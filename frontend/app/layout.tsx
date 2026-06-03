@@ -32,7 +32,9 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth`}>
       <body className="flex min-h-full flex-col bg-[var(--background)] text-[var(--foreground)] antialiased">
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1 scroll-mt-24">
+          {children}
+        </main>
         <SiteFooter />
       </body>
     </html>

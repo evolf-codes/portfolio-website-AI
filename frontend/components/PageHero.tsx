@@ -7,19 +7,13 @@ type Props = {
 export function PageHero({ eyebrow, title, description }: Props) {
   return (
     <section className="page-hero">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
-        {eyebrow ? (
-          <p className="page-hero__eyebrow text-xs font-semibold tracking-[0.2em] uppercase">
-            {eyebrow}
-          </p>
-        ) : null}
+      <div className="page-hero__inner">
+        {eyebrow ? <p className="page-hero__eyebrow">{eyebrow}</p> : null}
         <h1 className="page-hero__title mt-3 max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
           {title}
         </h1>
         {description ? (
-          <p className="page-hero__description mt-5 max-w-2xl text-base leading-relaxed md:text-lg">
-            {description}
-          </p>
+          <p className="page-hero__description mt-5">{description}</p>
         ) : null}
       </div>
     </section>

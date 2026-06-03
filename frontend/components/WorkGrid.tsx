@@ -16,7 +16,7 @@ export function WorkGrid() {
               style={{ backgroundColor: project.accent }}
               aria-hidden="true"
             />
-            <div className="relative aspect-[16/10] overflow-hidden bg-neutral-50">
+            <div className="relative aspect-[16/10] overflow-hidden bg-[var(--surface)]">
               <img
                 src={project.imageSrc}
                 alt={project.imageAlt}

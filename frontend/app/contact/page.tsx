@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
+import { PageMain } from "@/components/layout/PageMain";
+import { PanelHeading } from "@/components/layout/PanelHeading";
 import { SITE_EMAIL, SITE_LINKEDIN, SITE_LOCATION } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -11,17 +13,17 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div>
-      <PageHero eyebrow="Contact" title="Get in touch" />
-      <div className="mx-auto max-w-6xl px-6 pb-16">
+      <PageHero
+        eyebrow="Contact"
+        title="Get in touch"
+        description="Share a note about roles, consulting, or QA leadership. I read every message and respond when I can."
+      />
+      <PageMain>
         <div className="contact-layout">
           <aside className="contact-aside">
-            <p className="text-sm leading-relaxed text-[var(--graphite)]">
-              Share a note about roles, consulting, or QA leadership. I read every message and
-              respond when I can.
-            </p>
             <div className="panel panel--muted contact-aside__card">
-              <h2 className="text-sm font-semibold text-[var(--ink)]">Direct</h2>
-              <ul className="mt-4 space-y-2 text-sm text-[var(--graphite)]">
+              <PanelHeading>Direct</PanelHeading>
+              <ul className="mt-4 space-y-2 type-body">
                 <li>
                   <a className="text-link" href={`mailto:${SITE_EMAIL}`}>
                     {SITE_EMAIL}
@@ -40,7 +42,7 @@ export default function ContactPage() {
                 </li>
               </ul>
             </div>
-            <Link href="/" className="text-link text-sm">
+            <Link href="/" className="text-link inline-flex text-sm font-medium">
               View work
             </Link>
           </aside>
@@ -52,7 +54,7 @@ export default function ContactPage() {
             <ContactForm />
           </section>
         </div>
-      </div>
+      </PageMain>
     </div>
   );
 }

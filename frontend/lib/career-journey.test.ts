@@ -4,8 +4,7 @@ import { CAREER_MILESTONES } from "./career-journey";
 describe("career-journey", () => {
   it("lists milestones in reverse chronological order by start", () => {
     expect(CAREER_MILESTONES.length).toBeGreaterThanOrEqual(4);
-    expect(CAREER_MILESTONES[0]?.company).toContain("Confidential");
-    expect(CAREER_MILESTONES[0]?.company).toContain("Kraken");
+    expect(CAREER_MILESTONES[0]?.company).toBe("Confidential");
   });
 
   it("includes TMX progression", () => {

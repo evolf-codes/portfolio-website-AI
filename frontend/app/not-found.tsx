@@ -1,19 +1,17 @@
 import Link from "next/link";
+import { PageMain } from "@/components/layout/PageMain";
 
 export default function NotFound() {
   return (
-    <div className="mx-auto max-w-lg px-6 py-24 text-center">
-      <p className="text-sm font-semibold text-neutral-500">404</p>
-      <h1 className="mt-2 text-2xl font-semibold text-black">Page not found</h1>
-      <p className="mt-3 text-sm text-neutral-600">
+    <PageMain narrow className="text-center">
+      <p className="type-eyebrow">404</p>
+      <h1 className="type-section-title mt-3">Page not found</h1>
+      <p className="type-body-muted mx-auto mt-4 max-w-sm">
         The page you requested does not exist.
       </p>
-      <Link
-        href="/"
-        className="mt-8 inline-flex text-sm font-medium text-black underline"
-      >
-        Go to work
+      <Link href="/" className="btn-secondary mt-8">
+        Back to home
       </Link>
-    </div>
+    </PageMain>
   );
 }

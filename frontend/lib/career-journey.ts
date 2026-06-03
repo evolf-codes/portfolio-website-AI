@@ -10,7 +10,7 @@ export type CareerMilestone = {
 export const CAREER_MILESTONES: readonly CareerMilestone[] = [
   {
     id: "kraken",
-    company: "Confidential — Kraken Digital Asset Exchange",
+    company: "Confidential",
     role: "Senior Quality Assurance Consultant / QA Manager",
     period: "2022 – Present",
     location: "Remote / Canada",

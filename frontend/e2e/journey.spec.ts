@@ -7,7 +7,7 @@ test.describe("Journey", () => {
       page.getByRole("heading", { level: 1, name: /trading floors to global crypto/i }),
     ).toBeVisible();
     await expect(
-      page.getByText("Confidential — Kraken Digital Asset Exchange"),
+      page.getByText("Confidential", { exact: true }),
     ).toBeVisible();
     await expect(page.getByText("TMX Group (Toronto Stock Exchange)").first()).toBeVisible();
     await expect(page.getByRole("heading", { level: 2, name: "Education" })).toBeVisible();

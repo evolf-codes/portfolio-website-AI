@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomeIntro } from "@/components/HomeIntro";
+import { SectionHeading } from "@/components/layout/SectionHeading";
 import { WorkGrid } from "@/components/WorkGrid";
 
 export const metadata: Metadata = {
@@ -10,18 +11,13 @@ export default function HomePage() {
   return (
     <div>
       <HomeIntro />
-      <section className="border-t border-[var(--border)] bg-[var(--paper)]">
-        <div className="mx-auto max-w-6xl px-6 py-14 md:py-16">
-          <p className="page-hero__eyebrow text-xs font-semibold tracking-[0.2em] uppercase">
-            Work
-          </p>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[var(--ink)] md:text-3xl">
-            Quality engineering in practice
-          </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--graphite)] md:text-base">
-            Selected projects and automation examples that demonstrate test strategy, tooling,
-            and delivery at a senior QA level.
-          </p>
+      <section className="page-section">
+        <div className="page-section__inner">
+          <SectionHeading
+            eyebrow="Work"
+            title="Quality engineering in practice"
+            description="Selected projects and automation examples that demonstrate test strategy, tooling, and delivery at a senior QA level."
+          />
           <div className="mt-10">
             <WorkGrid />
           </div>

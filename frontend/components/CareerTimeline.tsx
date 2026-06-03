@@ -1,9 +1,11 @@
+import { PageMain } from "@/components/layout/PageMain";
+import { PanelHeading } from "@/components/layout/PanelHeading";
 import { CAREER_MILESTONES } from "@/lib/career-journey";
 import { EDUCATION } from "@/lib/profile";
 
 export function CareerTimeline() {
   return (
-    <div className="mx-auto max-w-6xl px-6 pb-16">
+    <PageMain>
       <ol className="career-timeline">
         {CAREER_MILESTONES.map((item, index) => (
           <li key={item.id} className="career-timeline__item">
@@ -25,10 +27,10 @@ export function CareerTimeline() {
               {item.location ? (
                 <p className="mt-1 text-xs text-[var(--slate)]">{item.location}</p>
               ) : null}
-              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-[var(--slate)]">
+              <ul className="mt-4 space-y-2">
                 {item.highlights.map((line) => (
-                  <li key={line} className="flex gap-2">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[var(--mist)]" />
+                  <li key={line} className="list-bullet">
+                    <span className="list-bullet__dot" aria-hidden="true" />
                     <span>{line}</span>
                   </li>
                 ))}
@@ -38,13 +40,13 @@ export function CareerTimeline() {
         ))}
       </ol>
 
-      <section className="panel panel--muted mt-4 p-6 md:p-8">
-        <h2 className="text-lg font-semibold text-[var(--ink)]">Education</h2>
-        <p className="mt-2 text-sm font-medium text-[var(--graphite)]">{EDUCATION.school}</p>
-        <p className="mt-1 text-sm text-[var(--slate)]">{EDUCATION.degree}</p>
-        <p className="mt-1 text-sm text-[var(--slate)]">{EDUCATION.years}</p>
-        <p className="mt-3 text-sm leading-relaxed text-[var(--slate)]">{EDUCATION.honors}</p>
+      <section className="panel panel--muted mt-12 p-6 md:mt-16 md:p-8">
+        <PanelHeading>Education</PanelHeading>
+        <p className="mt-4 text-sm font-medium text-[var(--graphite)]">{EDUCATION.school}</p>
+        <p className="mt-1 type-body-muted">{EDUCATION.degree}</p>
+        <p className="mt-1 type-body-muted">{EDUCATION.years}</p>
+        <p className="mt-3 type-body-muted">{EDUCATION.honors}</p>
       </section>
-    </div>
+    </PageMain>
   );
 }

@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element -- static SVG hero and local PNG */
+import { CaseStudyHeader } from "@/components/layout/CaseStudyHeader";
 import type { WorkProject } from "@/lib/work-projects";
 
 type Props = { project: WorkProject };
@@ -6,12 +7,7 @@ type Props = { project: WorkProject };
 export function FrontendAutomationCaseStudy({ project }: Props) {
   return (
     <>
-      <p className="page-hero__eyebrow text-xs font-semibold tracking-wide uppercase">
-        Case study
-      </p>
-      <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">
-        {project.title}
-      </h1>
+      <CaseStudyHeader title={project.title} />
       <div className="panel mt-8 overflow-hidden">
         <img
           src={project.imageSrc}
@@ -20,9 +16,9 @@ export function FrontendAutomationCaseStudy({ project }: Props) {
           role="presentation"
         />
       </div>
-      <div className="prose prose-neutral mt-8 max-w-none text-[var(--graphite)]">
-        <p className="text-base leading-relaxed">{project.summary}</p>
-        <p className="mt-4 text-base leading-relaxed">
+      <div className="article-body mt-8">
+        <p>{project.summary}</p>
+        <p>
           The runnable suite lives under{" "}
           <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-sm text-[var(--ink)]">
             qa-the-internet/
@@ -36,10 +32,10 @@ export function FrontendAutomationCaseStudy({ project }: Props) {
           >
             the-internet.herokuapp.com
           </a>
-          , written in Python with pytest and Playwright, styled for PEP 8, and ready for
-          the provided Docker image.
+          , written in Python with pytest and Playwright, styled for PEP 8, and ready for the
+          provided Docker image.
         </p>
-        <ul className="mt-4 list-disc pl-5 text-base leading-relaxed">
+        <ul>
           <li>Covers navigation, forms, tables, hovers, key events, new windows, and HTTP basic auth.</li>
           <li>
             Each test includes a short docstring; inline comments only where selectors need
@@ -62,7 +58,7 @@ export function FrontendAutomationCaseStudy({ project }: Props) {
           </li>
         </ul>
         <div className="mt-8">
-          <p className="text-sm font-semibold text-[var(--ink)]">Latest run (click to open)</p>
+          <p className="type-panel-title">Latest run (click to open)</p>
           <a
             href="/work/frontend-automation-pytest-output.png"
             target="_blank"
@@ -72,16 +68,16 @@ export function FrontendAutomationCaseStudy({ project }: Props) {
             <img
               src="/work/frontend-automation-pytest-output.png"
               alt="Pytest output from the Heroku the-internet suite"
-              className="w-full object-top object-contain"
+              className="w-full object-contain object-top"
             />
           </a>
-          <p className="mt-2 text-xs text-[var(--slate)]">
+          <p className="type-caption mt-2">
             Generated with{" "}
             <code className="text-[var(--graphite)]">python scripts/snapshot_pytest_output.py</code>{" "}
             after a green test run.
           </p>
         </div>
-        <p className="mt-8 text-base leading-relaxed">
+        <p>
           <a className="text-link" href="/work/frontend-automation-notes.txt" download>
             Download notes.txt
           </a>{" "}

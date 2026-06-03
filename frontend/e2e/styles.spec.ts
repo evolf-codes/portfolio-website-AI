@@ -18,6 +18,8 @@ test.describe("Site styles", () => {
     expect(css).toContain(".site-header");
     expect(css).toContain(".page-hero");
     expect(css).toContain(".contact-form");
+    expect(css).toContain(".type-eyebrow");
+    expect(css).toContain(".page-main");
   });
 
   test("home page shows styled name and work tiles", async ({ page }) => {
