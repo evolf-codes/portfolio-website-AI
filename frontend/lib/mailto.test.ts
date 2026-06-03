@@ -48,6 +48,6 @@ describe("buildContactMailto", () => {
     });
 
     expect(url.startsWith(`mailto:${SITE_EMAIL}?`)).toBe(true);
-    expect(SITE_EMAIL).toBe("eric.volfson@gmail.com");
+    expect(SITE_EMAIL).toBe("58_bent.sleigh@icloud.com");
   });
 });

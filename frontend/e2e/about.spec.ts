@@ -7,9 +7,9 @@ test.describe("About", () => {
       page.getByRole("heading", { level: 1, name: "Eric Volfson" }),
     ).toBeVisible();
     const mail = page.getByRole("complementary").getByRole("link", {
-      name: /eric\.volfson@gmail\.com/i,
+      name: /58_bent\.sleigh@icloud\.com/i,
     });
-    await expect(mail).toHaveAttribute("href", /^mailto:eric\.volfson@gmail\.com/);
+    await expect(mail).toHaveAttribute("href", /^mailto:58_bent\.sleigh@icloud\.com/);
   });
 
 });

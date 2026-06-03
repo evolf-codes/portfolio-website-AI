@@ -16,7 +16,7 @@ test.describe("Contact", () => {
       await route.fulfill({
         status: 200,
         contentType: "application/json",
-        body: JSON.stringify({ ok: true, to: "eric.volfson@gmail.com" }),
+        body: JSON.stringify({ ok: true, to: "58_bent.sleigh@icloud.com" }),
       });
     });
 

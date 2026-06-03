@@ -1,21 +1,10 @@
 # portfolio-website-AI
 
-Eric Volfson QA portfolio: Next.js site (`frontend/`) and pytest sample project (`qa-the-internet/`).
+Professional portfolio for **Eric Volfson**, a senior QA engineer and QA manager focused on capital markets, crypto trading, and high-volume platforms.
 
-## Quick start
+The repository contains:
 
-```bash
-cd frontend
-npm install
-cp .env.example .env.local   # Formspree + public email
-npm run dev                  # http://localhost:3000
-```
+- **`frontend/`** — Next.js portfolio site (home, career journey, about, contact, and work case studies)
+- **`qa-the-internet/`** — pytest automation sample against [The Internet](https://the-internet.herokuapp.com/) (Docker, PEP 8, portfolio case-study assets)
 
-Production preview:
-
-```bash
-cd frontend
-npm run start:local          # http://127.0.0.1:3002
-```
-
-See [frontend/README.md](frontend/README.md) for contact form setup and tests.
+The live experience leads with project work and case studies, a career timeline, an about profile, and a contact form backed by Formspree.

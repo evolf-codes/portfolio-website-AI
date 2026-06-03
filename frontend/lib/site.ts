@@ -1,12 +1,6 @@
-/** Public contact details. Override email with NEXT_PUBLIC_SITE_EMAIL. */
+/** Public contact address shown on the site and used for mailto links. */
 export const SITE_EMAIL =
-  process.env.NEXT_PUBLIC_SITE_EMAIL ?? "eric.volfson@gmail.com";
-
-/** Inbox Formspree notifies (may differ from SITE_EMAIL when using an alias). */
-export const CONTACT_DELIVERY_EMAIL =
-  process.env.NEXT_PUBLIC_CONTACT_DELIVERY_EMAIL ??
-  process.env.CONTACT_DELIVERY_EMAIL ??
-  SITE_EMAIL;
+  process.env.NEXT_PUBLIC_SITE_EMAIL ?? "58_bent.sleigh@icloud.com";
 
 export const SITE_LOCATION = "Ontario, Canada";
 export const SITE_LINKEDIN = "https://www.linkedin.com/in/eric-v-aa45ab79/";

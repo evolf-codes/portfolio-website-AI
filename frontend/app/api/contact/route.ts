@@ -4,7 +4,7 @@ import {
   validateContactPayload,
   type ContactPayload,
 } from "@/lib/contact";
-import { CONTACT_DELIVERY_EMAIL, SITE_EMAIL } from "@/lib/site";
+import { SITE_EMAIL } from "@/lib/site";
 
 export const runtime = "nodejs";
 
@@ -60,11 +60,7 @@ export async function POST(request: Request) {
 
   try {
     await sendViaFormspree(formId, validated.data);
-    return NextResponse.json({
-      ok: true,
-      to: SITE_EMAIL,
-      deliveryEmail: CONTACT_DELIVERY_EMAIL,
-    });
+    return NextResponse.json({ ok: true, to: SITE_EMAIL });
   } catch (err) {
     const message =
       err instanceof Error ? err.message : "Unable to send your message.";

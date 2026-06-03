@@ -37,7 +37,7 @@ describe("POST /api/contact", () => {
     const data = await response.json();
     expect(response.status).toBe(503);
     expect(data.fallback).toBe(true);
-    expect(data.to).toBe("eric.volfson@gmail.com");
+    expect(data.to).toBe("58_bent.sleigh@icloud.com");
   });
 
   it("returns ok when Formspree accepts the submission", async () => {
