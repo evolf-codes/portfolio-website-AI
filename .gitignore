@@ -1,0 +1,16 @@
+.DS_Store
+*.log
+.env
+.env.*.local
+
+# Monorepo-style ignores when tooling runs from repo root
+node_modules/
+coverage/
+playwright-report/
+test-results/
+
+# Python (qa-the-internet)
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/

@@ -1,0 +1,50 @@
+Front-end automation: Heroku the-internet (pytest + Playwright, Docker-ready)
+
+1) What this is
+This is a small, public-facing training ground (the-internet.herokuapp.com) with stable,
+intentional UI quirks. The suite is not trying to be clever; it is trying to be readable
+to a senior reviewer and cheap to run in a container, while still covering navigation,
+assertions, auth, a second window, and browser primitives that map to day-to-day web QA.
+
+2) Why pytest
+pytest is a plain-text runner with excellent failure output, a flat learning curve for
+new contributors, and a fixture model that matches how you already think in setup vs act vs
+assert. For hiring managers, it signals that the author can hand code to a team without
+forcing a custom framework.
+
+3) Why Playwright (Python)
+Selenium is still common in legacy codebases, but Playwright is now the most predictable
+path for new UI automation: auto-waiting, modern selectors, and strong APIs for new tabs,
+dialogs, and network. The official Python port keeps code close to the tests without a
+JVM, which pairs naturally with the lightweight Docker image.
+
+4) Why not Playwright test runner for this portfolio piece
+The JavaScript @playwright/test stack is first-class, but the brief asked for Python,
+pytest, and PEP 8, so the runner stays in pytest while the engine stays Playwright. You can
+port the same checks to the JS runner in an afternoon; the value here is the coverage map
+and the project hygiene.
+
+5) Test design
+Each test is one scenario with a one-line docstring, one happy path, and comments only
+where a selector is non-obvious. Assertions prefer role and text; regex is used
+sparingly to survive minor copy drift on the public site.
+
+6) Flakiness
+Public Heroku can rate-limit or return slow first paints. A 30s default timeout is set on
+the page. If a check becomes noisy, the first fix is to target a narrower locator, not to
+add sleeps. Retries belong in CI as policy, not in the test code.
+
+7) Docker
+The Dockerfile starts from the official Playwright Python image so browser dependencies
+and fonts are not hand-maintained. In CI, you run the same image as a developer, which
+removes a common source of "works on my machine" risk.
+
+8) How this ties to a senior role
+A senior path is not about maximum tests; it is about traceable decisions, a suite that
+new hires can run on day one, and notes that make trade-offs obvious. This folder is
+written to be reviewed under those expectations: short code, long rationale here.
+
+9) If you take one next step
+Add a second stage job that runs ruff and mypy on the test package, and publish the pytest
+Junit XML to your dashboard. The tests already separate concerns enough for that to be
+mechanical work.
