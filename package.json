@@ -1,0 +1,8 @@
+{
+  "name": "portfolio-website-ai",
+  "private": true,
+  "description": "Root wrapper so Cloudflare Workers Builds can deploy from repo root.",
+  "scripts": {
+    "deploy": "npm ci --prefix frontend && npm run deploy --prefix frontend"
+  }
+}

@@ -4,18 +4,28 @@ This app uses [OpenNext for Cloudflare](https://developers.cloudflare.com/worker
 
 ## Workers Builds (GitHub)
 
+Your build log must **not** show only `Executing user deploy command: npx wrangler deploy`. Change the deploy command in the Cloudflare dashboard.
+
+### Option A — repo root (recommended if you cannot set a root directory)
+
+| Setting | Value |
+|--------|--------|
+| **Root directory** | *(leave empty / repository root)* |
+| **Deploy command** | `npm run deploy` |
+
+Root `package.json` runs `npm ci` in `frontend`, OpenNext build, then `wrangler deploy`.
+
+### Option B — `frontend` as root
+
 | Setting | Value |
 |--------|--------|
 | **Root directory** | `frontend` |
-| **Install command** | `npm ci` (or leave default if it runs in `frontend`) |
 | **Build command** | `npm run pages:build` |
 | **Deploy command** | `npx wrangler deploy` |
 
-Or use a single deploy step:
+Or one step: **Deploy command** = `npm run deploy` (with root directory `frontend`).
 
-| **Deploy command** | `npm run deploy` |
-
-Do **not** use bare `npx wrangler deploy` without `pages:build` first — Wrangler has no `.open-next/` output and will fail with “Could not detect a directory containing static files”.
+Do **not** use bare `npx wrangler deploy` at the repo root — there is no `wrangler.jsonc` or `.open-next/` there, and you will get “Could not detect a directory containing static files”.
 
 ## Environment variables (dashboard)
 
