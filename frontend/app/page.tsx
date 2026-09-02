@@ -52,11 +52,7 @@ export default function HomePage() {
       </section>
       <section id="resume" className="page-section scroll-mt-20">
         <div className="page-section__inner">
-          <SectionHeading
-            eyebrow="Resume"
-            title="View a current resume"
-            description="Open the PDF in your browser, or the Word file if you prefer to edit."
-          />
+          <SectionHeading title="Resume" />
           <ResumeDownloads />
         </div>
       </section>

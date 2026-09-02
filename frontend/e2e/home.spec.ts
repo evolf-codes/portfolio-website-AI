@@ -9,8 +9,8 @@ test.describe("Home", () => {
     await expect(page.getByText("15+")).toBeVisible();
     await expect(page.getByRole("heading", { name: "Frontend automation" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "QA leadership for fintech and digital assets" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "View a current resume" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "View PDF" }).first()).toHaveAttribute(
+    await expect(page.getByRole("heading", { name: "Resume" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "View PDF" })).toHaveAttribute(
       "href",
       "/resume/eric-volfson-qa-manager-2-page.pdf",
     );
