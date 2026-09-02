@@ -21,11 +21,14 @@ test.describe("Home", () => {
     await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Home" })).toHaveAttribute("href", "/#home");
     await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Resume" })).toHaveAttribute("href", "/#resume");
     await expect(page.getByRole("contentinfo").getByRole("link", { name: "Contact" })).toBeVisible();
+    await expect(page.getByRole("contentinfo").getByRole("link", { name: "LinkedIn" })).toHaveAttribute(
+      "href",
+      "https://www.linkedin.com/in/eric-v-aa45ab79/",
+    );
     await expect(page.getByRole("contentinfo").getByRole("link", { name: "GitHub" })).toHaveAttribute(
       "href",
       "https://github.com/evolf-codes",
     );
-    await expect(page.getByRole("contentinfo").getByRole("link", { name: "LinkedIn" })).toHaveCount(0);
     await expect(page.getByRole("contentinfo").getByText(/@/)).toHaveCount(0);
   });
 
