@@ -17,6 +17,10 @@ export function WorkShowcase() {
               </Link>
             </h3>
             <p className="type-body mt-4">{project.about}</p>
+            <p className="type-body mt-3">
+              <span className="font-medium text-[var(--ink)]">What is tested:</span>{" "}
+              {project.tested}
+            </p>
             <p className="work-showcase__outcome mt-5">{project.outcome}</p>
             <p className="type-caption mt-4">{project.tools}</p>
             <div className="mt-6 flex flex-wrap gap-5 text-sm">

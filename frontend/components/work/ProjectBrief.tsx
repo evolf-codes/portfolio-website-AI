@@ -13,15 +13,23 @@ export function ProjectBrief({ project }: { project: WorkProject }) {
           <p>{project.about}</p>
         </section>
         <section>
-          <h2>Purpose</h2>
-          <p>{project.purpose}</p>
+          <h2>What is being tested</h2>
+          <p>{project.tested}</p>
+        </section>
+        <section>
+          <h2>Input source</h2>
+          <p>{project.inputSource}</p>
+        </section>
+        <section>
+          <h2>Expected output</h2>
+          <p>{project.expectedOutput}</p>
         </section>
         <section>
           <h2>Technology</h2>
           <p className="case-study-tools">{project.tools}</p>
         </section>
         <section>
-          <h2>Output</h2>
+          <h2>Actual result</h2>
           <p>{project.outcome}</p>
           <a
             href={project.resultImageSrc}

@@ -13,9 +13,14 @@ test.describe("Work", () => {
         page.getByRole("heading", { level: 1, name: project.title }),
       ).toBeVisible();
       await expect(page.getByRole("heading", { name: "About this sample" })).toBeVisible();
-      await expect(page.getByRole("heading", { name: "Purpose" })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "What is being tested" })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "Input source" })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "Expected output" })).toBeVisible();
       await expect(page.getByRole("heading", { name: "Technology" })).toBeVisible();
-      await expect(page.getByRole("heading", { name: "Output" })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "Actual result" })).toBeVisible();
+      await expect(page.getByText(project.inputSource)).toBeVisible();
+      await expect(page.getByText(project.expectedOutput)).toBeVisible();
+      await expect(page.getByText(project.tested)).toBeVisible();
     }
   });
 
@@ -54,7 +59,9 @@ test.describe("Work", () => {
     await page.goto("/work/performance-testing");
 
     await expect(page.getByRole("heading", { name: "About this sample" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Output" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Input source" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Expected output" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Actual result" })).toBeVisible();
     await expect(page.getByRole("img", { name: /Locust performance test summary/i })).toBeVisible();
     await expect(page.locator(".case-study-simple")).toBeVisible();
   });

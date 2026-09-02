@@ -20,7 +20,9 @@ describe("work-projects", () => {
   it("keeps every project brief and evidence-ready", () => {
     for (const project of WORK_PROJECTS) {
       expect(project.about.length).toBeGreaterThan(20);
-      expect(project.purpose.length).toBeGreaterThan(20);
+      expect(project.tested.length).toBeGreaterThan(20);
+      expect(project.inputSource.length).toBeGreaterThan(20);
+      expect(project.expectedOutput.length).toBeGreaterThan(20);
       expect(project.tools.length).toBeGreaterThan(5);
       expect(project.outcome.length).toBeGreaterThan(20);
       expect(project.resultImageSrc.startsWith("/work/")).toBe(true);
