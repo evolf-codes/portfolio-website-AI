@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { HomeIntro } from "@/components/HomeIntro";
 import { ContactForm } from "@/components/ContactForm";
-import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { ResumeDownloads } from "@/components/ResumeDownloads";
 import { SectionHeading } from "@/components/layout/SectionHeading";
 import { WorkShowcase } from "@/components/WorkShowcase";
-import { CORE_SKILLS, PROFILE_SUMMARY } from "@/lib/profile";
 import { SITE_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -16,30 +14,6 @@ export default function HomePage() {
   return (
     <div>
       <HomeIntro />
-      <section id="about" className="page-section page-section--white">
-        <div className="page-section__inner about-flow">
-          <SectionHeading eyebrow="About" title="Quality leadership that scales with the product" />
-          <div className="about-flow__content">
-            <div className="about-flow__profile">
-              <ProfilePhoto className="profile-photo--about" />
-              <div className="space-y-4">
-                {PROFILE_SUMMARY.map((item) => (
-                  <p key={item} className="type-body">
-                    {item}
-                  </p>
-                ))}
-              </div>
-            </div>
-            <ul className="flex flex-wrap gap-2 content-start">
-              {CORE_SKILLS.slice(0, 8).map((skill) => (
-                <li key={skill} className="skill-pill">
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
       <section id="resume" className="page-section">
         <div className="page-section__inner">
           <SectionHeading title="Resume" />

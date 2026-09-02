@@ -2,12 +2,13 @@ import { expect, test } from "@playwright/test";
 import { WORK_PROJECTS } from "../lib/work-projects";
 
 test.describe("Home", () => {
-  test("shows a continuous about, resume, work, and contact flow", async ({ page }) => {
+  test("shows a combined about intro with resume, work, and contact", async ({ page }) => {
     await page.goto("/");
     await expect(page.getByRole("heading", { level: 1, name: "Eric Volfson" })).toBeVisible();
     await expect(page.getByRole("img", { name: /Eric Volfson/i }).first()).toBeVisible();
     await expect(page.getByText("Toronto, ON, Canada — Remote First")).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Quality leadership that scales with the product" })).toBeVisible();
+    await expect(page.locator("#about")).toBeVisible();
+    await expect(page.locator("#home")).toHaveCount(0);
     await expect(page.getByRole("heading", { name: "Resume" })).toBeVisible();
     await expect(page.getByRole("link", { name: "View PDF" })).toHaveAttribute(
       "href",
@@ -20,7 +21,7 @@ test.describe("Home", () => {
     await expect(page.getByRole("heading", { name: "Ready to talk quality leadership." })).toBeVisible();
 
     const sectionOrder = await page.evaluate(() =>
-      ["home", "about", "resume", "work", "contact"].map((id) => {
+      ["about", "resume", "work", "contact"].map((id) => {
         const el = document.getElementById(id);
         return el ? el.getBoundingClientRect().top : Number.POSITIVE_INFINITY;
       }),
@@ -31,9 +32,9 @@ test.describe("Home", () => {
       .getByRole("navigation", { name: "Primary" })
       .getByRole("link")
       .allTextContents();
-    expect(navLabels).toEqual(["Home", "About", "Resume", "Work", "Contact"]);
+    expect(navLabels).toEqual(["About", "Resume", "Work", "Contact"]);
 
-    await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Home" })).toHaveAttribute("href", "/#home");
+    await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "About" })).toHaveAttribute("href", "/#about");
     await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Resume" })).toHaveAttribute("href", "/#resume");
     await expect(page.getByRole("contentinfo").getByRole("link", { name: "Contact" })).toBeVisible();
     await expect(page.getByRole("contentinfo").getByRole("link", { name: "LinkedIn" })).toHaveAttribute(

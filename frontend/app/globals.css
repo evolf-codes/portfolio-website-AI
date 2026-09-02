@@ -630,6 +630,28 @@ a {
   background: var(--mist);
 }
 
+.home-intro {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.home-intro__profile {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .home-intro__profile {
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
+
+.home-intro__skills {
+  max-width: 48rem;
+}
+
 .home-intro__name {
   font-size: clamp(2.75rem, 8vw, 4.5rem);
   font-weight: 600;

@@ -4,11 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-const SECTIONS = ["home", "about", "resume", "work", "contact"] as const;
+const SECTIONS = ["about", "resume", "work", "contact"] as const;
 type SectionId = (typeof SECTIONS)[number];
 
 const nav = [
-  { href: "/#home", label: "Home", section: "home" },
   { href: "/#about", label: "About", section: "about" },
   { href: "/#resume", label: "Resume", section: "resume" },
   { href: "/#work", label: "Work", section: "work" },
@@ -32,14 +31,15 @@ function sectionFromLocation(pathname: string, hash: string): SectionId | null {
   if (pathname === "/contact") return "contact";
   if (pathname !== "/") return null;
 
-  const fromHash = hash.replace(/^#/, "") as SectionId;
-  if (SECTIONS.includes(fromHash)) return fromHash;
-  return "home";
+  const fromHash = hash.replace(/^#/, "");
+  if (fromHash === "home" || fromHash === "about") return "about";
+  if (SECTIONS.includes(fromHash as SectionId)) return fromHash as SectionId;
+  return "about";
 }
 
 function sectionFromScroll(): SectionId {
   const offset = headerOffsetPx() + 8;
-  let current: SectionId = "home";
+  let current: SectionId = "about";
 
   for (const id of SECTIONS) {
     const el = document.getElementById(id);
@@ -150,7 +150,7 @@ export function SiteHeader() {
         <Link
           href="/"
           className="site-header__brand-block group flex flex-col"
-          onClick={() => activateSection("home")}
+          onClick={() => activateSection("about")}
         >
           <span className="site-header__brand text-sm font-semibold tracking-wide uppercase">
             Eric Volfson

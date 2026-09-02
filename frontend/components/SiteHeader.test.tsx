@@ -8,13 +8,12 @@ vi.mock("next/navigation", () => ({
 }));
 
 describe("SiteHeader", () => {
-  it("renders Home, About, Resume, Work, and Contact section anchors", () => {
+  it("renders About, Resume, Work, and Contact section anchors", () => {
     vi.mocked(usePathname).mockReturnValue("/");
     render(<SiteHeader />);
     const nav = screen.getByRole("navigation", { name: "Primary" });
     const links = within(nav).getAllByRole("link");
     expect(links.map((link) => link.getAttribute("href"))).toEqual([
-      "/#home",
       "/#about",
       "/#resume",
       "/#work",
@@ -22,13 +21,13 @@ describe("SiteHeader", () => {
     ]);
   });
 
-  it("marks Home active on the home route by default", () => {
+  it("marks About active on the home route by default", () => {
     vi.mocked(usePathname).mockReturnValue("/");
     render(<SiteHeader />);
     const nav = screen.getByRole("navigation", { name: "Primary" });
-    const home = within(nav).getByRole("link", { name: "Home" });
-    expect(home.className).toContain("site-header__link--active");
-    expect(home).toHaveAttribute("aria-current", "true");
+    const about = within(nav).getByRole("link", { name: "About" });
+    expect(about.className).toContain("site-header__link--active");
+    expect(about).toHaveAttribute("aria-current", "true");
   });
 
   it("marks Work active on project routes", () => {
