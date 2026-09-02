@@ -41,9 +41,7 @@ export default function AboutPage() {
               ))}
             </ul>
             <p className="type-body-muted">
-              Hands-on enough to catch risk early, senior enough to set the standard —
-              planning, environments, performance, automation, and release calls that hold up
-              in regulated, high-volume systems.
+              Planning, environments, performance, and automation in regulated, high-volume systems.
             </p>
             <Link href="/journey" className="text-link inline-flex text-sm font-medium">
               Read the full career journey
