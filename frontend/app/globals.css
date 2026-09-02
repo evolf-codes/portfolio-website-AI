@@ -688,10 +688,32 @@ a {
   align-items: start;
 }
 
+.home-intro .profile-photo--about {
+  width: 100%;
+  max-width: none;
+  justify-self: stretch;
+  border-radius: 1.25rem;
+}
+
 @media (min-width: 768px) {
   .home-intro__profile {
-    grid-template-columns: 11rem minmax(0, 1fr);
-    gap: 2rem;
+    grid-template-columns: minmax(16rem, 18rem) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .home-intro .profile-photo--about {
+    max-width: 18rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-intro__profile {
+    grid-template-columns: minmax(18rem, 20rem) minmax(0, 1fr);
+  }
+
+  .home-intro .profile-photo--about {
+    max-width: 20rem;
   }
 }
 
@@ -771,8 +793,8 @@ a {
 }
 
 .profile-photo--about {
-  max-width: 16rem;
-  border-radius: 1rem;
+  max-width: 20rem;
+  border-radius: 1.25rem;
 }
 
 .about-flow__profile {

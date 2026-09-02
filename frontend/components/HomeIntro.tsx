@@ -17,7 +17,7 @@ export function HomeIntro() {
         </div>
 
         <div className="home-intro__profile">
-          <ProfilePhoto className="profile-photo--about" />
+          <ProfilePhoto className="profile-photo--about" priority />
           <div className="home-intro__copy">
             {ABOUT_COPY.map((item) => (
               <p key={item}>{item}</p>
