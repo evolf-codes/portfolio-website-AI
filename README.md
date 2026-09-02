@@ -6,5 +6,7 @@ The repository contains:
 
 - **`frontend/`** — Next.js portfolio site (home, career journey, about, contact, and work case studies)
 - **`qa-the-internet/`** — pytest automation sample against [The Internet](https://the-internet.herokuapp.com/) (Docker, PEP 8, portfolio case-study assets)
+- **`portfolio-projects/`** — six focused sample briefs and reusable skill instructions
+- **`deployment/`** — tested Cloudflare release instructions and deployment skill
 
 The live experience leads with project work and case studies, a career timeline, an about profile, and a contact form backed by Formspree.

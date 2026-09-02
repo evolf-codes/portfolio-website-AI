@@ -3,6 +3,9 @@
   "private": true,
   "description": "Root wrapper so Cloudflare Workers Builds can deploy from repo root.",
   "scripts": {
-    "deploy": "npm ci --prefix frontend && npm run deploy --prefix frontend"
+    "verify": "npm run lint --prefix frontend && npm test --prefix frontend && npm run build --prefix frontend && npm run test:e2e --prefix frontend",
+    "verify:live": "qa-the-internet/.venv/bin/python -m pytest qa-the-internet/tests -q",
+    "deploy": "npm ci --prefix frontend && npm run deploy --prefix frontend",
+    "release": "npm run verify && npm run deploy"
   }
 }

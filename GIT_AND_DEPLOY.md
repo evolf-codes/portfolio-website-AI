@@ -67,15 +67,58 @@ git commit -m "Unify page layout typography and update Journey employer label."
 git push origin main
 ```
 
-Cloudflare Workers Builds runs automatically on push to `main`.
+Cloudflare runs a build **only if** the Worker is connected to your GitHub repo (see below). A `git push` alone does nothing if Git is not linked.
 
 ### 5. Confirm deploy in Cloudflare
 
-1. Cloudflare dashboard → Workers & Pages → your project → **Deployments**
-2. Wait for the latest build to finish (green)
-3. Open the live URL and smoke-test: home styles, Journey, About, Contact form
+**Where to look** (names vary slightly in the UI):
+
+1. [dash.cloudflare.com](https://dash.cloudflare.com) → **Workers & Pages**
+2. Click your Worker (e.g. `portfolio-website-ai`)
+3. Open **Deployments** (or **Builds** / **Build history**)
+
+You should see a row for commit `b411e7e` (or your latest message) with a build log.
 
 Build log should show `opennextjs-cloudflare build` and `wrangler deploy`, not only `npx wrangler deploy`.
+
+### 5b. No build after `git push`?
+
+Usually the Worker is **not** connected to GitHub, or you are on the wrong project.
+
+**Check Git is connected**
+
+1. Workers & Pages → your Worker → **Settings**
+2. Find **Builds** / **Build configuration** / **Connect to Git**
+3. Confirm:
+   - Repository: `evolf-codes/portfolio-website-AI`
+   - Production branch: `main`
+   - Deploy command: `npm run deploy`
+4. If there is no repo linked, choose **Connect to Git**, authorize GitHub, select the repo and branch, set deploy command, save.
+
+**Trigger a build without a new commit**
+
+- On the Worker page, use **Create deployment** / **Retry deployment** / **Deploy latest commit** (wording depends on account).
+
+**Confirm GitHub received the push**
+
+```bash
+cd /Users/evolfson/Documents/portfolio
+git log origin/main -1 --oneline
+```
+
+Should show your latest commit (e.g. `b411e7e`).
+
+**Deploy from your Mac (always works if Wrangler is logged in)**
+
+```bash
+cd /Users/evolfson/Documents/portfolio
+npx wrangler login    # once
+npm run deploy
+```
+
+For a manual production release, prefer `npm run release`; it runs the complete local verification gate before deploying.
+
+That uploads the current code even when Cloudflare Git builds are off.
 
 ### 6. If the build fails
 

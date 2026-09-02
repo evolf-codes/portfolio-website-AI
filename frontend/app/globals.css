@@ -291,6 +291,36 @@ a {
   margin-top: 0.5rem;
 }
 
+.article-body h2 {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+.case-study-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .case-study-grid {
+    grid-template-columns: minmax(0, 1.6fr) minmax(15rem, 0.9fr);
+  }
+}
+
+.evidence-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.evidence-list li {
+  border-bottom: 1px solid var(--border);
+  color: var(--graphite);
+  font-size: 0.875rem;
+  padding-bottom: 0.75rem;
+}
+
 .list-bullet {
   display: flex;
   gap: 0.75rem;

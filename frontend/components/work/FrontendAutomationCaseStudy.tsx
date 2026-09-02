@@ -7,7 +7,7 @@ type Props = { project: WorkProject };
 export function FrontendAutomationCaseStudy({ project }: Props) {
   return (
     <>
-      <CaseStudyHeader title={project.title} />
+      <CaseStudyHeader eyebrow={project.status} title={project.title} />
       <div className="panel mt-8 overflow-hidden">
         <img
           src={project.imageSrc}

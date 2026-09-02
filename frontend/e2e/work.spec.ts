@@ -12,7 +12,7 @@ test.describe("Work", () => {
       await expect(
         page.getByRole("heading", { level: 1, name: project.title }),
       ).toBeVisible();
-      await expect(page.getByText(/case study/i).first()).toBeVisible();
+      await expect(page.getByText(project.status, { exact: true })).toBeVisible();
     }
   });
 
@@ -45,5 +45,14 @@ test.describe("Work", () => {
     expect(readmeResp.ok()).toBeTruthy();
     expect(reqsResp.ok()).toBeTruthy();
     expect(notesResp.ok()).toBeTruthy();
+  });
+
+  test("planned projects show a quality brief without claiming results", async ({ page }) => {
+    await page.goto("/work/performance-testing");
+
+    await expect(page.getByText("Planned", { exact: true })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Quality brief" })).toBeVisible();
+    await expect(page.getByText("Evidence target")).toBeVisible();
+    await expect(page.getByText("Next increment")).toBeVisible();
   });
 });

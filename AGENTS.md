@@ -64,3 +64,9 @@ Contact:
 1. Use latest versions of libraries and idiomatic approaches as of today
 2. Keep it simple - NEVER over-engineer, ALWAYS simplify, NO unnecessary defensive programming. No extra features - focus on simplicity.
 3. Be concise. Keep README minimal. IMPORTANT: no emojis ever
+
+## Atlassian Rovo MCP
+
+When connected to atlassian-rovo-mcp:
+- MUST use cloudId = "https://ericvolfson.atlassian.net"
+- MUST use maxResults: 10 for all search operations

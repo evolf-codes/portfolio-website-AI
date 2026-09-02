@@ -26,7 +26,9 @@ export function WorkGrid() {
             </div>
             <div className="work-card__body flex flex-1 flex-col px-4 py-4">
               <h2 className="work-card__title text-base font-semibold">{project.title}</h2>
-              <p className="work-card__meta mt-1 text-sm">View overview</p>
+              <p className="work-card__meta mt-1 text-sm">
+                {project.status} · {project.discipline}
+              </p>
             </div>
           </Link>
         </li>

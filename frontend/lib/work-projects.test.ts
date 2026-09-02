@@ -18,4 +18,19 @@ describe("work-projects", () => {
   it("returns undefined for unknown slug", () => {
     expect(getWorkProject("missing")).toBeUndefined();
   });
+
+  it("gives every project an honest status and evidence plan", () => {
+    for (const project of WORK_PROJECTS) {
+      expect(["Ready", "Planned"]).toContain(project.status);
+      expect(project.approach).toHaveLength(3);
+      expect(project.evidence).toHaveLength(3);
+      expect(project.nextStep.length).toBeGreaterThan(20);
+    }
+
+    expect(
+      WORK_PROJECTS.filter((project) => project.status === "Ready").map(
+        (project) => project.slug,
+      ),
+    ).toEqual(["frontend-automation"]);
+  });
 });
