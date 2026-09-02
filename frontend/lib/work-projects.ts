@@ -33,7 +33,6 @@ const PROJECTS: WorkProject[] = [
     outcome: "Clear risk, clear ownership, fewer surprises at release.",
     discipline: "Leadership · Delivery",
     accent: "#0f766e",
-    sourcePath: "portfolio-projects/employee-schedules/",
     resultImageSrc: "/work/results/jira-scheduling.svg",
     resultImageAlt:
       "Jira-style dashboard with bug status pie chart and open bug list with IDs",
@@ -51,7 +50,6 @@ const PROJECTS: WorkProject[] = [
     outcome: "Stronger plans, visible coverage, and this site built with the same workflow.",
     discipline: "AI · End-to-end",
     accent: "#0f766e",
-    sourcePath: "portfolio-projects/ai-driven-testing/",
     resultImageSrc: "/work/results/ai-driven-testing.svg",
     resultImageAlt:
       "AI-assisted QA workflow showing Claude, Cursor, Codex, ChatGPT, skills, and end-to-end coverage",
@@ -127,6 +125,11 @@ const PROJECTS: WorkProject[] = [
 export const WORK_PROJECTS: readonly WorkProject[] = PROJECTS.sort(
   (a, b) => a.priority - b.priority,
 );
+
+export function getProjectSourceUrl(project: WorkProject): string | null {
+  if (!project.sourcePath) return null;
+  return `https://github.com/evolf-codes/portfolio-website-AI/tree/main/${project.sourcePath}`;
+}
 
 export function getWorkProject(slug: string): WorkProject | undefined {
   return WORK_PROJECTS.find((p) => p.slug === slug);

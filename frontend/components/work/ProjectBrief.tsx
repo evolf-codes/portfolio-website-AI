@@ -1,9 +1,14 @@
 /* eslint-disable @next/next/no-img-element -- local case-study evidence */
 import { CaseStudyHeader } from "@/components/layout/CaseStudyHeader";
-import { getProjectResultImages, type WorkProject } from "@/lib/work-projects";
+import {
+  getProjectResultImages,
+  getProjectSourceUrl,
+  type WorkProject,
+} from "@/lib/work-projects";
 
 export function ProjectBrief({ project }: { project: WorkProject }) {
   const resultImages = getProjectResultImages(project);
+  const sourceUrl = getProjectSourceUrl(project);
 
   return (
     <>
@@ -42,6 +47,14 @@ export function ProjectBrief({ project }: { project: WorkProject }) {
           </div>
         </section>
       </div>
+
+      {sourceUrl ? (
+        <p className="type-caption mt-6">
+          <a className="text-link" href={sourceUrl} target="_blank" rel="noreferrer">
+            View project files
+          </a>
+        </p>
+      ) : null}
     </>
   );
 }

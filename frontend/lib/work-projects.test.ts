@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getWorkProject, WORK_PROJECTS } from "./work-projects";
+import { getProjectSourceUrl, getWorkProject, WORK_PROJECTS } from "./work-projects";
 
 describe("work-projects", () => {
   it("lists five projects with unique slugs", () => {
@@ -50,5 +50,19 @@ describe("work-projects", () => {
       expect(project.demonstrates.toLowerCase()).not.toContain("workflow tests");
       expect(project.outcome.toLowerCase()).not.toMatch(/\d+\s+.*tests? passed/);
     }
+  });
+
+  it("exposes GitHub source links for automation samples 3-5 only", () => {
+    expect(getProjectSourceUrl(WORK_PROJECTS[0]!)).toBeNull();
+    expect(getProjectSourceUrl(WORK_PROJECTS[1]!)).toBeNull();
+    expect(getProjectSourceUrl(WORK_PROJECTS[2]!)).toContain(
+      "portfolio-projects/frontend-automation/qa-the-internet/",
+    );
+    expect(getProjectSourceUrl(WORK_PROJECTS[3]!)).toContain(
+      "portfolio-projects/backend-automation/",
+    );
+    expect(getProjectSourceUrl(WORK_PROJECTS[4]!)).toContain(
+      "portfolio-projects/performance-testing/",
+    );
   });
 });

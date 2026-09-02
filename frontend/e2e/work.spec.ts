@@ -18,7 +18,17 @@ test.describe("Work", () => {
       await expect(page.getByRole("heading", { name: "Tools" })).toBeVisible();
       await expect(page.getByRole("heading", { name: "Result" })).toBeVisible();
       await expect(page.getByText(project.about)).toBeVisible();
-      await expect(page.getByRole("link", { name: "View project files" })).toHaveCount(0);
+
+      const sourceLink = page.getByRole("link", { name: "View project files" });
+      if (project.sourcePath) {
+        await expect(sourceLink).toBeVisible();
+        await expect(sourceLink).toHaveAttribute(
+          "href",
+          new RegExp(`github\\.com/.*/${project.sourcePath.replace(/\/$/, "")}`),
+        );
+      } else {
+        await expect(sourceLink).toHaveCount(0);
+      }
     }
   });
 
