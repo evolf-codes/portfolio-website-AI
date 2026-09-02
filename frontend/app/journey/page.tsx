@@ -13,8 +13,8 @@ export default function JourneyPage() {
     <div>
       <PageHero
         eyebrow="Career journey"
-        title="From trading floors to global crypto platforms"
-        description="A progression through capital markets quality engineering: environment management, technical test leadership, senior consulting, and QA management."
+        title="From trading floors to global platforms"
+        description="Capital markets quality engineering through environment management, technical leadership, senior consulting, and QA management."
       />
       <CareerTimeline />
     </div>

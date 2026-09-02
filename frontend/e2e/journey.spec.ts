@@ -4,7 +4,7 @@ test.describe("Journey", () => {
   test("shows career timeline and education", async ({ page }) => {
     await page.goto("/journey");
     await expect(
-      page.getByRole("heading", { level: 1, name: /trading floors to global crypto/i }),
+      page.getByRole("heading", { level: 1, name: /trading floors to global platforms/i }),
     ).toBeVisible();
     await expect(page.getByText("Confidential", { exact: true }).first()).toBeVisible();
     await expect(page.getByRole("heading", { name: "Quality Assurance Manager" })).toBeVisible();

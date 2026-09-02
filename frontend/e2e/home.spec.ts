@@ -8,16 +8,17 @@ test.describe("Home", () => {
     await expect(page.getByRole("img", { name: /Eric Volfson/i }).first()).toBeVisible();
     await expect(page.getByText("Toronto, ON, Canada — Remote First")).toBeVisible();
     await expect(page.getByText("15+")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Selected work" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Jira tracking & documentation" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "AI-assisted quality engineering" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Frontend automation" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "QA leadership for fintech and digital assets" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Quality leadership that scales with the product" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Resume" })).toBeVisible();
     await expect(page.getByRole("link", { name: "View PDF" })).toHaveAttribute(
       "href",
       "/resume/eric-volfson-qa-manager-2-page.pdf",
     );
-    await expect(page.getByRole("heading", { name: "Let's improve release confidence." })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Ready to talk quality leadership." })).toBeVisible();
     await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Home" })).toHaveAttribute("href", "/#home");
     await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Resume" })).toHaveAttribute("href", "/#resume");
   });

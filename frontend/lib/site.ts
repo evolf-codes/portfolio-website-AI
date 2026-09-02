@@ -7,4 +7,4 @@ export const SITE_LINKEDIN = "https://www.linkedin.com/in/eric-v-aa45ab79/";
 
 export const SITE_TITLE = "QA Manager | Quality Engineering | Fintech & Digital Assets";
 export const SITE_TAGLINE =
-  "Fifteen years delivering quality across capital markets, digital assets, spot and margin trading, and mission-critical financial systems.";
+  "I help trading and fintech teams ship with confidence — clear strategy, strong automation, and quality leadership that holds up under release pressure.";

@@ -1,8 +1,8 @@
 export const PROFILE_SUMMARY = [
-  "Quality Assurance leader with 15 years across capital markets, digital assets, spot and margin trading, and mission-critical financial systems.",
-  "Experienced in QA leadership, test strategy, system integration, performance and capacity testing, automation, CI/CD, and test environment management.",
-  "Career progression from hands-on QA and environment management through technical test leadership to senior consulting and QA management.",
-  "Domain depth in trading engines, release and production risk, and coordinating delivery across development, product, and engineering teams.",
+  "QA manager and quality engineer with 15 years across capital markets, digital assets, and high-volume trading systems.",
+  "I lead strategy, automation, performance, and release risk — and I stay close enough to the work to keep delivery honest.",
+  "Comfortable hiring and mentoring teams, coordinating across product and engineering, and turning complex change into clear test coverage.",
+  "Domain strength in trading engines, spot and margin flows, system integration, and production-minded quality.",
 ] as const;
 
 export const CERTIFICATIONS = [
@@ -15,7 +15,7 @@ export const CERTIFICATIONS = [
 export const CORE_SKILLS = [
   "QA leadership & team development",
   "Quality strategy",
-  "AI-driven quality",
+  "AI-assisted quality",
   "Capital markets & digital assets",
   "Spot / margin trading",
   "System integration",
@@ -24,8 +24,8 @@ export const CORE_SKILLS = [
   "CI/CD & GitLab",
   "Release & production risk",
   "Test environment management",
-  "Python · pytest · Selenium",
-  "JMeter · Postman · SOAP UI",
+  "Python · pytest · Playwright",
+  "JMeter · Postman · Locust",
   "Oracle SQL · Splunk · AWS",
   "Jira · Confluence · TestRail",
 ] as const;

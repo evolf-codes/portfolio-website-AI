@@ -20,15 +20,15 @@ export default function HomePage() {
         <div className="page-section__inner">
           <SectionHeading
             eyebrow="Work"
-            title="Quality engineering in practice"
-            description="Short samples that show what was tested, which practice site was used, and what a good result looks like."
+            title="Selected work"
+            description="Leadership, AI-assisted quality, and automation samples that show how I keep releases clear and defensible."
           />
           <WorkShowcase />
         </div>
       </section>
       <section id="about" className="page-section page-section--white scroll-mt-20">
         <div className="page-section__inner about-flow">
-          <SectionHeading eyebrow="About" title="QA leadership for fintech and digital assets" />
+          <SectionHeading eyebrow="About" title="Quality leadership that scales with the product" />
           <div className="about-flow__content">
             <div className="about-flow__profile">
               <ProfilePhoto className="profile-photo--about" />
@@ -60,9 +60,9 @@ export default function HomePage() {
         <div className="page-section__inner contact-flow__inner">
           <div>
             <p className="type-eyebrow contact-flow__eyebrow">Contact</p>
-            <h2 className="contact-flow__title mt-3">Let&apos;s improve release confidence.</h2>
+            <h2 className="contact-flow__title mt-3">Ready to talk quality leadership.</h2>
             <p className="contact-flow__copy mt-5">
-              Share a role, delivery challenge, or QA leadership opportunity. You can also email{" "}
+              Tell me about the role, the team, or the delivery challenge. You can also email{" "}
               <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.
             </p>
           </div>

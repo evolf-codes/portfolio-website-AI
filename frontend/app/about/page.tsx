@@ -41,9 +41,9 @@ export default function AboutPage() {
               ))}
             </ul>
             <p className="type-body-muted">
-              Hands-on testing paired with leadership that keeps quality visible early:
-              sprint planning, environment reliability, performance validation, and automation
-              that supports release confidence in regulated, high-volume systems.
+              Hands-on enough to catch risk early, senior enough to set the standard —
+              planning, environments, performance, automation, and release calls that hold up
+              in regulated, high-volume systems.
             </p>
             <Link href="/journey" className="text-link inline-flex text-sm font-medium">
               Read the full career journey

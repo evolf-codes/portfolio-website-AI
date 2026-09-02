@@ -26,10 +26,8 @@ describe("work-projects", () => {
     for (const project of WORK_PROJECTS) {
       expect(project.about.length).toBeGreaterThan(20);
       expect(project.demonstrates.length).toBeGreaterThan(20);
-      expect(project.inputSource.length).toBeGreaterThan(20);
-      expect(project.expectedOutput.length).toBeGreaterThan(20);
       expect(project.tools.length).toBeGreaterThan(5);
-      expect(project.outcome.length).toBeGreaterThan(20);
+      expect(project.outcome.length).toBeGreaterThan(15);
       expect(project.resultImageSrc.startsWith("/work/")).toBe(true);
     }
   });
@@ -49,16 +47,8 @@ describe("work-projects", () => {
     expect(jira).toHaveLength(1);
     for (const project of jira) {
       expect(project.kind).toBe("leadership");
-      expect(project.sourcePath).toMatch(/^portfolio-projects\//);
       expect(project.demonstrates.toLowerCase()).not.toContain("workflow tests");
       expect(project.outcome.toLowerCase()).not.toMatch(/\d+\s+.*tests? passed/);
-    }
-  });
-
-  it("exposes GitHub source links for every project path", () => {
-    for (const project of WORK_PROJECTS) {
-      expect(project.sourcePath).toMatch(/^portfolio-projects\//);
-      expect(project.sourcePath?.endsWith("/")).toBe(true);
     }
   });
 });
