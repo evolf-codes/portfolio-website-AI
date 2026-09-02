@@ -20,12 +20,4 @@ export const RESUME_FILES: readonly ResumeFile[] = [
       { label: "DOCX", href: "/resume/eric-volfson-qa-manager-2-page.docx" },
     ],
   },
-  {
-    id: "detailed",
-    title: "Detailed resume",
-    description: "Longer version with selected project highlights.",
-    formats: [
-      { label: "PDF", href: "/resume/eric-volfson-qa-manager-detailed.pdf" },
-    ],
-  },
 ];

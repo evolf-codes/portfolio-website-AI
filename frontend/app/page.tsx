@@ -55,7 +55,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Resume"
             title="View a current resume"
-            description="Open the short 2-page resume or the detailed version. PDF opens in the browser; DOCX is available for the 2-page file."
+            description="Open the PDF in your browser, or the Word file if you prefer to edit."
           />
           <ResumeDownloads />
         </div>
