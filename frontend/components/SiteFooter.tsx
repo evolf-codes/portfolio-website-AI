@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SITE_TITLE } from "@/lib/site";
+import { SITE_GITHUB, SITE_LINKEDIN, SITE_TITLE } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -25,6 +25,22 @@ export function SiteFooter() {
             <Link className="footer-link" href="/#contact">
               Contact
             </Link>
+            <a
+              className="footer-link"
+              href={SITE_LINKEDIN}
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              className="footer-link"
+              href={SITE_GITHUB}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
           </nav>
         </div>
       </div>
