@@ -1,7 +1,8 @@
 import { expect, test } from "@playwright/test";
+import { getResumeGoogleDocsUrl } from "../lib/resumes";
 
 test.describe("Resume", () => {
-  test("nav opens resume section with direct file links", async ({ page }) => {
+  test("nav opens resume section with PDF and Google Doc links", async ({ page }) => {
     await page.goto("/");
     await page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Resume" }).click();
     await expect(page.getByRole("heading", { name: "Resume" })).toBeVisible();
@@ -9,9 +10,9 @@ test.describe("Resume", () => {
       "href",
       "/resume/eric-volfson-qa-manager-2-page.pdf",
     );
-    await expect(page.getByRole("link", { name: "View DOCX" })).toHaveAttribute(
+    await expect(page.getByRole("link", { name: "View Google Doc" })).toHaveAttribute(
       "href",
-      "/resume/eric-volfson-qa-manager-2-page.docx",
+      getResumeGoogleDocsUrl(),
     );
   });
 

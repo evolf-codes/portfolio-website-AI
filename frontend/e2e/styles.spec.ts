@@ -25,13 +25,17 @@ test.describe("Site styles", () => {
     expect(css).toContain(".page-main");
   });
 
-  test("home page shows styled name and work showcase", async ({ page }) => {
+  test("home page shows styled name and cohesive intro type", async ({ page }) => {
     await page.goto("/");
 
     const name = page.getByRole("heading", { level: 1, name: "Eric Volfson" });
     await expect(name).toBeVisible();
     const fontSize = await name.evaluate((el) => getComputedStyle(el).fontSize);
     expect(parseFloat(fontSize)).toBeGreaterThan(32);
+
+    const taglineSize = await page.locator(".home-intro__tagline").evaluate((el) => getComputedStyle(el).fontSize);
+    const copySize = await page.locator(".home-intro__copy p").first().evaluate((el) => getComputedStyle(el).fontSize);
+    expect(taglineSize).toBe(copySize);
 
     const showcase = page.locator(".work-showcase");
     await expect(showcase).toBeVisible();
