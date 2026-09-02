@@ -1,3 +1,8 @@
+export type WorkResultImage = {
+  src: string;
+  alt: string;
+};
+
 export type WorkProject = {
   slug: string;
   title: string;
@@ -11,8 +16,11 @@ export type WorkProject = {
   discipline: string;
   accent: string;
   sourcePath?: string;
+  sourceLabel?: string;
+  checksLabel?: string;
   resultImageSrc: string;
   resultImageAlt: string;
+  resultImages?: readonly WorkResultImage[];
   priority: number;
   downloads?: readonly { label: string; href: string }[];
 };
@@ -84,42 +92,62 @@ const PROJECTS: WorkProject[] = [
   },
   {
     slug: "ai-driven-testing",
-    title: "AI-driven testing",
+    title: "AI-assisted quality engineering",
     kind: "automation",
     about:
-      "A sample that scores AI-written test ideas before a QA engineer would trust them.",
+      "I use AI every day to plan tests, find gaps, and move faster — with QA judgment still owning the release call.",
     demonstrates:
-      "Quality, consistency, and safety — including whether unsafe prompt-injection requests are refused.",
+      "Claude, Cursor, Codex, and ChatGPT for test plans, coverage matrices, Google Sheets, Markdown skills, agents, and custom tooling — end to end from API through GUI.",
     inputSource:
-      "Saved practice cases and AI answers stored in the project (no live model calls).",
+      "Daily AI workflow examples, plus an offline evaluation sample in the project files.",
     expectedOutput:
-      "Most answers meet the quality bar, and any unsafe answer blocks release.",
-    tools: "Python · unittest",
-    outcome: "17/18 answers passed quality checks; the safety gate blocked release.",
-    discipline: "AI quality",
+      "Clear plans, visible coverage gaps, and artifacts a team can review and reuse.",
+    tools: "Claude · Cursor · Codex · ChatGPT · Skills/MD · Agents · Google Sheets",
+    outcome: "Built this site and QA tooling with AI. Example artifacts below.",
+    discipline: "AI · E2E quality",
     accent: "#0891b2",
     sourcePath: "portfolio-projects/ai-driven-testing/",
+    sourceLabel: "Where this comes from",
+    checksLabel: "What I use AI for",
     resultImageSrc: "/work/results/ai-driven-testing.svg",
-    resultImageAlt: "AI evaluation scorecard showing a blocked release after a safety failure",
+    resultImageAlt:
+      "AI-assisted QA workflow showing Claude, Cursor, Codex, ChatGPT, skills, and end-to-end coverage",
+    resultImages: [
+      {
+        src: "/work/results/ai-driven-testing.svg",
+        alt: "AI daily workflow from backend services through GUI validation",
+      },
+      {
+        src: "/work/results/ai-test-plan.svg",
+        alt: "AI-assisted test plan draft reviewed by QA",
+      },
+      {
+        src: "/work/results/ai-coverage-matrix.svg",
+        alt: "Google Sheets style coverage matrix with API and GUI gaps",
+      },
+    ],
     priority: 4,
   },
   {
     slug: "gantt-schedules",
-    title: "Jira scheduling & documentation",
+    title: "Jira tracking & documentation",
     kind: "leadership",
     about:
-      "An example Jira-style plan used to show staffing, coverage gaps, and linked docs.",
+      "I run project health in Jira and Confluence — bugs, owners, status, and docs in one place the team can trust.",
     demonstrates:
-      "Who is assigned, where coverage is thin, and which documents support the work.",
-    inputSource: "Illustrative Jira schedule with sample data (not a confidential client plan).",
-    expectedOutput: "A manager can spot conflicts and coverage gaps in one view.",
-    tools: "Jira · Confluence",
-    outcome: "Example scheduling dashboard below.",
-    discipline: "Jira · Leadership",
+      "Bug counts by status, open defect lists by ID, burndown-style progress, and Confluence links for decisions and runbooks.",
+    inputSource:
+      "Illustrative Jira dashboard with sample project data (not a confidential client board).",
+    expectedOutput:
+      "Anyone can see what’s open, what’s blocked, and which docs explain the work.",
+    tools: "Jira · Confluence · Filters · Dashboards",
+    outcome: "This is how I track bugs and project status day to day.",
+    discipline: "Jira · Confluence · Leadership",
     accent: "#2563eb",
     sourcePath: "portfolio-projects/employee-schedules/",
     resultImageSrc: "/work/results/jira-scheduling.svg",
-    resultImageAlt: "Illustrative Jira scheduling dashboard with capacity, conflicts, and linked documentation",
+    resultImageAlt:
+      "Jira-style dashboard with bug status pie chart and open bug list with IDs",
     priority: 5,
   },
 ];
@@ -135,4 +163,9 @@ export function getProjectSourceUrl(project: WorkProject): string | null {
 
 export function getWorkProject(slug: string): WorkProject | undefined {
   return WORK_PROJECTS.find((p) => p.slug === slug);
+}
+
+export function getProjectResultImages(project: WorkProject): readonly WorkResultImage[] {
+  if (project.resultImages?.length) return project.resultImages;
+  return [{ src: project.resultImageSrc, alt: project.resultImageAlt }];
 }

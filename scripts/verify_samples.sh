@@ -16,6 +16,12 @@ require_file "$repo_dir/portfolio-projects/employee-schedules/evidence/jira-sche
 require_file "$repo_dir/frontend/public/work/results/jira-scheduling.svg"
 echo "OK"
 
+echo "== AI evidence gallery =="
+require_file "$repo_dir/frontend/public/work/results/ai-driven-testing.svg"
+require_file "$repo_dir/frontend/public/work/results/ai-test-plan.svg"
+require_file "$repo_dir/frontend/public/work/results/ai-coverage-matrix.svg"
+echo "OK"
+
 echo "== Backend automation =="
 (cd "$repo_dir/portfolio-projects/backend-automation" && \
   if [ ! -x .venv/bin/python ]; then python3 -m venv .venv && .venv/bin/pip install -q -r requirements.txt; fi && \

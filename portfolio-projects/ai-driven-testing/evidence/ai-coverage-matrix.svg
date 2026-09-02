@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">AI-assisted coverage matrix</title>
+  <desc id="desc">Google Sheets style coverage matrix showing requirements mapped to API and GUI tests, with gaps highlighted.</desc>
+  <rect width="1280" height="760" fill="#e8f0e9"/>
+  <rect x="50" y="50" width="1180" height="660" rx="12" fill="white" stroke="#c5d4c8"/>
+
+  <text x="84" y="108" fill="#3f6b4a" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">GOOGLE SHEETS · COVERAGE MATRIX · BUILT WITH AI ASSIST</text>
+  <text x="84" y="156" fill="#14201a" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Requirement ’ test coverage</text>
+  <text x="84" y="190" fill="#4b6354" font-family="Arial, Helvetica, sans-serif" font-size="15">Find gaps fast · API through GUI · exportable for stakeholders</text>
+
+  <!-- Sheet header -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">
+    <rect x="84" y="230" width="220" height="44" fill="#0f766e"/><text x="100" y="258" fill="white">Requirement</text>
+    <rect x="304" y="230" width="160" height="44" fill="#0f766e"/><text x="320" y="258" fill="white">API</text>
+    <rect x="464" y="230" width="160" height="44" fill="#0f766e"/><text x="480" y="258" fill="white">Integration</text>
+    <rect x="624" y="230" width="160" height="44" fill="#0f766e"/><text x="640" y="258" fill="white">GUI</text>
+    <rect x="784" y="230" width="160" height="44" fill="#0f766e"/><text x="800" y="258" fill="white">Automation</text>
+    <rect x="944" y="230" width="200" height="44" fill="#0f766e"/><text x="960" y="258" fill="white">Gap?</text>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="14">
+    <rect x="84" y="274" width="1060" height="52" fill="#f8faf9"/>
+    <text x="100" y="306" fill="#14201a">Create booking</text>
+    <text x="320" y="306" fill="#15803d">Covered</text>
+    <text x="480" y="306" fill="#15803d">Covered</text>
+    <text x="640" y="306" fill="#15803d">Covered</text>
+    <text x="800" y="306" fill="#15803d">Yes</text>
+    <text x="960" y="306" fill="#15803d">No</text>
+
+    <rect x="84" y="326" width="1060" height="52" fill="white"/>
+    <text x="100" y="358" fill="#14201a">Auth token expiry</text>
+    <text x="320" y="358" fill="#15803d">Covered</text>
+    <text x="480" y="358" fill="#ca8a04">Partial</text>
+    <text x="640" y="358" fill="#ca8a04">Partial</text>
+    <text x="800" y="358" fill="#ca8a04">Planned</text>
+    <text x="960" y="358" fill="#ca8a04">Watch</text>
+
+    <rect x="84" y="378" width="1060" height="52" fill="#fff7ed"/>
+    <text x="100" y="410" fill="#14201a">Idempotent retry</text>
+    <text x="320" y="410" fill="#15803d">Covered</text>
+    <text x="480" y="410" fill="#dc2626">Missing</text>
+    <text x="640" y="410" fill="#dc2626">Missing</text>
+    <text x="800" y="410" fill="#dc2626">No</text>
+    <text x="960" y="410" fill="#dc2626">GAP</text>
+
+    <rect x="84" y="430" width="1060" height="52" fill="white"/>
+    <text x="100" y="462" fill="#14201a">Confirm screen errors</text>
+    <text x="320" y="462" fill="#ca8a04">N/A</text>
+    <text x="480" y="462" fill="#15803d">Covered</text>
+    <text x="640" y="462" fill="#15803d">Covered</text>
+    <text x="800" y="462" fill="#15803d">Yes</text>
+    <text x="960" y="462" fill="#15803d">No</text>
+
+    <rect x="84" y="482" width="1060" height="52" fill="#fff7ed"/>
+    <text x="100" y="514" fill="#14201a">Audit log on void</text>
+    <text x="320" y="514" fill="#dc2626">Missing</text>
+    <text x="480" y="514" fill="#dc2626">Missing</text>
+    <text x="640" y="514" fill="#ca8a04">Partial</text>
+    <text x="800" y="514" fill="#dc2626">No</text>
+    <text x="960" y="514" fill="#dc2626">GAP</text>
+  </g>
+
+  <rect x="84" y="570" width="1060" height="100" rx="10" fill="#0f172a"/>
+  <text x="112" y="616" fill="#e2e8f0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">AI finds candidate gaps · QA confirms impact · team closes the matrix</text>
+  <text x="112" y="650" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="14">End-to-end view keeps backend and GUI coverage honest in one sheet</text>
+</svg>

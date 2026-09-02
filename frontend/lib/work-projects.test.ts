@@ -10,10 +10,12 @@ describe("work-projects", () => {
 
   it("resolves known slugs", () => {
     expect(getWorkProject("gantt-schedules")?.title).toBe(
-      "Jira scheduling & documentation",
+      "Jira tracking & documentation",
     );
     expect(getWorkProject("gantt-schedules")?.kind).toBe("leadership");
-    expect(getWorkProject("ai-driven-testing")?.title).toBe("AI-driven testing");
+    expect(getWorkProject("ai-driven-testing")?.title).toBe(
+      "AI-assisted quality engineering",
+    );
   });
 
   it("returns undefined for unknown slug", () => {

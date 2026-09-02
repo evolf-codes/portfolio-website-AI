@@ -22,7 +22,11 @@ export function WorkShowcase() {
               <p className="type-body mt-4">{project.about}</p>
               <p className="type-body mt-3">
                 <span className="font-medium text-[var(--ink)]">
-                  {project.kind === "leadership" ? "Source:" : "Site under test:"}
+                  {project.sourceLabel
+                    ? `${project.sourceLabel}:`
+                    : project.kind === "leadership"
+                      ? "Source:"
+                      : "Site under test:"}
                 </span>{" "}
                 {project.inputSource}
               </p>

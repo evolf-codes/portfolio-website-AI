@@ -1,10 +1,21 @@
 /* eslint-disable @next/next/no-img-element -- local case-study evidence */
 import { CaseStudyHeader } from "@/components/layout/CaseStudyHeader";
-import { getProjectSourceUrl, type WorkProject } from "@/lib/work-projects";
+import {
+  getProjectResultImages,
+  getProjectSourceUrl,
+  type WorkProject,
+} from "@/lib/work-projects";
 
 export function ProjectBrief({ project }: { project: WorkProject }) {
   const isLeadership = project.kind === "leadership";
   const sourceUrl = getProjectSourceUrl(project);
+  const resultImages = getProjectResultImages(project);
+
+  const sourceHeading =
+    project.sourceLabel ?? (isLeadership ? "Source" : "Site under test");
+  const checksHeading =
+    project.checksLabel ??
+    (isLeadership ? "What this shows" : "What the tests check");
 
   return (
     <>
@@ -16,11 +27,11 @@ export function ProjectBrief({ project }: { project: WorkProject }) {
           <p>{project.about}</p>
         </section>
         <section>
-          <h2>{isLeadership ? "Source" : "Site under test"}</h2>
+          <h2>{sourceHeading}</h2>
           <p>{project.inputSource}</p>
         </section>
         <section>
-          <h2>{isLeadership ? "What this shows" : "What the tests check"}</h2>
+          <h2>{checksHeading}</h2>
           <p>{project.demonstrates}</p>
         </section>
         <section>
@@ -34,18 +45,19 @@ export function ProjectBrief({ project }: { project: WorkProject }) {
         <section>
           <h2>Result</h2>
           <p>{project.outcome}</p>
-          <a
-            href={project.resultImageSrc}
-            target="_blank"
-            rel="noreferrer"
-            className="result-link mt-5 block overflow-hidden rounded-xl border border-[var(--border)] bg-white"
-          >
-            <img
-              src={project.resultImageSrc}
-              alt={project.resultImageAlt}
-              className="w-full object-contain"
-            />
-          </a>
+          <div className={`result-gallery mt-5 ${resultImages.length > 1 ? "result-gallery--multi" : ""}`}>
+            {resultImages.map((image) => (
+              <a
+                key={image.src}
+                href={image.src}
+                target="_blank"
+                rel="noreferrer"
+                className="result-link overflow-hidden rounded-xl border border-[var(--border)] bg-white"
+              >
+                <img src={image.src} alt={image.alt} className="w-full object-contain" />
+              </a>
+            ))}
+          </div>
         </section>
       </div>
 

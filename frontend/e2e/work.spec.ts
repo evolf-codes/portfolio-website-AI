@@ -16,12 +16,16 @@ test.describe("Work", () => {
       await expect(page.getByRole("heading", { name: "Goal" })).toBeVisible();
       await expect(
         page.getByRole("heading", {
-          name: project.kind === "leadership" ? "Source" : "Site under test",
+          name:
+            project.sourceLabel ??
+            (project.kind === "leadership" ? "Source" : "Site under test"),
         }),
       ).toBeVisible();
       await expect(
         page.getByRole("heading", {
-          name: project.kind === "leadership" ? "What this shows" : "What the tests check",
+          name:
+            project.checksLabel ??
+            (project.kind === "leadership" ? "What this shows" : "What the tests check"),
         }),
       ).toBeVisible();
       await expect(page.getByRole("heading", { name: "Success looks like" })).toBeVisible();
@@ -76,8 +80,20 @@ test.describe("Work", () => {
 
   test("Jira examples are framed as leadership evidence", async ({ page }) => {
     await page.goto("/work/gantt-schedules");
+    await expect(page.getByRole("heading", { level: 1, name: "Jira tracking & documentation" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "What this shows" })).toBeVisible();
     await expect(page.getByText(/workflow tests/i)).toHaveCount(0);
+    await expect(page.getByRole("img", { name: /bug status pie chart/i })).toBeVisible();
     await expect(page.getByRole("link", { name: "View project files" })).toBeVisible();
+  });
+
+  test("AI case study shows workflow gallery", async ({ page }) => {
+    await page.goto("/work/ai-driven-testing");
+    await expect(
+      page.getByRole("heading", { level: 1, name: "AI-assisted quality engineering" }),
+    ).toBeVisible();
+    await expect(page.getByRole("img", { name: /backend services through GUI/i })).toBeVisible();
+    await expect(page.getByRole("img", { name: /test plan draft/i })).toBeVisible();
+    await expect(page.getByRole("img", { name: /coverage matrix/i })).toBeVisible();
   });
 });

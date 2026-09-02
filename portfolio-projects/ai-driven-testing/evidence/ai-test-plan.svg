@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">AI-assisted test plan example</title>
+  <desc id="desc">Sample test plan outline drafted with AI and refined by a QA manager.</desc>
+  <rect width="1280" height="760" fill="#f7f8fa"/>
+  <rect x="60" y="50" width="1160" height="660" rx="14" fill="white" stroke="#d8dee6"/>
+  <text x="96" y="110" fill="#5b6573" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">TEST PLAN · DRAFTED WITH CLAUDE / CURSOR · REVIEWED BY QA</text>
+  <text x="96" y="160" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">Payments release test plan</text>
+  <text x="96" y="196" fill="#4b5563" font-family="Arial, Helvetica, sans-serif" font-size="16">Scope · risk · entry/exit · API + UI paths · owners</text>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="96" y="240" width="520" height="400" rx="10" fill="#f9fafb" stroke="#e5e7eb"/>
+    <text x="120" y="282" fill="#111827" font-size="18" font-weight="700">1. Scope</text>
+    <text x="120" y="318" fill="#374151" font-size="15">Settlement, void, retry, confirm UI</text>
+    <text x="120" y="360" fill="#111827" font-size="18" font-weight="700">2. Risks</text>
+    <text x="120" y="396" fill="#374151" font-size="15">Idempotency, timeout, audit trail</text>
+    <text x="120" y="438" fill="#111827" font-size="18" font-weight="700">3. Entry / exit</text>
+    <text x="120" y="474" fill="#374151" font-size="15">Build green · no Sev1 open · docs current</text>
+    <text x="120" y="516" fill="#111827" font-size="18" font-weight="700">4. Evidence</text>
+    <text x="120" y="552" fill="#374151" font-size="15">API logs · UI screenshots · Jira links</text>
+    <text x="120" y="600" fill="#0f766e" font-size="14" font-weight="700">AI drafts · QA owns the final plan</text>
+
+    <rect x="648" y="240" width="520" height="400" rx="10" fill="#0f172a"/>
+    <text x="676" y="286" fill="#94a3b8" font-size="13" font-weight="700">PROMPT ’ REVIEW LOOP</text>
+    <text x="676" y="330" fill="#e2e8f0" font-size="16">Build a release test plan for&</text>
+    <text x="676" y="372" fill="#e2e8f0" font-size="16">Find missing negative cases&</text>
+    <text x="676" y="414" fill="#e2e8f0" font-size="16">Map risks to API + GUI checks&</text>
+    <text x="676" y="470" fill="#5eead4" font-size="15" font-weight="700">Then: edit · challenge · assign owners</text>
+    <text x="676" y="514" fill="#94a3b8" font-size="14">Saved as Markdown / Confluence</text>
+    <text x="676" y="558" fill="#94a3b8" font-size="14">Shared with Dev · Product · QA</text>
+    <text x="676" y="602" fill="#cbd5e1" font-size="14">Skills file keeps the process repeatable</text>
+  </g>
+</svg>

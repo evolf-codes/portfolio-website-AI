@@ -1,11 +1,11 @@
-# Jira scheduling and documentation
+# Jira tracking and documentation
 
-Illustrative Jira-style leadership evidence for capacity, coverage, and operating docs.
+Illustrative Jira-style leadership evidence for project bug tracking and documentation.
 
-![Illustrative Jira scheduling and documentation report](evidence/jira-scheduling.svg)
+![Jira bug tracking dashboard](evidence/jira-scheduling.svg)
 
 This folder is **not** an automation suite. It holds the screenshot used on the portfolio
-to show QA management skills: resource allocation, coverage gaps, schedule conflicts,
-owners, and linked runbooks / documentation.
+to show QA management skills: bugs by status, open defect lists by ID, burndown-style
+progress, owners, and linked Confluence documentation.
 
-Sample data only — not a confidential client schedule export.
+Sample data only — not a confidential client board export.

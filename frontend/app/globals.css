@@ -360,6 +360,17 @@ a {
   transform: translateY(-2px);
 }
 
+.result-gallery {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-link:hover {
+    transform: none;
+  }
+}
+
 .work-showcase {
   border-top: 1px solid var(--border);
 }
