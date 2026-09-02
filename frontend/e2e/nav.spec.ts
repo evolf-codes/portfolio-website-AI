@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 test.describe("Nav active state", () => {
-  test("underlines Home at the top and Work after scrolling to work", async ({ page }) => {
+  test("underlines Home at the top and Work after opening the work section", async ({ page }) => {
     await page.goto("/");
 
     const nav = page.getByRole("navigation", { name: "Primary" });
@@ -12,7 +12,8 @@ test.describe("Nav active state", () => {
     await expect(nav.getByRole("link", { name: "Resume" })).toHaveClass(/site-header__link--active/);
     await expect(nav.getByRole("link", { name: "Home" })).not.toHaveAttribute("aria-current", "true");
 
-    await page.locator("#work").scrollIntoViewIfNeeded();
+    await nav.getByRole("link", { name: "Work" }).click();
+    await expect(page.locator("#work")).toBeInViewport();
     await expect(nav.getByRole("link", { name: "Work" })).toHaveAttribute("aria-current", "true", {
       timeout: 3000,
     });
