@@ -8,7 +8,6 @@ Runnable QA samples and leadership evidence linked from the site.
 | [`backend-automation`](backend-automation) | Automation | [restful-booker.herokuapp.com](https://restful-booker.herokuapp.com/) | `backend-automation` |
 | [`performance-testing`](performance-testing) | Automation | [restful-booker.herokuapp.com](https://restful-booker.herokuapp.com/) | `performance-testing` |
 | [`ai-driven-testing`](ai-driven-testing) | Automation | Offline labelled fixtures | `ai-driven-testing` |
-| [`kanban-board`](kanban-board) | Leadership | Illustrative Jira delivery report | `kanban` |
 | [`employee-schedules`](employee-schedules) | Leadership | Illustrative Jira scheduling report | `gantt-schedules` |
 
 ## Verify

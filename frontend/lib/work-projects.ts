@@ -104,25 +104,6 @@ const PROJECTS: WorkProject[] = [
     priority: 4,
   },
   {
-    slug: "kanban",
-    title: "Jira delivery reporting",
-    kind: "leadership",
-    about:
-      "An example Jira-style report used to show delivery risk and release readiness.",
-    demonstrates:
-      "Blocked work, ageing items, owners, and a clear go / no-go view for leaders.",
-    inputSource: "Illustrative Jira report with sample data (not a confidential client board).",
-    expectedOutput: "A manager can see risk and next decisions quickly.",
-    tools: "Jira · Confluence",
-    outcome: "Example delivery dashboard below.",
-    discipline: "Jira · Leadership",
-    accent: "#0d9488",
-    sourcePath: "portfolio-projects/kanban-board/",
-    resultImageSrc: "/work/results/jira-delivery-reporting.svg",
-    resultImageAlt: "Illustrative Jira delivery management dashboard with release risks and flow measures",
-    priority: 5,
-  },
-  {
     slug: "gantt-schedules",
     title: "Jira scheduling & documentation",
     kind: "leadership",
@@ -139,7 +120,7 @@ const PROJECTS: WorkProject[] = [
     sourcePath: "portfolio-projects/employee-schedules/",
     resultImageSrc: "/work/results/jira-scheduling.svg",
     resultImageAlt: "Illustrative Jira scheduling dashboard with capacity, conflicts, and linked documentation",
-    priority: 6,
+    priority: 5,
   },
 ];
 

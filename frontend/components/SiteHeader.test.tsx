@@ -22,7 +22,7 @@ describe("SiteHeader", () => {
   });
 
   it("marks Work active on project routes", () => {
-    vi.mocked(usePathname).mockReturnValue("/work/kanban");
+    vi.mocked(usePathname).mockReturnValue("/work/gantt-schedules");
     render(<SiteHeader />);
     const nav = screen.getByRole("navigation", { name: "Primary" });
     const work = within(nav).getByRole("link", { name: "Work" });

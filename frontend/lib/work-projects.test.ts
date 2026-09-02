@@ -2,15 +2,17 @@ import { describe, expect, it } from "vitest";
 import { getWorkProject, WORK_PROJECTS } from "./work-projects";
 
 describe("work-projects", () => {
-  it("lists six projects with unique slugs", () => {
-    expect(WORK_PROJECTS).toHaveLength(6);
+  it("lists five projects with unique slugs", () => {
+    expect(WORK_PROJECTS).toHaveLength(5);
     const slugs = new Set(WORK_PROJECTS.map((p) => p.slug));
-    expect(slugs.size).toBe(6);
+    expect(slugs.size).toBe(5);
   });
 
   it("resolves known slugs", () => {
-    expect(getWorkProject("kanban")?.title).toBe("Jira delivery reporting");
-    expect(getWorkProject("kanban")?.kind).toBe("leadership");
+    expect(getWorkProject("gantt-schedules")?.title).toBe(
+      "Jira scheduling & documentation",
+    );
+    expect(getWorkProject("gantt-schedules")?.kind).toBe("leadership");
     expect(getWorkProject("ai-driven-testing")?.title).toBe("AI-driven testing");
   });
 
@@ -39,10 +41,8 @@ describe("work-projects", () => {
   });
 
   it("treats Jira items as leadership evidence rather than test suites", () => {
-    const jira = WORK_PROJECTS.filter((project) =>
-      ["kanban", "gantt-schedules"].includes(project.slug),
-    );
-    expect(jira).toHaveLength(2);
+    const jira = WORK_PROJECTS.filter((project) => project.slug === "gantt-schedules");
+    expect(jira).toHaveLength(1);
     for (const project of jira) {
       expect(project.kind).toBe("leadership");
       expect(project.sourcePath).toMatch(/^portfolio-projects\//);

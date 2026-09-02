@@ -75,7 +75,7 @@ test.describe("Work", () => {
   });
 
   test("Jira examples are framed as leadership evidence", async ({ page }) => {
-    await page.goto("/work/kanban");
+    await page.goto("/work/gantt-schedules");
     await expect(page.getByRole("heading", { name: "What this shows" })).toBeVisible();
     await expect(page.getByText(/workflow tests/i)).toHaveCount(0);
     await expect(page.getByRole("link", { name: "View project files" })).toBeVisible();

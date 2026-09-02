@@ -12,9 +12,7 @@ require_file() {
 }
 
 echo "== Leadership evidence =="
-require_file "$repo_dir/portfolio-projects/kanban-board/evidence/jira-delivery-reporting.svg"
 require_file "$repo_dir/portfolio-projects/employee-schedules/evidence/jira-scheduling.svg"
-require_file "$repo_dir/frontend/public/work/results/jira-delivery-reporting.svg"
 require_file "$repo_dir/frontend/public/work/results/jira-scheduling.svg"
 echo "OK"
 
