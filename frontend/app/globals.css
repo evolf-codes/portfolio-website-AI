@@ -177,6 +177,18 @@ a {
   text-decoration-color: var(--brand);
 }
 
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.footer-social__icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+}
+
 .site-footer {
   margin-top: auto;
 }
