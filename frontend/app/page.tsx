@@ -16,16 +16,6 @@ export default function HomePage() {
   return (
     <div>
       <HomeIntro />
-      <section id="work" className="page-section">
-        <div className="page-section__inner">
-          <SectionHeading
-            eyebrow="Work"
-            title="Selected work"
-            description="Leadership, AI-assisted quality, and automation samples that show how I keep releases clear and defensible."
-          />
-          <WorkShowcase />
-        </div>
-      </section>
       <section id="about" className="page-section page-section--white">
         <div className="page-section__inner about-flow">
           <SectionHeading eyebrow="About" title="Quality leadership that scales with the product" />
@@ -54,6 +44,16 @@ export default function HomePage() {
         <div className="page-section__inner">
           <SectionHeading title="Resume" />
           <ResumeDownloads />
+        </div>
+      </section>
+      <section id="work" className="page-section">
+        <div className="page-section__inner">
+          <SectionHeading
+            eyebrow="Work"
+            title="Selected work"
+            description="Leadership, AI-assisted quality, and automation samples that show how I keep releases clear and defensible."
+          />
+          <WorkShowcase />
         </div>
       </section>
       <section id="contact" className="contact-flow">

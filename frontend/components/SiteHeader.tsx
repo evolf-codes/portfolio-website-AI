@@ -4,14 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-const SECTIONS = ["home", "work", "about", "resume", "contact"] as const;
+const SECTIONS = ["home", "about", "resume", "work", "contact"] as const;
 type SectionId = (typeof SECTIONS)[number];
 
 const nav = [
   { href: "/#home", label: "Home", section: "home" },
-  { href: "/#work", label: "Work", section: "work" },
   { href: "/#about", label: "About", section: "about" },
   { href: "/#resume", label: "Resume", section: "resume" },
+  { href: "/#work", label: "Work", section: "work" },
   { href: "/#contact", label: "Contact", section: "contact" },
 ] as const;
 

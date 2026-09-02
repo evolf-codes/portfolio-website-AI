@@ -35,14 +35,14 @@ export function SiteFooter() {
             <p className="site-footer__tagline mt-1 text-xs">{SITE_TITLE}</p>
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-xs">
-            <Link className="footer-link" href="/#work">
-              Work
-            </Link>
             <Link className="footer-link" href="/#about">
               About
             </Link>
             <Link className="footer-link" href="/#resume">
               Resume
+            </Link>
+            <Link className="footer-link" href="/#work">
+              Work
             </Link>
             <Link className="footer-link" href="/#contact">
               Contact
