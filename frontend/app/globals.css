@@ -927,6 +927,12 @@ a {
   font-weight: 600;
 }
 
+.resume-downloads__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
 @media (min-width: 640px) {
   .resume-downloads__item {
     flex-direction: row;

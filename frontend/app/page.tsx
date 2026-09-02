@@ -54,8 +54,8 @@ export default function HomePage() {
         <div className="page-section__inner">
           <SectionHeading
             eyebrow="Resume"
-            title="Download a current resume"
-            description="Two PDF versions — a short 2-page summary, and a more detailed version with selected projects."
+            title="View a current resume"
+            description="Open the short 2-page resume or the detailed version. PDF opens in the browser; DOCX is available for the 2-page file."
           />
           <ResumeDownloads />
         </div>

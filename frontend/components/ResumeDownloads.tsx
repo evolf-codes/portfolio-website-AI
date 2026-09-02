@@ -9,15 +9,19 @@ export function ResumeDownloads() {
             <h3 className="resume-downloads__title">{resume.title}</h3>
             <p className="type-body mt-2">{resume.description}</p>
           </div>
-          <a
-            className="btn-secondary"
-            href={resume.href}
-            download={resume.fileName}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Download PDF
-          </a>
+          <div className="resume-downloads__actions">
+            {resume.formats.map((format) => (
+              <a
+                key={format.href}
+                className="btn-secondary"
+                href={format.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View {format.label}
+              </a>
+            ))}
+          </div>
         </li>
       ))}
     </ul>
