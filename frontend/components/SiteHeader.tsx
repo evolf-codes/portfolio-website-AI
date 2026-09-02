@@ -147,7 +147,11 @@ export function SiteHeader() {
   return (
     <header className="site-header sticky top-0 z-50">
       <div className="site-header__inner">
-        <Link href="/" className="group flex flex-col" onClick={() => activateSection("home")}>
+        <Link
+          href="/"
+          className="site-header__brand-block group flex flex-col"
+          onClick={() => activateSection("home")}
+        >
           <span className="site-header__brand text-sm font-semibold tracking-wide uppercase">
             Eric Volfson
           </span>
@@ -164,7 +168,7 @@ export function SiteHeader() {
                 href={item.href}
                 aria-current={active ? "true" : undefined}
                 onClick={(event) => handleSectionNav(event, item.section, item.href)}
-                className={`text-sm transition-colors ${
+                className={`transition-colors ${
                   active ? "site-header__link site-header__link--active" : "site-header__link"
                 }`}
               >
