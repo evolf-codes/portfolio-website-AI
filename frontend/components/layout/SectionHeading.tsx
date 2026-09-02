@@ -16,12 +16,10 @@ export function SectionHeading({
   className = "",
 }: Props) {
   return (
-    <header className={className}>
+    <header className={`section-heading ${className}`.trim()}>
       {eyebrow ? <p className="type-eyebrow">{eyebrow}</p> : null}
-      <Tag className={`type-section-title ${eyebrow ? "mt-3" : ""}`.trim()}>
-        {title}
-      </Tag>
-      {description ? <p className="type-section-desc mt-4">{description}</p> : null}
+      <Tag className="type-section-title">{title}</Tag>
+      {description ? <p className="type-section-desc">{description}</p> : null}
     </header>
   );
 }

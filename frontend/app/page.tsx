@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <div>
       <HomeIntro />
-      <section id="resume" className="page-section">
+      <section id="resume" className="page-section page-section--compact">
         <div className="page-section__inner">
           <SectionHeading title="Resume" />
           <ResumeDownloads />
@@ -32,10 +32,10 @@ export default function HomePage() {
       </section>
       <section id="contact" className="contact-flow">
         <div className="page-section__inner contact-flow__inner">
-          <div>
+          <div className="contact-flow__intro">
             <p className="type-eyebrow contact-flow__eyebrow">Contact</p>
-            <h2 className="contact-flow__title mt-3">Let&apos;s talk.</h2>
-            <p className="contact-flow__copy mt-5">
+            <h2 className="contact-flow__title">Let&apos;s talk.</h2>
+            <p className="contact-flow__copy">
               Share the role, the team, or the challenge — or email{" "}
               <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.
             </p>

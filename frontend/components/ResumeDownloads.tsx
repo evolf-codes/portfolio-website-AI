@@ -2,7 +2,7 @@ import { RESUME_FILES } from "@/lib/resumes";
 
 export function ResumeDownloads() {
   return (
-    <div className="resume-downloads mt-8">
+    <div className="resume-downloads">
       {RESUME_FILES.map((format) => (
         <a
           key={format.href}
