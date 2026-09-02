@@ -15,6 +15,7 @@ test.describe("Home", () => {
       "/resume/eric-volfson-qa-manager-2-page.pdf",
     );
     await expect(page.getByRole("heading", { name: "Let's improve release confidence." })).toBeVisible();
+    await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Home" })).toHaveAttribute("href", "/#home");
     await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Resume" })).toHaveAttribute("href", "/#resume");
   });
 
