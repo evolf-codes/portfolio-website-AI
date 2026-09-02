@@ -10,25 +10,21 @@ describe("work-projects", () => {
 
   it("resolves known slugs", () => {
     expect(getWorkProject("kanban")?.title).toBe("Jira delivery reporting");
-    expect(getWorkProject("ai-driven-testing")?.title).toBe(
-      "AI-driven testing",
-    );
+    expect(getWorkProject("ai-driven-testing")?.title).toBe("AI-driven testing");
   });
 
   it("returns undefined for unknown slug", () => {
     expect(getWorkProject("missing")).toBeUndefined();
   });
 
-  it("gives every project an honest status and evidence plan", () => {
+  it("keeps every project brief and evidence-ready", () => {
     for (const project of WORK_PROJECTS) {
-      expect(["Ready", "Planned"]).toContain(project.status);
-      expect(project.approach).toHaveLength(3);
-      expect(project.evidence).toHaveLength(3);
-      expect(project.nextStep.length).toBeGreaterThan(20);
+      expect(project.about.length).toBeGreaterThan(20);
+      expect(project.purpose.length).toBeGreaterThan(20);
+      expect(project.tools.length).toBeGreaterThan(5);
+      expect(project.outcome.length).toBeGreaterThan(20);
+      expect(project.resultImageSrc.startsWith("/work/")).toBe(true);
     }
-
-    expect(WORK_PROJECTS.every((project) => project.status === "Ready")).toBe(true);
-    expect(WORK_PROJECTS.every((project) => project.resultImageSrc.startsWith("/work/"))).toBe(true);
   });
 
   it("leads with automation and performance evidence", () => {

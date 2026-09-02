@@ -1,14 +1,14 @@
 export const HOME_HIGHLIGHTS = [
   {
-    value: "13+",
-    label: "Years in QA and test leadership",
+    value: "15+",
+    label: "Years in QA leadership and quality engineering",
   },
   {
-    value: "Capital markets",
-    label: "Equities, trading engines, and crypto platforms",
+    value: "Fintech",
+    label: "Capital markets, digital assets, and trading systems",
   },
   {
     value: "CSM · ISTQB",
-    label: "Certified Scrum Master and foundation tester",
+    label: "Certified ScrumMaster and foundation tester",
   },
 ] as const;

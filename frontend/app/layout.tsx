@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Eric Volfson | Sr. QA Engineer & QA Manager",
+    default: "Eric Volfson | QA Manager | Fintech & Digital Assets",
     template: "%s | Eric Volfson",
   },
   description:
-    "Portfolio of Eric Volfson: capital markets QA leadership, automation, performance testing, and career journey.",
+    "Portfolio of Eric Volfson: QA management, capital markets and digital-asset quality engineering, automation, and performance testing.",
 };
 
 export default function RootLayout({

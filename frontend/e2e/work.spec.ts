@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import { WORK_PROJECTS } from "../lib/work-projects";
 
 test.describe("Work", () => {
-  test("each tile opens its overview template", async ({ page }) => {
+  test("each showcase item opens its case study", async ({ page }) => {
     for (const project of WORK_PROJECTS) {
       await page.goto("/");
       await page
@@ -12,7 +12,10 @@ test.describe("Work", () => {
       await expect(
         page.getByRole("heading", { level: 1, name: project.title }),
       ).toBeVisible();
-      await expect(page.getByText(project.status, { exact: true })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "About this sample" })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "Purpose" })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "Technology" })).toBeVisible();
+      await expect(page.getByRole("heading", { name: "Output" })).toBeVisible();
     }
   });
 
@@ -47,12 +50,12 @@ test.describe("Work", () => {
     expect(notesResp.ok()).toBeTruthy();
   });
 
-  test("completed projects show their quality brief and verified evidence", async ({ page }) => {
+  test("case study shows output evidence without a decorative hero image", async ({ page }) => {
     await page.goto("/work/performance-testing");
 
-    await expect(page.getByText("Ready", { exact: true })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Quality brief" })).toBeVisible();
-    await expect(page.getByText("Evidence", { exact: true })).toBeVisible();
-    await expect(page.getByText("Verified result")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "About this sample" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Output" })).toBeVisible();
+    await expect(page.getByRole("img", { name: /Locust performance test summary/i })).toBeVisible();
+    await expect(page.locator(".case-study-simple")).toBeVisible();
   });
 });

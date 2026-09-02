@@ -31,8 +31,8 @@ Do **not** use bare `npx wrangler deploy` at the repo root — there is no `wran
 
 | Variable | Notes |
 |----------|--------|
-| `FORMSPREE_FORM_ID` | Formspree form id (secret) |
-| `NEXT_PUBLIC_SITE_EMAIL` | Public contact email, e.g. `58_bent.sleigh@icloud.com` |
+| `FORMSPREE_FORM_ID` | Formspree form id (also set in `wrangler.jsonc` vars for deploy) |
+| `NEXT_PUBLIC_SITE_EMAIL` | Public contact email alias (kept in `wrangler.jsonc`) |
 
 ## Local
 

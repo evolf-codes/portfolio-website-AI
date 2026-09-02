@@ -26,7 +26,7 @@ export default function HomePage() {
       </section>
       <section id="about" className="page-section page-section--white scroll-mt-20">
         <div className="page-section__inner about-flow">
-          <SectionHeading eyebrow="About" title="Quality leadership grounded in delivery" />
+          <SectionHeading eyebrow="About" title="QA leadership for fintech and digital assets" />
           <div className="about-flow__content">
             <div className="space-y-4">
               {PROFILE_SUMMARY.map((item) => <p key={item} className="type-body">{item}</p>)}

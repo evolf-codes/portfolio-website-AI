@@ -6,10 +6,10 @@ test.describe("Journey", () => {
     await expect(
       page.getByRole("heading", { level: 1, name: /trading floors to global crypto/i }),
     ).toBeVisible();
-    await expect(
-      page.getByText("Confidential", { exact: true }),
-    ).toBeVisible();
-    await expect(page.getByText("TMX Group (Toronto Stock Exchange)").first()).toBeVisible();
+    await expect(page.getByText("Confidential", { exact: true }).first()).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Quality Assurance Manager" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Senior Quality Assurance Consultant" })).toBeVisible();
+    await expect(page.getByText("Toronto Stock Exchange (TMX)").first()).toBeVisible();
     await expect(page.getByRole("heading", { level: 2, name: "Education" })).toBeVisible();
     await expect(page.getByText("York University")).toBeVisible();
   });

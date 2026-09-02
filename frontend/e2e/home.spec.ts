@@ -5,9 +5,9 @@ test.describe("Home", () => {
   test("shows a continuous work, about, and contact flow", async ({ page }) => {
     await page.goto("/");
     await expect(page.getByRole("heading", { level: 1, name: "Eric Volfson" })).toBeVisible();
-    await expect(page.getByText("13+")).toBeVisible();
+    await expect(page.getByText("15+")).toBeVisible();
     await expect(page.getByRole("heading", { name: "Frontend automation" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Quality leadership grounded in delivery" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "QA leadership for fintech and digital assets" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Let's improve release confidence." })).toBeVisible();
     await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Work" })).toHaveAttribute("href", "/#work");
   });

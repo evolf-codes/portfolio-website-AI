@@ -182,7 +182,7 @@ export function ContactForm() {
         </button>
         {submitState === "sent" ? (
           <p className="contact-form__thanks" aria-live="polite">
-            Thanks
+            Thanks — your message was sent. I will reply to the email you provided.
           </p>
         ) : null}
       </div>

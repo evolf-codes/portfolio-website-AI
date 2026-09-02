@@ -5,7 +5,7 @@ import { PageHero } from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Career Journey",
   description:
-    "Eric Volfson's QA career across Kraken, TMX Group, and capital markets leadership.",
+    "Eric Volfson's QA career across digital assets, Toronto Stock Exchange (TMX), and capital markets leadership.",
 };
 
 export default function JourneyPage() {
@@ -14,7 +14,7 @@ export default function JourneyPage() {
       <PageHero
         eyebrow="Career journey"
         title="From trading floors to global crypto platforms"
-        description="A progression through capital markets quality engineering: environment management, technical test leadership, and senior QA consulting at scale."
+        description="A progression through capital markets quality engineering: environment management, technical test leadership, senior consulting, and QA management."
       />
       <CareerTimeline />
     </div>

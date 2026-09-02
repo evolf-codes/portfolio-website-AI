@@ -30,6 +30,6 @@ test.describe("Contact", () => {
     await page.getByLabel("Message").fill("Interested in discussing QA leadership.");
     await page.getByRole("button", { name: "Submit" }).click();
 
-    await expect(page.getByText("Thanks", { exact: true })).toBeVisible();
+    await expect(page.getByText(/Thanks — your message was sent/i)).toBeVisible();
   });
 });

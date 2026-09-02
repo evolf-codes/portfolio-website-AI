@@ -37,7 +37,7 @@ export default function AboutPage() {
               ))}
             </ul>
             <p className="type-body-muted">
-              I combine hands-on testing with leadership that keeps quality visible early:
+              Hands-on testing paired with leadership that keeps quality visible early:
               sprint planning, environment reliability, performance validation, and automation
               that supports release confidence in regulated, high-volume systems.
             </p>

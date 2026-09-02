@@ -1,18 +1,12 @@
 export type WorkProject = {
   slug: string;
   title: string;
-  summary: string;
-  imageSrc: string;
-  imageAlt: string;
-  accent: string;
-  status: "Ready" | "Planned";
-  discipline: string;
-  challenge: string;
-  approach: readonly string[];
-  evidence: readonly string[];
-  nextStep: string;
+  about: string;
+  purpose: string;
   tools: string;
   outcome: string;
+  discipline: string;
+  accent: string;
   sourcePath: string;
   resultImageSrc: string;
   resultImageAlt: string;
@@ -22,61 +16,16 @@ export type WorkProject = {
 
 const PROJECTS: WorkProject[] = [
   {
-    slug: "kanban",
-    title: "Jira delivery reporting",
-    summary: "An illustrative Jira management view that turns WIP, blocked work, ageing, and flow into release decisions.",
-    imageSrc: "/work/kanban.svg",
-    imageAlt: "Kanban board with teal, amber, and blue workflow columns",
-    accent: "#0d9488",
-    status: "Ready",
-    discipline: "Jira · Management reporting",
-    challenge: "Make delivery risk, work in progress, and blocked work visible without turning the board into administrative overhead.",
-    approach: ["Set explicit entry and exit policies for each workflow state.", "Use WIP limits and ageing signals to surface flow risk early.", "Pair delivery metrics with qualitative review instead of treating velocity as performance."],
-    evidence: ["Interactive board", "Workflow policy", "Flow-metrics summary"],
-    nextStep: "Add an automated browser accessibility scan while preserving the native keyboard move controls.",
-    tools: "Jira workflow design · JavaScript · Node test runner",
-    outcome: "8 deterministic workflow tests pass; desktop and mobile interactions were reviewed with no browser errors.",
-    sourcePath: "portfolio-projects/kanban-board/",
-    resultImageSrc: "/work/results/jira-delivery-reporting.svg",
-    resultImageAlt: "Illustrative Jira delivery management dashboard with release risks and flow measures",
-    priority: 5,
-  },
-  {
-    slug: "gantt-schedules",
-    title: "Jira scheduling & documentation",
-    summary: "An illustrative Jira planning view for team capacity, schedule conflicts, coverage gaps, and linked operating documentation.",
-    imageSrc: "/work/gantt.svg",
-    imageAlt: "Gantt chart with color-coded schedule bars",
-    accent: "#2563eb",
-    status: "Ready",
-    discipline: "Jira · Scheduling",
-    challenge: "Give managers a trustworthy staffing view while making overlaps, leave, and coverage gaps easy to spot.",
-    approach: ["Model shifts and leave as simple time ranges with clear ownership.", "Highlight conflicts and under-covered periods at the point of planning.", "Test timezone, boundary-date, and overlapping-assignment risks first."],
-    evidence: ["Schedule timeline", "Conflict rules", "Boundary test matrix"],
-    nextStep: "Add property-based interval testing for broader boundary coverage.",
-    tools: "Jira planning · Python · Flask · pytest",
-    outcome: "16 schedule, boundary, conflict, and route tests pass against a deterministic fixture set.",
-    sourcePath: "portfolio-projects/employee-schedules/",
-    resultImageSrc: "/work/results/jira-scheduling.svg",
-    resultImageAlt: "Illustrative Jira scheduling dashboard with capacity, conflicts, and linked documentation",
-    priority: 6,
-  },
-  {
     slug: "frontend-automation",
     title: "Frontend automation",
-    summary:
-      "Fifteen pytest + Playwright checks against the public Heroku training app, packaged for Docker with a documented rationale and a screenshot of a clean run.",
-    imageSrc: "/work/frontend-automation.svg",
-    imageAlt: "Browser mockup for UI test automation",
-    accent: "#4f46e5",
-    status: "Ready",
-    discipline: "UI automation",
-    challenge: "Demonstrate maintainable browser automation that is fast to review, straightforward to run, and resistant to common sources of flakiness.",
-    approach: ["Cover fifteen focused user behaviours with pytest and Playwright.", "Prefer accessible locators and auto-waiting over sleeps and brittle selectors.", "Package the same execution path for local use and Docker."],
-    evidence: ["15 browser tests", "Docker runner", "Green-run screenshot"],
-    nextStep: "Add CI reporting and targeted accessibility checks while keeping the suite intentionally small.",
+    about:
+      "A small browser automation suite against the public Heroku training app (The Internet).",
+    purpose:
+      "Show maintainable UI automation that is easy to run, review, and package for Docker.",
     tools: "Python · pytest · Playwright · Docker",
-    outcome: "15 browser scenarios pass against The Internet training application.",
+    outcome: "15 focused browser checks with a green run screenshot as evidence.",
+    discipline: "UI automation",
+    accent: "#4f46e5",
     sourcePath: "portfolio-projects/frontend-automation/qa-the-internet/",
     resultImageSrc: "/work/frontend-automation-pytest-output.png",
     resultImageAlt: "Green pytest output for fifteen frontend browser checks",
@@ -90,38 +39,31 @@ const PROJECTS: WorkProject[] = [
   {
     slug: "backend-automation",
     title: "Backend API automation",
-    summary: "A deterministic Orders API exercised over HTTP for contracts, authorization, validation, idempotency, and diagnostics.",
-    imageSrc: "/work/backend-automation.svg",
-    imageAlt: "API services connected for back end automation",
-    accent: "#7c3aed",
-    status: "Ready",
-    discipline: "API automation",
-    challenge: "Show service-level confidence across contracts, business rules, failure modes, and authorization without a large test framework.",
-    approach: ["Start with consumer-visible contracts and high-value business invariants.", "Separate deterministic API checks from environment health checks.", "Make failures diagnostic through concise request and correlation metadata."],
-    evidence: ["API test suite", "Contract checks", "CI report"],
-    nextStep: "Run the same contracts in an isolated deployed test environment and publish JUnit evidence in CI.",
+    about:
+      "A local Orders API exercised over HTTP for contracts, auth, validation, and idempotency.",
+    purpose:
+      "Demonstrate service-level confidence with clear pass/fail evidence at the API boundary.",
     tools: "Python · pytest · requests · JSON Schema · Docker",
-    outcome: "15 service-level checks pass against a real local HTTP boundary.",
+    outcome: "15 verbose API tests passing against a deterministic local HTTP service.",
+    discipline: "API automation",
+    accent: "#7c3aed",
     sourcePath: "portfolio-projects/backend-automation/",
     resultImageSrc: "/work/results/backend-automation.svg",
-    resultImageAlt: "Green pytest summary for the Orders API automation sample",
+    resultImageAlt: "Verbose pytest results for the Orders API automation sample",
     priority: 2,
   },
   {
     slug: "performance-testing",
     title: "Performance testing",
-    summary: "A safe local Locust workload with explicit latency, error-rate, and throughput release thresholds.",
-    imageSrc: "/work/performance.svg",
-    imageAlt: "Performance load test chart with rising throughput",
-    accent: "#ea580c",
-    status: "Ready",
-    discipline: "Performance engineering",
-    challenge: "Translate business expectations into measurable service objectives and a repeatable load profile.",
-    approach: ["Define throughput, latency percentiles, and error budgets before scripting.", "Model ramp, steady-state, and recovery phases with realistic traffic ratios.", "Report bottlenecks and decision thresholds, not just charts."],
-    evidence: ["Load model", "Threshold checks", "Decision report"],
-    nextStep: "Run the same Locust profile in a controlled CI environment and compare trends against the baseline.",
+    about:
+      "A safe local Locust workload with explicit latency, error-rate, and throughput gates.",
+    purpose:
+      "Show how release thresholds turn a load run into a clear go / no-go decision.",
     tools: "Python · Locust · local HTTP target",
-    outcome: "2,085 Locust requests completed at 188.9 req/s with 14 ms p95 latency and 0 failures; all gates passed.",
+    outcome:
+      "2,085 requests at 188.9 req/s with 14 ms p95 and 0 failures; all thresholds passed.",
+    discipline: "Performance engineering",
+    accent: "#ea580c",
     sourcePath: "portfolio-projects/performance-testing/",
     resultImageSrc: "/work/results/performance-testing.svg",
     resultImageAlt: "Locust performance test summary with release thresholds",
@@ -130,22 +72,53 @@ const PROJECTS: WorkProject[] = [
   {
     slug: "ai-driven-testing",
     title: "AI-driven testing",
-    summary: "A versioned offline evaluation harness that scores task quality, consistency, and prompt-injection safety.",
-    imageSrc: "/work/ai-testing.svg",
-    imageAlt: "AI assisted testing network diagram",
-    accent: "#0891b2",
-    status: "Ready",
-    discipline: "AI quality",
-    challenge: "Evaluate an AI-assisted workflow with repeatable evidence while keeping human review, privacy, and failure analysis explicit.",
-    approach: ["Define a small labelled evaluation set and a task-specific scoring rubric.", "Track quality, consistency, latency, and unsafe or unsupported outputs.", "Keep prompts versioned and require human judgment for ambiguous results."],
-    evidence: ["Evaluation dataset", "Scoring rubric", "Failure analysis"],
-    nextStep: "Add redacted model responses and blinded human ratings with inter-rater agreement.",
+    about:
+      "An offline evaluation harness that scores task quality, consistency, and prompt-injection safety.",
+    purpose:
+      "Make AI-assisted output reviewable with a versioned rubric and an explicit safety gate.",
     tools: "Python · unittest · labelled evaluation fixtures",
-    outcome: "17 of 18 responses pass; the safety hard gate correctly blocks the candidate release.",
+    outcome:
+      "17 of 18 responses pass; the safety hard gate correctly blocks the candidate release.",
+    discipline: "AI quality",
+    accent: "#0891b2",
     sourcePath: "portfolio-projects/ai-driven-testing/",
     resultImageSrc: "/work/results/ai-driven-testing.svg",
     resultImageAlt: "AI evaluation scorecard showing a blocked release after a safety failure",
     priority: 4,
+  },
+  {
+    slug: "kanban",
+    title: "Jira delivery reporting",
+    about:
+      "An illustrative Jira-style management view for WIP, blocked work, ageing, and release risk.",
+    purpose:
+      "Show how delivery reporting turns board signals into clear QA and release decisions.",
+    tools: "Jira workflow design · JavaScript · Node test runner",
+    outcome:
+      "Illustrative delivery dashboard backed by 8 deterministic workflow tests.",
+    discipline: "Jira · Management reporting",
+    accent: "#0d9488",
+    sourcePath: "portfolio-projects/kanban-board/",
+    resultImageSrc: "/work/results/jira-delivery-reporting.svg",
+    resultImageAlt: "Illustrative Jira delivery management dashboard with release risks and flow measures",
+    priority: 5,
+  },
+  {
+    slug: "gantt-schedules",
+    title: "Jira scheduling & documentation",
+    about:
+      "An illustrative Jira planning view for capacity, schedule conflicts, coverage gaps, and linked docs.",
+    purpose:
+      "Show how scheduling and documentation stay connected for staffing and coverage decisions.",
+    tools: "Jira planning · Python · Flask · pytest",
+    outcome:
+      "Illustrative scheduling report backed by 16 schedule, conflict, and boundary tests.",
+    discipline: "Jira · Scheduling",
+    accent: "#2563eb",
+    sourcePath: "portfolio-projects/employee-schedules/",
+    resultImageSrc: "/work/results/jira-scheduling.svg",
+    resultImageAlt: "Illustrative Jira scheduling dashboard with capacity, conflicts, and linked documentation",
+    priority: 6,
   },
 ];
 

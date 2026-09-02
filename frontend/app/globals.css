@@ -302,6 +302,26 @@ a {
   margin-top: 1.5rem;
 }
 
+.case-study-simple {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.case-study-simple h2 {
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.case-study-simple p {
+  margin-top: 0.5rem;
+  color: var(--graphite);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
 .case-study-grid {
   display: grid;
   gap: 1.5rem;
