@@ -10,3 +10,4 @@ Professional portfolio for **Eric Volfson**, QA Manager focused on fintech, capi
 See [`portfolio-projects/README.md`](portfolio-projects/README.md) for the project index and verification commands.
 
 Live site: https://portfolio-website-ai.saucers-mikado-0a.workers.dev
+Source: https://github.com/evolf-codes/portfolio-website-AI
