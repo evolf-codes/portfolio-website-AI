@@ -16,7 +16,7 @@ export default function HomePage() {
   return (
     <div>
       <HomeIntro />
-      <section id="work" className="page-section scroll-mt-20">
+      <section id="work" className="page-section">
         <div className="page-section__inner">
           <SectionHeading
             eyebrow="Work"
@@ -26,7 +26,7 @@ export default function HomePage() {
           <WorkShowcase />
         </div>
       </section>
-      <section id="about" className="page-section page-section--white scroll-mt-20">
+      <section id="about" className="page-section page-section--white">
         <div className="page-section__inner about-flow">
           <SectionHeading eyebrow="About" title="Quality leadership that scales with the product" />
           <div className="about-flow__content">
@@ -50,13 +50,13 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section id="resume" className="page-section scroll-mt-20">
+      <section id="resume" className="page-section">
         <div className="page-section__inner">
           <SectionHeading title="Resume" />
           <ResumeDownloads />
         </div>
       </section>
-      <section id="contact" className="contact-flow scroll-mt-20">
+      <section id="contact" className="contact-flow">
         <div className="page-section__inner contact-flow__inner">
           <div>
             <p className="type-eyebrow contact-flow__eyebrow">Contact</p>

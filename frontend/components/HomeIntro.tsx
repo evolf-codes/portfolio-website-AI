@@ -2,7 +2,7 @@ import { SITE_LOCATION, SITE_TAGLINE, SITE_TITLE } from "@/lib/site";
 
 export function HomeIntro() {
   return (
-    <section id="home" className="page-hero page-hero--home scroll-mt-20">
+    <section id="home" className="page-hero page-hero--home">
       <div className="page-hero__inner page-hero__inner--home">
         <p className="page-hero__eyebrow">Portfolio</p>
         <h1 className="home-intro__name mt-4 max-w-4xl">Eric Volfson</h1>

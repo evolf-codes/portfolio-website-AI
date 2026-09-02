@@ -6,7 +6,7 @@ export function WorkShowcase() {
   return (
     <div className="work-showcase mt-12">
       {WORK_PROJECTS.map((project, index) => (
-        <article id={project.slug} key={project.slug} className="work-showcase__item scroll-mt-24">
+        <article id={project.slug} key={project.slug} className="work-showcase__item">
           <div className="work-showcase__copy">
             <p className="type-eyebrow">
               {String(index + 1).padStart(2, "0")} · {project.discipline}

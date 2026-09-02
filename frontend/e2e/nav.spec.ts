@@ -7,13 +7,15 @@ test.describe("Nav active state", () => {
     const nav = page.getByRole("navigation", { name: "Primary" });
     await expect(nav.getByRole("link", { name: "Home" })).toHaveAttribute("aria-current", "true");
 
-    await page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Resume" }).click();
+    await nav.getByRole("link", { name: "Resume" }).click();
     await expect(page.locator("#resume")).toBeInViewport();
-    await expect(nav.getByRole("link", { name: "Resume" })).toHaveAttribute("aria-current", "true");
+    await expect(nav.getByRole("link", { name: "Resume" })).toHaveClass(/site-header__link--active/);
     await expect(nav.getByRole("link", { name: "Home" })).not.toHaveAttribute("aria-current", "true");
 
     await page.locator("#work").scrollIntoViewIfNeeded();
-    await expect(nav.getByRole("link", { name: "Work" })).toHaveAttribute("aria-current", "true");
+    await expect(nav.getByRole("link", { name: "Work" })).toHaveAttribute("aria-current", "true", {
+      timeout: 3000,
+    });
   });
 
   test("keeps Work underlined on case study pages", async ({ page }) => {

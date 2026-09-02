@@ -29,10 +29,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full`}>
       <body className="flex min-h-full flex-col bg-[var(--background)] text-[var(--foreground)] antialiased">
         <SiteHeader />
-        <main id="main-content" className="flex-1 scroll-mt-24">
+        <main id="main-content" className="flex-1">
           {children}
         </main>
         <SiteFooter />
