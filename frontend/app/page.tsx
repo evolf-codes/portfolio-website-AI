@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HomeIntro } from "@/components/HomeIntro";
 import { ContactForm } from "@/components/ContactForm";
+import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { SectionHeading } from "@/components/layout/SectionHeading";
 import { WorkShowcase } from "@/components/WorkShowcase";
 import { CORE_SKILLS, PROFILE_SUMMARY } from "@/lib/profile";
@@ -28,11 +29,22 @@ export default function HomePage() {
         <div className="page-section__inner about-flow">
           <SectionHeading eyebrow="About" title="QA leadership for fintech and digital assets" />
           <div className="about-flow__content">
-            <div className="space-y-4">
-              {PROFILE_SUMMARY.map((item) => <p key={item} className="type-body">{item}</p>)}
+            <div className="about-flow__profile">
+              <ProfilePhoto className="profile-photo--about" />
+              <div className="space-y-4">
+                {PROFILE_SUMMARY.map((item) => (
+                  <p key={item} className="type-body">
+                    {item}
+                  </p>
+                ))}
+              </div>
             </div>
-            <ul className="flex flex-wrap gap-2">
-              {CORE_SKILLS.slice(0, 8).map((skill) => <li key={skill} className="skill-pill">{skill}</li>)}
+            <ul className="flex flex-wrap gap-2 content-start">
+              {CORE_SKILLS.slice(0, 8).map((skill) => (
+                <li key={skill} className="skill-pill">
+                  {skill}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -42,9 +54,14 @@ export default function HomePage() {
           <div>
             <p className="type-eyebrow contact-flow__eyebrow">Contact</p>
             <h2 className="contact-flow__title mt-3">Let&apos;s improve release confidence.</h2>
-            <p className="contact-flow__copy mt-5">Share a role, delivery challenge, or QA leadership opportunity. You can also email <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.</p>
+            <p className="contact-flow__copy mt-5">
+              Share a role, delivery challenge, or QA leadership opportunity. You can also email{" "}
+              <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.
+            </p>
           </div>
-          <div className="contact-flow__form"><ContactForm /></div>
+          <div className="contact-flow__form">
+            <ContactForm />
+          </div>
         </div>
       </section>
     </div>

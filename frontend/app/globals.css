@@ -507,6 +507,70 @@ a {
   color: var(--graphite);
 }
 
+.home-intro {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .home-intro {
+    grid-template-columns: minmax(0, 1.15fr) minmax(14rem, 0.7fr);
+    gap: 4rem;
+  }
+}
+
+.home-intro__photo {
+  justify-self: start;
+  max-width: 20rem;
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .home-intro__photo {
+    justify-self: end;
+    max-width: 22rem;
+  }
+}
+
+.profile-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 1.25rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.profile-photo--hero {
+  border-radius: 1.5rem;
+}
+
+.profile-photo--about {
+  max-width: 16rem;
+  border-radius: 1rem;
+}
+
+.about-flow__profile {
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .about-flow__profile {
+    grid-template-columns: minmax(10rem, 12rem) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+.about-page__photo {
+  max-width: 16rem;
+}
+
 .site-footer__highlights .stat-card {
   height: 100%;
 }

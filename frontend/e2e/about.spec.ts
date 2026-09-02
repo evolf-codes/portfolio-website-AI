@@ -6,6 +6,7 @@ test.describe("About", () => {
     await expect(
       page.getByRole("heading", { level: 1, name: "Eric Volfson" }),
     ).toBeVisible();
+    await expect(page.getByRole("img", { name: /Eric Volfson/i })).toBeVisible();
     const mail = page.getByRole("complementary").getByRole("link", {
       name: /58_bent\.sleigh@icloud\.com/i,
     });

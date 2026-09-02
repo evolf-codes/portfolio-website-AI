@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
+import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { PageMain } from "@/components/layout/PageMain";
 import { PanelHeading } from "@/components/layout/PanelHeading";
 import { SectionHeading } from "@/components/layout/SectionHeading";
@@ -27,6 +28,9 @@ export default function AboutPage() {
       <PageMain>
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
           <section className="space-y-6">
+            <div className="about-page__photo">
+              <ProfilePhoto className="profile-photo--about" />
+            </div>
             <SectionHeading title="Profile" as="h2" />
             <ul className="space-y-3">
               {PROFILE_SUMMARY.map((item) => (
