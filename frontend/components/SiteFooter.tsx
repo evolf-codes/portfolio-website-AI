@@ -29,12 +29,12 @@ export function SiteFooter() {
       <div className="site-footer__bar">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="site-footer__brand text-sm font-semibold tracking-wide uppercase">
+            <p className="site-footer__brand font-semibold tracking-wide uppercase">
               Eric Volfson
             </p>
-            <p className="site-footer__tagline mt-1 text-xs">{SITE_TITLE}</p>
+            <p className="site-footer__tagline mt-1">{SITE_TITLE}</p>
           </div>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-xs">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
             <Link className="footer-link" href="/#about">
               About
             </Link>

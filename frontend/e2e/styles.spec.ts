@@ -35,7 +35,24 @@ test.describe("Site styles", () => {
 
     const taglineSize = await page.locator(".home-intro__tagline").evaluate((el) => getComputedStyle(el).fontSize);
     const copySize = await page.locator(".home-intro__copy p").first().evaluate((el) => getComputedStyle(el).fontSize);
+    const workBodySize = await page.locator(".work-showcase .type-body").first().evaluate((el) => getComputedStyle(el).fontSize);
+    const sectionTitleSize = await page
+      .locator(".type-section-title")
+      .first()
+      .evaluate((el) => getComputedStyle(el).fontSize);
+    const workTitleSize = await page
+      .locator(".work-showcase__title")
+      .first()
+      .evaluate((el) => getComputedStyle(el).fontSize);
+    const contactTitleSize = await page
+      .locator(".contact-flow__title")
+      .evaluate((el) => getComputedStyle(el).fontSize);
+
     expect(taglineSize).toBe(copySize);
+    expect(taglineSize).toBe(workBodySize);
+    expect(parseFloat(sectionTitleSize)).toBeGreaterThan(parseFloat(workTitleSize));
+    expect(parseFloat(workTitleSize)).toBeGreaterThan(parseFloat(taglineSize));
+    expect(Math.abs(parseFloat(sectionTitleSize) - parseFloat(contactTitleSize))).toBeLessThan(1);
 
     const showcase = page.locator(".work-showcase");
     await expect(showcase).toBeVisible();
