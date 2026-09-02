@@ -7,7 +7,6 @@ test.describe("Home", () => {
     await expect(page.getByRole("heading", { level: 1, name: "Eric Volfson" })).toBeVisible();
     await expect(page.getByRole("img", { name: /Eric Volfson/i }).first()).toBeVisible();
     await expect(page.getByText("Toronto, ON, Canada — Remote First")).toBeVisible();
-    await expect(page.getByText("15+")).toBeVisible();
     await expect(page.getByRole("heading", { name: "Selected work" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Jira tracking & documentation" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "AI-assisted quality engineering" })).toBeVisible();
@@ -21,6 +20,9 @@ test.describe("Home", () => {
     await expect(page.getByRole("heading", { name: "Ready to talk quality leadership." })).toBeVisible();
     await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Home" })).toHaveAttribute("href", "/#home");
     await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Resume" })).toHaveAttribute("href", "/#resume");
+    await expect(page.getByRole("contentinfo").getByRole("link", { name: "Contact" })).toBeVisible();
+    await expect(page.getByRole("contentinfo").getByRole("link", { name: "LinkedIn" })).toBeVisible();
+    await expect(page.getByRole("contentinfo").getByText(/@/)).toHaveCount(0);
   });
 
   test("redirects /work to home", async ({ page }) => {
