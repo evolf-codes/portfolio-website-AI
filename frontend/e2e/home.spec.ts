@@ -37,15 +37,16 @@ test.describe("Home", () => {
     await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "About" })).toHaveAttribute("href", "/#about");
     await expect(page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Resume" })).toHaveAttribute("href", "/#resume");
     await expect(page.getByRole("contentinfo").getByRole("link", { name: "Contact" })).toBeVisible();
-    await expect(page.getByRole("contentinfo").getByRole("link", { name: "LinkedIn" })).toHaveAttribute(
-      "href",
-      "https://www.linkedin.com/in/eric-v-aa45ab79/",
-    );
-    await expect(page.getByRole("contentinfo").getByRole("link", { name: "GitHub" })).toHaveAttribute(
-      "href",
-      "https://github.com/evolf-codes",
-    );
+    await expect(page.getByRole("contentinfo").getByRole("link", { name: "LinkedIn" })).toHaveCount(0);
+    await expect(page.getByRole("contentinfo").getByRole("link", { name: "GitHub" })).toHaveCount(0);
     await expect(page.getByRole("contentinfo").getByText(/@/)).toHaveCount(0);
+
+    const footerNavLabels = await page
+      .getByRole("contentinfo")
+      .getByRole("navigation", { name: "Footer" })
+      .getByRole("link")
+      .allTextContents();
+    expect(footerNavLabels).toEqual(["About", "Resume", "Work", "Contact"]);
   });
 
   test("redirects /work to home", async ({ page }) => {
