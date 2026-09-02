@@ -34,8 +34,10 @@ describe("work-projects", () => {
     }
   });
 
-  it("leads with automation and performance evidence", () => {
-    expect(WORK_PROJECTS.slice(0, 3).map((project) => project.slug)).toEqual([
+  it("leads with Jira management and AI evidence", () => {
+    expect(WORK_PROJECTS.map((project) => project.slug)).toEqual([
+      "gantt-schedules",
+      "ai-driven-testing",
       "frontend-automation",
       "backend-automation",
       "performance-testing",

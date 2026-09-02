@@ -43,7 +43,7 @@ const PROJECTS: WorkProject[] = [
     sourcePath: "portfolio-projects/frontend-automation/qa-the-internet/",
     resultImageSrc: "/work/frontend-automation-pytest-output.png",
     resultImageAlt: "Green pytest output for fifteen frontend browser checks",
-    priority: 1,
+    priority: 3,
     downloads: [
       { label: "README", href: "/work/frontend-automation-readme.txt" },
       { label: "requirements.txt", href: "/work/frontend-automation-requirements.txt" },
@@ -67,7 +67,7 @@ const PROJECTS: WorkProject[] = [
     sourcePath: "portfolio-projects/backend-automation/",
     resultImageSrc: "/work/results/backend-automation.svg",
     resultImageAlt: "Verbose pytest results for Restful Booker API automation",
-    priority: 2,
+    priority: 4,
   },
   {
     slug: "performance-testing",
@@ -88,7 +88,7 @@ const PROJECTS: WorkProject[] = [
     sourcePath: "portfolio-projects/performance-testing/",
     resultImageSrc: "/work/results/performance-testing.svg",
     resultImageAlt: "Locust performance summary against Restful Booker with release thresholds",
-    priority: 3,
+    priority: 5,
   },
   {
     slug: "ai-driven-testing",
@@ -126,7 +126,7 @@ const PROJECTS: WorkProject[] = [
         alt: "Google Sheets style coverage matrix with API and GUI gaps",
       },
     ],
-    priority: 4,
+    priority: 2,
   },
   {
     slug: "gantt-schedules",
@@ -148,7 +148,7 @@ const PROJECTS: WorkProject[] = [
     resultImageSrc: "/work/results/jira-scheduling.svg",
     resultImageAlt:
       "Jira-style dashboard with bug status pie chart and open bug list with IDs",
-    priority: 5,
+    priority: 1,
   },
 ];
 

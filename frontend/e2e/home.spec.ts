@@ -6,7 +6,10 @@ test.describe("Home", () => {
     await page.goto("/");
     await expect(page.getByRole("heading", { level: 1, name: "Eric Volfson" })).toBeVisible();
     await expect(page.getByRole("img", { name: /Eric Volfson/i }).first()).toBeVisible();
+    await expect(page.getByText("Toronto, ON, Canada — Remote First")).toBeVisible();
     await expect(page.getByText("15+")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Jira tracking & documentation" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "AI-assisted quality engineering" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Frontend automation" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "QA leadership for fintech and digital assets" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Resume" })).toBeVisible();

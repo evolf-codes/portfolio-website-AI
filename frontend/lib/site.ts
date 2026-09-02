@@ -2,7 +2,7 @@
 export const SITE_EMAIL =
   process.env.NEXT_PUBLIC_SITE_EMAIL ?? "58_bent.sleigh@icloud.com";
 
-export const SITE_LOCATION = "Vaughan, ON";
+export const SITE_LOCATION = "Toronto, ON, Canada — Remote First";
 export const SITE_LINKEDIN = "https://www.linkedin.com/in/eric-v-aa45ab79/";
 
 export const SITE_TITLE = "QA Manager | Quality Engineering | Fintech & Digital Assets";
