@@ -10,6 +10,7 @@ describe("work-projects", () => {
 
   it("resolves known slugs", () => {
     expect(getWorkProject("kanban")?.title).toBe("Jira delivery reporting");
+    expect(getWorkProject("kanban")?.kind).toBe("leadership");
     expect(getWorkProject("ai-driven-testing")?.title).toBe("AI-driven testing");
   });
 
@@ -20,7 +21,7 @@ describe("work-projects", () => {
   it("keeps every project brief and evidence-ready", () => {
     for (const project of WORK_PROJECTS) {
       expect(project.about.length).toBeGreaterThan(20);
-      expect(project.tested.length).toBeGreaterThan(20);
+      expect(project.demonstrates.length).toBeGreaterThan(20);
       expect(project.inputSource.length).toBeGreaterThan(20);
       expect(project.expectedOutput.length).toBeGreaterThan(20);
       expect(project.tools.length).toBeGreaterThan(5);
@@ -37,10 +38,25 @@ describe("work-projects", () => {
     ]);
   });
 
-  it("exposes GitHub source links for every project path", () => {
+  it("treats Jira items as leadership evidence rather than test suites", () => {
+    const jira = WORK_PROJECTS.filter((project) =>
+      ["kanban", "gantt-schedules"].includes(project.slug),
+    );
+    expect(jira).toHaveLength(2);
+    for (const project of jira) {
+      expect(project.kind).toBe("leadership");
+      expect(project.sourcePath).toBeUndefined();
+      expect(project.demonstrates.toLowerCase()).not.toContain("workflow tests");
+      expect(project.outcome.toLowerCase()).not.toMatch(/\d+\s+.*tests? passed/);
+    }
+  });
+
+  it("exposes GitHub source links only for automation samples", () => {
     for (const project of WORK_PROJECTS) {
-      expect(project.sourcePath).toMatch(/^portfolio-projects\//);
-      expect(project.sourcePath.endsWith("/")).toBe(true);
+      if (project.kind === "automation") {
+        expect(project.sourcePath).toMatch(/^portfolio-projects\//);
+        expect(project.sourcePath?.endsWith("/")).toBe(true);
+      }
     }
   });
 });

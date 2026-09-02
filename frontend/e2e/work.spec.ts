@@ -12,15 +12,26 @@ test.describe("Work", () => {
       await expect(
         page.getByRole("heading", { level: 1, name: project.title }),
       ).toBeVisible();
-      await expect(page.getByRole("heading", { name: "About this sample" })).toBeVisible();
-      await expect(page.getByRole("heading", { name: "What is being tested" })).toBeVisible();
-      await expect(page.getByRole("heading", { name: "Input source" })).toBeVisible();
-      await expect(page.getByRole("heading", { name: "Expected output" })).toBeVisible();
-      await expect(page.getByRole("heading", { name: "Technology" })).toBeVisible();
-      await expect(page.getByRole("heading", { name: "Actual result" })).toBeVisible();
+
+      if (project.kind === "leadership") {
+        await expect(page.getByRole("heading", { name: "About this example" })).toBeVisible();
+        await expect(page.getByRole("heading", { name: "Leadership focus" })).toBeVisible();
+        await expect(page.getByRole("heading", { name: "Source" })).toBeVisible();
+        await expect(page.getByRole("heading", { name: "What leaders should see" })).toBeVisible();
+        await expect(page.getByRole("heading", { name: "Tools" })).toBeVisible();
+        await expect(page.getByRole("heading", { name: "Evidence" })).toBeVisible();
+      } else {
+        await expect(page.getByRole("heading", { name: "About this sample" })).toBeVisible();
+        await expect(page.getByRole("heading", { name: "What is being tested" })).toBeVisible();
+        await expect(page.getByRole("heading", { name: "Input source" })).toBeVisible();
+        await expect(page.getByRole("heading", { name: "Expected output" })).toBeVisible();
+        await expect(page.getByRole("heading", { name: "Technology" })).toBeVisible();
+        await expect(page.getByRole("heading", { name: "Actual result" })).toBeVisible();
+      }
+
       await expect(page.getByText(project.inputSource)).toBeVisible();
       await expect(page.getByText(project.expectedOutput)).toBeVisible();
-      await expect(page.getByText(project.tested)).toBeVisible();
+      await expect(page.getByText(project.demonstrates)).toBeVisible();
     }
   });
 
@@ -64,5 +75,12 @@ test.describe("Work", () => {
     await expect(page.getByRole("heading", { name: "Actual result" })).toBeVisible();
     await expect(page.getByRole("img", { name: /Locust performance test summary/i })).toBeVisible();
     await expect(page.locator(".case-study-simple")).toBeVisible();
+  });
+
+  test("Jira examples are framed as leadership evidence", async ({ page }) => {
+    await page.goto("/work/kanban");
+    await expect(page.getByRole("heading", { name: "Leadership focus" })).toBeVisible();
+    await expect(page.getByText(/workflow tests/i)).toHaveCount(0);
+    await expect(page.getByRole("link", { name: "View project files" })).toHaveCount(0);
   });
 });

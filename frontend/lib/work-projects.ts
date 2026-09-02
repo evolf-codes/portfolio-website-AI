@@ -1,15 +1,16 @@
 export type WorkProject = {
   slug: string;
   title: string;
+  kind: "automation" | "leadership";
   about: string;
-  tested: string;
+  demonstrates: string;
   inputSource: string;
   expectedOutput: string;
   tools: string;
   outcome: string;
   discipline: string;
   accent: string;
-  sourcePath: string;
+  sourcePath?: string;
   resultImageSrc: string;
   resultImageAlt: string;
   priority: number;
@@ -20,9 +21,10 @@ const PROJECTS: WorkProject[] = [
   {
     slug: "frontend-automation",
     title: "Frontend automation",
+    kind: "automation",
     about:
       "A browser automation sample that checks real UI behaviour on a public training website.",
-    tested:
+    demonstrates:
       "Fifteen user-facing UI flows: navigation, forms, tables, hover states, keyboard events, new windows, and HTTP basic auth.",
     inputSource:
       "Live public app: https://the-internet.herokuapp.com/ (no customer or private data).",
@@ -46,9 +48,10 @@ const PROJECTS: WorkProject[] = [
   {
     slug: "backend-automation",
     title: "Backend API automation",
+    kind: "automation",
     about:
       "An API automation sample that exercises a local Orders service over real HTTP.",
-    tested:
+    demonstrates:
       "API contracts and risk paths: health, JSON response shape, auth rejection, product catalog, order create/retrieve, quantity validation, unknown products, malformed JSON, and idempotency replay/conflict behaviour.",
     inputSource:
       "Local Orders API started for the test run on an ephemeral localhost port, with deterministic fixture products and orders (no internet dependency).",
@@ -67,9 +70,10 @@ const PROJECTS: WorkProject[] = [
   {
     slug: "performance-testing",
     title: "Performance testing",
+    kind: "automation",
     about:
       "A safe local load-test sample that answers one release question: can a catalog read endpoint hold expected browsing traffic?",
-    tested:
+    demonstrates:
       "Latency, error rate, and throughput for repeated catalog reads under warm-up, steady-state, and short peak load.",
     inputSource:
       "Local catalog HTTP service started by the runner. Virtual users repeatedly call GET /api/products?category=testing.",
@@ -88,9 +92,10 @@ const PROJECTS: WorkProject[] = [
   {
     slug: "ai-driven-testing",
     title: "AI-driven testing",
+    kind: "automation",
     about:
       "An offline evaluation sample for AI-generated checkout test suggestions before a QA engineer would trust them.",
-    tested:
+    demonstrates:
       "Whether each candidate response is useful and safe: risk coverage, observable oracles, requirement traceability, unsupported claims, consistency across runs, and refusal of prompt-injection instructions.",
     inputSource:
       "Versioned fixture file of labelled evaluation cases plus captured candidate responses (offline; no live model calls, API keys, or customer data).",
@@ -109,20 +114,20 @@ const PROJECTS: WorkProject[] = [
   {
     slug: "kanban",
     title: "Jira delivery reporting",
+    kind: "leadership",
     about:
-      "A delivery-flow sample that turns board policy into management-ready release decisions.",
-    tested:
-      "Workflow rules in code: valid and invalid card transitions, WIP limits, blocked work, ageing flags, and flow-metric calculations.",
+      "A Jira-style delivery dashboard showing how I make release risk visible to leadership: WIP, blocked work, ageing, and go / no-go decisions.",
+    demonstrates:
+      "QA leadership through Jira reporting — triage dashboards, flow visibility, release readiness, and cross-team coordination without drowning stakeholders in board noise.",
     inputSource:
-      "A deterministic in-browser / in-memory board fixture with sample cards, columns, and policy rules. The Jira-style report is illustrative sample data, not a confidential client screenshot.",
+      "Illustrative Jira management views based on how I run delivery reporting in capital-markets and digital-asset delivery (not a confidential client screenshot).",
     expectedOutput:
-      "Invalid moves should be rejected, WIP and blocked/ageing signals should surface correctly, and flow metrics should match the fixture. Reviewers should see a clear delivery-risk view for release readiness.",
-    tools: "Jira workflow design · JavaScript · Node test runner",
+      "Leaders should quickly see blocked work, ageing risk, owners, and the next release decision — with linked documentation for follow-through.",
+    tools: "Jira · Confluence · KPI / release dashboards",
     outcome:
-      "8 deterministic workflow tests passed. The image below is the illustrative Jira delivery report generated from those rules.",
-    discipline: "Jira · Management reporting",
+      "The screenshot below is an illustrative delivery-reporting view aligned to my resume: defect triage, Jira dashboards, and release confidence.",
+    discipline: "Jira · Leadership reporting",
     accent: "#0d9488",
-    sourcePath: "portfolio-projects/kanban-board/",
     resultImageSrc: "/work/results/jira-delivery-reporting.svg",
     resultImageAlt: "Illustrative Jira delivery management dashboard with release risks and flow measures",
     priority: 5,
@@ -130,20 +135,20 @@ const PROJECTS: WorkProject[] = [
   {
     slug: "gantt-schedules",
     title: "Jira scheduling & documentation",
+    kind: "leadership",
     about:
-      "A staffing-schedule sample focused on overlaps, leave, coverage gaps, and timezone-safe intervals.",
-    tested:
-      "Schedule rules: overlapping shifts, shift-vs-leave conflicts, coverage gaps across a support window, overnight work, mixed timezones, and half-open interval boundaries.",
+      "A Jira-style planning view for QA capacity, coverage gaps, schedule conflicts, and the operating docs teams need during delivery.",
+    demonstrates:
+      "QA management skills from my resume: resource allocation across concurrent work, dependency coordination, coverage planning, and keeping runbooks/documentation attached to the plan.",
     inputSource:
-      "Deterministic Python schedule fixtures (people, shifts, leave, and expected coverage windows). The Jira-style planning view is illustrative sample data for management review.",
+      "Illustrative Jira scheduling and documentation views that mirror how I plan staffing and coverage (sample data only; no confidential client schedules).",
     expectedOutput:
-      "Conflicts and uncovered intervals should be detected exactly against the fixture rules, adjacent shifts at the same boundary should not false-positive, and the report should make capacity and documentation gaps obvious.",
-    tools: "Jira planning · Python · Flask · pytest",
+      "Managers should see who is assigned, where coverage is thin, which conflicts need a decision, and which Confluence / runbook links support the work.",
+    tools: "Jira · Confluence · capacity and coverage planning",
     outcome:
-      "16 schedule, conflict, boundary, and route tests passed. The image below is the illustrative Jira scheduling and documentation report.",
-    discipline: "Jira · Scheduling",
+      "The screenshot below shows the leadership artifact: capacity, conflicts, coverage, owners, and linked documentation in one reviewable view.",
+    discipline: "Jira · Leadership planning",
     accent: "#2563eb",
-    sourcePath: "portfolio-projects/employee-schedules/",
     resultImageSrc: "/work/results/jira-scheduling.svg",
     resultImageAlt: "Illustrative Jira scheduling dashboard with capacity, conflicts, and linked documentation",
     priority: 6,
@@ -154,7 +159,8 @@ export const WORK_PROJECTS: readonly WorkProject[] = PROJECTS.sort(
   (a, b) => a.priority - b.priority,
 );
 
-export function getProjectSourceUrl(project: WorkProject): string {
+export function getProjectSourceUrl(project: WorkProject): string | null {
+  if (!project.sourcePath) return null;
   return `https://github.com/evolf-codes/portfolio-website-AI/tree/main/${project.sourcePath}`;
 }
 

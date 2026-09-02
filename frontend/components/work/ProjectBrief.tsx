@@ -3,33 +3,39 @@ import { CaseStudyHeader } from "@/components/layout/CaseStudyHeader";
 import { getProjectSourceUrl, type WorkProject } from "@/lib/work-projects";
 
 export function ProjectBrief({ project }: { project: WorkProject }) {
+  const isLeadership = project.kind === "leadership";
+  const sourceUrl = getProjectSourceUrl(project);
+
   return (
     <>
-      <CaseStudyHeader eyebrow={project.discipline} title={project.title} />
+      <CaseStudyHeader
+        eyebrow={project.discipline}
+        title={project.title}
+      />
 
       <div className="case-study-simple mt-8">
         <section>
-          <h2>About this sample</h2>
+          <h2>{isLeadership ? "About this example" : "About this sample"}</h2>
           <p>{project.about}</p>
         </section>
         <section>
-          <h2>What is being tested</h2>
-          <p>{project.tested}</p>
+          <h2>{isLeadership ? "Leadership focus" : "What is being tested"}</h2>
+          <p>{project.demonstrates}</p>
         </section>
         <section>
-          <h2>Input source</h2>
+          <h2>{isLeadership ? "Source" : "Input source"}</h2>
           <p>{project.inputSource}</p>
         </section>
         <section>
-          <h2>Expected output</h2>
+          <h2>{isLeadership ? "What leaders should see" : "Expected output"}</h2>
           <p>{project.expectedOutput}</p>
         </section>
         <section>
-          <h2>Technology</h2>
+          <h2>{isLeadership ? "Tools" : "Technology"}</h2>
           <p className="case-study-tools">{project.tools}</p>
         </section>
         <section>
-          <h2>Actual result</h2>
+          <h2>{isLeadership ? "Evidence" : "Actual result"}</h2>
           <p>{project.outcome}</p>
           <a
             href={project.resultImageSrc}
@@ -46,19 +52,23 @@ export function ProjectBrief({ project }: { project: WorkProject }) {
         </section>
       </div>
 
-      <p className="type-caption mt-6">
-        <a className="text-link" href={getProjectSourceUrl(project)} target="_blank" rel="noreferrer">
-          View project files
-        </a>
-        {project.downloads?.map((download) => (
-          <span key={download.href}>
-            {" · "}
-            <a className="text-link" href={download.href} download>
-              {download.label}
+      {sourceUrl || project.downloads?.length ? (
+        <p className="type-caption mt-6">
+          {sourceUrl ? (
+            <a className="text-link" href={sourceUrl} target="_blank" rel="noreferrer">
+              View project files
             </a>
-          </span>
-        ))}
-      </p>
+          ) : null}
+          {project.downloads?.map((download, index) => (
+            <span key={download.href}>
+              {sourceUrl || index > 0 ? " · " : null}
+              <a className="text-link" href={download.href} download>
+                {download.label}
+              </a>
+            </span>
+          ))}
+        </p>
+      ) : null}
     </>
   );
 }
