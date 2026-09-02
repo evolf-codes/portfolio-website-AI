@@ -1,47 +1,72 @@
-"""Shared fixtures and diagnostic HTTP client."""
+"""Shared client for the public Restful Booker practice API."""
 
-import threading
-from http.server import ThreadingHTTPServer
+import os
 
 import pytest
 import requests
 
-from api import OrdersHandler, TOKEN
+BASE_URL = os.getenv(
+    "BOOKER_BASE_URL",
+    "https://restful-booker.herokuapp.com",
+).rstrip("/")
 
 
-class ApiClient:
-    """Add safe request context when an API assertion fails."""
+class BookerClient:
+    """Thin HTTP helper with useful assertion context."""
 
-    def __init__(self, base_url):
+    def __init__(self, base_url: str):
         self.base_url = base_url
-        self.headers = {"Authorization": f"Bearer {TOKEN}"}
+        self.session = requests.Session()
+        self.session.headers.update({"Accept": "application/json"})
 
-    def request(self, method, path, **kwargs):
-        return requests.request(method, f"{self.base_url}{path}", timeout=2, **kwargs)
-
-    def authorized(self, method, path, **kwargs):
-        headers = {**self.headers, **kwargs.pop("headers", {})}
-        return self.request(method, path, headers=headers, **kwargs)
+    def request(self, method: str, path: str, **kwargs):
+        return self.session.request(
+            method,
+            f"{self.base_url}{path}",
+            timeout=20,
+            **kwargs,
+        )
 
     @staticmethod
     def assert_status(response, expected):
         context = (
             f"{response.request.method} {response.request.path_url}: "
-            f"{response.status_code} {response.text}"
+            f"{response.status_code} {response.text[:300]}"
         )
-        assert response.status_code == expected, context
+        if isinstance(expected, (list, tuple, set)):
+            assert response.status_code in expected, context
+        else:
+            assert response.status_code == expected, context
+
+
+@pytest.fixture(scope="session")
+def booker():
+    """Point every test at the public Restful Booker Heroku practice API."""
+    return BookerClient(BASE_URL)
 
 
 @pytest.fixture()
-def api():
-    """Start a clean Orders API on an ephemeral port for each test."""
-    OrdersHandler.orders = {}
-    OrdersHandler.idempotency = {}
-    OrdersHandler.next_id = 1
-    server = ThreadingHTTPServer(("127.0.0.1", 0), OrdersHandler)
-    thread = threading.Thread(target=server.serve_forever, daemon=True)
-    thread.start()
-    yield ApiClient(f"http://127.0.0.1:{server.server_port}")
-    server.shutdown()
-    server.server_close()
-    thread.join(timeout=2)
+def auth_token(booker):
+    """Obtain a valid session token from POST /auth."""
+    response = booker.request(
+        "POST",
+        "/auth",
+        json={"username": "admin", "password": "password123"},
+    )
+    booker.assert_status(response, 200)
+    token = response.json().get("token")
+    assert token, response.text
+    return token
+
+
+@pytest.fixture()
+def booking_payload():
+    """Valid booking body used across create/update checks."""
+    return {
+        "firstname": "Eric",
+        "lastname": "Volfson",
+        "totalprice": 125,
+        "depositpaid": True,
+        "bookingdates": {"checkin": "2026-12-01", "checkout": "2026-12-05"},
+        "additionalneeds": "Breakfast",
+    }

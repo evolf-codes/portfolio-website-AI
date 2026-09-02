@@ -1,23 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title description">
-  <title id="title">Passing Locust catalog API performance test</title>
-  <desc id="description">A concise Locust report showing 2,085 requests, 188.9 requests per second, 14 millisecond p95 latency, zero percent failures, and a pass release decision.</desc>
+  <title id="title">Passing Locust Restful Booker performance test</title>
+  <desc id="description">A Locust report showing 61 requests against Restful Booker, 4.48 requests per second, 190 millisecond p95 latency, zero percent failures, and a pass release decision.</desc>
   <rect width="1200" height="680" fill="#0b0d10"/>
   <rect x="54" y="48" width="1092" height="584" rx="24" fill="#15191e" stroke="#343b44"/>
-  <text x="96" y="112" fill="#f5f7fa" font-family="Inter,Arial,sans-serif" font-size="31" font-weight="700">Locust catalog API performance gate</text>
-  <text x="96" y="148" fill="#aab2bd" font-family="Inter,Arial,sans-serif" font-size="17">Local deterministic target · 8 steady VUs · 16 peak VUs</text>
+  <text x="96" y="112" fill="#f5f7fa" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700">Locust Restful Booker performance gate</text>
+  <text x="96" y="148" fill="#aab2bd" font-family="Inter,Arial,sans-serif" font-size="17">https://restful-booker.herokuapp.com · light public practice load · max 4 VUs</text>
   <rect x="930" y="85" width="148" height="48" rx="24" fill="#173d2b"/>
   <circle cx="960" cy="109" r="7" fill="#48d597"/>
   <text x="980" y="116" fill="#bdf6dc" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">PASSED</text>
   <g font-family="Inter,Arial,sans-serif">
-    <rect x="96" y="196" width="232" height="142" rx="14" fill="#20252c"/><text x="120" y="237" fill="#98a2ad" font-size="15">REQUESTS</text><text x="120" y="294" fill="#f5f7fa" font-size="40" font-weight="700">2,085</text>
-    <rect x="348" y="196" width="232" height="142" rx="14" fill="#20252c"/><text x="372" y="237" fill="#98a2ad" font-size="15">THROUGHPUT</text><text x="372" y="294" fill="#f5f7fa" font-size="40" font-weight="700">188.9</text><text x="493" y="294" fill="#98a2ad" font-size="15">req/s</text>
-    <rect x="600" y="196" width="232" height="142" rx="14" fill="#20252c"/><text x="624" y="237" fill="#98a2ad" font-size="15">P95 LATENCY</text><text x="624" y="294" fill="#f5f7fa" font-size="40" font-weight="700">14</text><text x="680" y="294" fill="#98a2ad" font-size="15">ms</text>
+    <rect x="96" y="196" width="232" height="142" rx="14" fill="#20252c"/><text x="120" y="237" fill="#98a2ad" font-size="15">REQUESTS</text><text x="120" y="294" fill="#f5f7fa" font-size="40" font-weight="700">61</text>
+    <rect x="348" y="196" width="232" height="142" rx="14" fill="#20252c"/><text x="372" y="237" fill="#98a2ad" font-size="15">THROUGHPUT</text><text x="372" y="294" fill="#f5f7fa" font-size="40" font-weight="700">4.48</text><text x="493" y="294" fill="#98a2ad" font-size="15">req/s</text>
+    <rect x="600" y="196" width="232" height="142" rx="14" fill="#20252c"/><text x="624" y="237" fill="#98a2ad" font-size="15">P95 LATENCY</text><text x="624" y="294" fill="#f5f7fa" font-size="40" font-weight="700">190</text><text x="715" y="294" fill="#98a2ad" font-size="15">ms</text>
     <rect x="852" y="196" width="226" height="142" rx="14" fill="#20252c"/><text x="876" y="237" fill="#98a2ad" font-size="15">ERROR RATE</text><text x="876" y="294" fill="#f5f7fa" font-size="40" font-weight="700">0.00%</text>
     <text x="96" y="395" fill="#f5f7fa" font-size="19" font-weight="700">Release objectives</text>
     <line x1="96" y1="418" x2="1078" y2="418" stroke="#343b44"/>
-    <g font-size="18"><text x="96" y="461" fill="#48d597">✓</text><text x="126" y="461" fill="#d8dde3">p95 latency &lt; 100 ms</text><text x="980" y="461" fill="#bdf6dc">PASS</text>
-    <text x="96" y="505" fill="#48d597">✓</text><text x="126" y="505" fill="#d8dde3">HTTP errors &lt; 1%</text><text x="980" y="505" fill="#bdf6dc">PASS</text>
-    <text x="96" y="549" fill="#48d597">✓</text><text x="126" y="549" fill="#d8dde3">Response contract validated</text><text x="980" y="549" fill="#bdf6dc">PASS</text>
-    <text x="96" y="593" fill="#48d597">✓</text><text x="126" y="593" fill="#d8dde3">Throughput ≥ 20 req/s</text><text x="980" y="593" fill="#bdf6dc">PASS</text></g>
+    <g font-size="18"><text x="96" y="461" fill="#48d597">✓</text><text x="126" y="461" fill="#d8dde3">p95 latency &lt; 3000 ms</text><text x="980" y="461" fill="#bdf6dc">PASS</text>
+    <text x="96" y="505" fill="#48d597">✓</text><text x="126" y="505" fill="#d8dde3">HTTP errors &lt; 5%</text><text x="980" y="505" fill="#bdf6dc">PASS</text>
+    <text x="96" y="549" fill="#48d597">✓</text><text x="126" y="549" fill="#d8dde3">Booking JSON contracts validated</text><text x="980" y="549" fill="#bdf6dc">PASS</text>
+    <text x="96" y="593" fill="#48d597">✓</text><text x="126" y="593" fill="#d8dde3">Throughput ≥ 0.5 req/s</text><text x="980" y="593" fill="#bdf6dc">PASS</text></g>
   </g>
 </svg>

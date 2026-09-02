@@ -50,21 +50,21 @@ const PROJECTS: WorkProject[] = [
     title: "Backend API automation",
     kind: "automation",
     about:
-      "An API automation sample that exercises a local Orders service over real HTTP.",
+      "An API automation sample against the public Restful Booker Heroku practice API — the API counterpart to The Internet for UI testing.",
     demonstrates:
-      "API contracts and risk paths: health, JSON response shape, auth rejection, product catalog, order create/retrieve, quantity validation, unknown products, malformed JSON, and idempotency replay/conflict behaviour.",
+      "Live HTTPS contracts for booking list/detail, auth token minting, create/read, name filters, unauthorized update/delete rejection, and authenticated PUT/PATCH/DELETE.",
     inputSource:
-      "Local Orders API started for the test run on an ephemeral localhost port, with deterministic fixture products and orders (no internet dependency).",
+      "Public QA practice API: https://restful-booker.herokuapp.com/ (shared tester sandbox on Heroku; no customer data).",
     expectedOutput:
-      "All 15 checks should PASS with verbose names printed. Failures must fail the run; auth and validation errors should return stable HTTP status codes and error envelopes.",
-    tools: "Python · pytest · requests · JSON Schema · Docker",
+      "All 15 checks should PASS against the live practice API, with verbose names printed. Auth failures should not mint tokens; unauthorized mutations should be rejected; created bookings should be readable.",
+    tools: "Python · pytest · requests · JSON Schema",
     outcome:
-      "15/15 API checks passed. The verbose pytest listing below is the committed run evidence.",
+      "15/15 API checks passed against Restful Booker in 1.44s. The verbose pytest listing below is the committed run evidence.",
     discipline: "API automation",
     accent: "#7c3aed",
     sourcePath: "portfolio-projects/backend-automation/",
     resultImageSrc: "/work/results/backend-automation.svg",
-    resultImageAlt: "Verbose pytest results for the Orders API automation sample",
+    resultImageAlt: "Verbose pytest results for Restful Booker API automation",
     priority: 2,
   },
   {
@@ -72,21 +72,21 @@ const PROJECTS: WorkProject[] = [
     title: "Performance testing",
     kind: "automation",
     about:
-      "A safe local load-test sample that answers one release question: can a catalog read endpoint hold expected browsing traffic?",
+      "A light Locust run against the same public Restful Booker practice API used for backend checks — a Heroku QA sandbox, not a customer production system.",
     demonstrates:
-      "Latency, error rate, and throughput for repeated catalog reads under warm-up, steady-state, and short peak load.",
+      "Latency, error rate, and throughput for polite browsing of GET /booking and GET /booking/{id} under a short warm-up / steady / peak profile.",
     inputSource:
-      "Local catalog HTTP service started by the runner. Virtual users repeatedly call GET /api/products?category=testing.",
+      "Public QA practice API: https://restful-booker.herokuapp.com/ with a capped profile (max 4 virtual users, ~14 seconds).",
     expectedOutput:
-      "Release gates must all pass: p95 latency under 100 ms, HTTP error rate under 1%, and throughput at least 20 requests/second. The run fails if any gate is breached.",
-    tools: "Python · Locust · local HTTP target",
+      "Release gates must all pass on the public network path: p95 under 3000 ms, HTTP errors under 5%, throughput at least 0.5 req/s, and at least one recorded request. The run fails if any gate is breached.",
+    tools: "Python · Locust · Restful Booker (Heroku)",
     outcome:
-      "2,085 requests completed at 188.9 req/s with 14 ms p95 and 0 failures. All thresholds passed.",
+      "61 requests completed at 4.48 req/s with 190 ms p95 and 0 failures. All public-practice thresholds passed.",
     discipline: "Performance engineering",
     accent: "#ea580c",
     sourcePath: "portfolio-projects/performance-testing/",
     resultImageSrc: "/work/results/performance-testing.svg",
-    resultImageAlt: "Locust performance test summary with release thresholds",
+    resultImageAlt: "Locust performance summary against Restful Booker with release thresholds",
     priority: 3,
   },
   {

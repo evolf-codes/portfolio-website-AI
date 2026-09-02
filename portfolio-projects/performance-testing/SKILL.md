@@ -5,7 +5,10 @@ description: Build or refine the portfolio performance sample when demonstrating
 
 # Performance testing sample
 
-Confirm the target permits load testing before sending traffic. Default to a local or owned service; never run material load against an unapproved public target.
+Confirm the target permits load testing before sending traffic. Prefer a
+public QA practice API (for example Restful Booker) or an owned service, and
+keep the profile light. Never run material load against an unapproved customer
+system.
 
 Define the workload, ramp, steady-state window, latency percentiles, throughput, and error thresholds before scripting. Prefer a small Python Locust scenario and checked-in configuration. Capture system and test conditions so results can be compared honestly.
 

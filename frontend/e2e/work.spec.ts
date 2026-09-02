@@ -73,7 +73,7 @@ test.describe("Work", () => {
     await expect(page.getByRole("heading", { name: "Input source" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Expected output" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Actual result" })).toBeVisible();
-    await expect(page.getByRole("img", { name: /Locust performance test summary/i })).toBeVisible();
+    await expect(page.getByRole("img", { name: /Restful Booker/i })).toBeVisible();
     await expect(page.locator(".case-study-simple")).toBeVisible();
   });
 

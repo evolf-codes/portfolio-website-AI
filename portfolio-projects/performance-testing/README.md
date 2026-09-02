@@ -1,32 +1,34 @@
-# Performance testing: local catalog API
+# Performance testing: Restful Booker practice API
 
-A small, reproducible load test that answers one release question: can a catalog
-read endpoint sustain the expected browsing traffic without breaching its service
-objectives?
+A short, respectful Locust run against the public QA practice API
+[Restful Booker](https://restful-booker.herokuapp.com/) on Heroku.
 
-The target is an intentionally small local HTTP service. No public system receives
-load. The runner starts the service, waits for readiness, executes the scenario,
-and always stops it.
+This mirrors the frontend sample’s approach: hit a site built for testers
+(same Heroku practice ecosystem as
+[the-internet.herokuapp.com](https://the-internet.herokuapp.com/)), not a
+customer production system. Load stays intentionally light.
 
 ## Workload and release criteria
 
 | Stage | Duration | Virtual users | Purpose |
 | --- | ---: | ---: | --- |
-| Warm-up | 2 seconds | 2 | Establish connections and caches |
-| Steady state | 6 seconds | 8 | Model normal concurrent browsing |
-| Peak | 3 seconds | 16 | Exercise a short traffic spike |
+| Warm-up | 3 seconds | 1 | Confirm connectivity |
+| Steady state | 7 seconds | 3 | Light browsing concurrency |
+| Peak | 4 seconds | 4 | Short, polite spike |
 
-Each user repeatedly requests `GET /api/products?category=testing` and validates
-the status, content type, and response contract. The build fails unless all of
-these pre-declared thresholds pass:
+Users call:
 
-- p95 latency below 100 ms;
-- HTTP error rate below 1%;
-- throughput at least 20 requests/second.
+- `GET /booking`
+- `GET /booking/{id}`
+
+and validate JSON contracts. The run fails unless all gates pass:
+
+- p95 latency below **3000 ms** (public internet)
+- HTTP error rate below **5%**
+- throughput at least **0.5 requests/second**
+- at least one successful request recorded
 
 ## Run
-
-Requires Python 3.11 or newer. Locust is pinned for reproducible tooling.
 
 ```bash
 python3 -m venv .venv
@@ -35,29 +37,15 @@ python3 -m venv .venv
 .venv/bin/python scripts/run_load_test.py
 ```
 
-The load command is the complete one-command run. It exits non-zero on a threshold
-breach and prints the workload, test conditions, percentile results, and release
-decision. See the compact [green-run evidence](evidence/load-test-green-run.svg)
-for a representative run.
+Optional override:
 
-## Result and interpretation
+```bash
+PERF_BASE_URL=https://restful-booker.herokuapp.com python scripts/run_load_test.py
+```
 
-The recorded local run passed all three release criteria: 2,085 requests at 188.9
-requests/second, 14 ms p95 latency, and 0% failures. This supports
-releasing this endpoint for the modelled workload on the recorded machine; it does
-not establish production capacity.
-
-The large margin and flat local response time indicate the service was not close
-to saturation. The next useful increment is to run an equivalent arrival-rate
-scenario in a controlled staging environment while correlating CPU, memory,
-connection-pool, and datastore telemetry. Network latency, authentication,
-production data volume, and shared infrastructure are intentionally outside this
-sample, so results must not be extrapolated to production.
+See [green-run evidence](evidence/load-test-green-run.svg).
 
 ## Design notes
 
-This sample keeps the application deterministic and the assertions diagnostic.
-Thresholds are declared before execution, warm-up is separated from measurement,
-and failures identify the breached objective. The application target uses only the
-Python standard library. The workload uses Locust's standard `HttpUser`,
-`LoadTestShape`, response validation, and lifecycle hooks.
+- Do **not** raise VU counts against this shared practice target.
+- Thresholds are tuned for a public network path, not localhost.

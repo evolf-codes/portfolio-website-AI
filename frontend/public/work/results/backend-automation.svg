@@ -1,53 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Verbose backend API pytest results</title>
-  <desc id="desc">Terminal evidence listing all 15 Orders API tests as passed, covering health, contracts, authentication, validation, idempotency, and retrieval.</desc>
+  <title id="title">Verbose Restful Booker pytest results</title>
+  <desc id="desc">Terminal evidence listing all 15 Restful Booker API tests as passed against the public Heroku practice API.</desc>
   <rect width="1200" height="760" rx="24" fill="#0d1012"/>
   <rect width="1200" height="62" rx="24" fill="#202428"/>
   <rect y="38" width="1200" height="24" fill="#202428"/>
   <circle cx="30" cy="30" r="7" fill="#6e7479"/>
   <circle cx="54" cy="30" r="7" fill="#6e7479"/>
   <circle cx="78" cy="30" r="7" fill="#6e7479"/>
-  <text x="600" y="37" text-anchor="middle" fill="#d9dddf" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">backend-automation — pytest verbose run</text>
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">
-    <text x="34" y="102" fill="#9fa6ab">$ pytest</text>
-    <text x="34" y="136" fill="#d9dddf">collected 15 items</text>
+  <text x="600" y="37" text-anchor="middle" fill="#d9dddf" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">backend-automation — Restful Booker pytest verbose run</text>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">
+    <text x="34" y="102" fill="#9fa6ab">$ pytest -vv</text>
+    <text x="34" y="132" fill="#d9dddf">target: https://restful-booker.herokuapp.com</text>
+    <text x="34" y="158" fill="#d9dddf">collected 15 items</text>
     <g fill="#d9dddf">
-      <text x="34" y="182">test_health_contract</text>
-      <text x="34" y="212">test_responses_are_json_and_traceable</text>
-      <text x="34" y="242">test_products_require_authentication</text>
-      <text x="34" y="272">test_invalid_token_is_rejected</text>
-      <text x="34" y="302">test_product_catalog_contract</text>
-      <text x="34" y="332">test_create_order_contract</text>
-      <text x="34" y="362">test_order_total_is_calculated_server_side</text>
-      <text x="34" y="392">test_invalid_quantities_are_rejected</text>
-      <text x="34" y="422">test_unknown_product_is_rejected</text>
-      <text x="34" y="452">test_malformed_json_has_stable_error</text>
-      <text x="34" y="482">test_idempotency_key_is_required</text>
-      <text x="34" y="512">test_identical_replay_returns_original_order</text>
-      <text x="34" y="542">test_changed_replay_is_a_conflict</text>
-      <text x="34" y="572">test_created_order_can_be_retrieved</text>
-      <text x="34" y="602">test_missing_order_uses_standard_error</text>
+      <text x="34" y="198">test_booking_collection_is_available</text>
+      <text x="34" y="226">test_booking_detail_matches_contract</text>
+      <text x="34" y="254">test_missing_booking_returns_not_found</text>
+      <text x="34" y="282">test_auth_returns_token_for_valid_credentials</text>
+      <text x="34" y="310">test_auth_rejects_bad_credentials</text>
+      <text x="34" y="338">test_create_booking_contract</text>
+      <text x="34" y="366">test_created_booking_can_be_retrieved</text>
+      <text x="34" y="394">test_filter_bookings_by_name</text>
+      <text x="34" y="422">test_update_requires_authentication</text>
+      <text x="34" y="450">test_update_booking_with_token</text>
+      <text x="34" y="478">test_partial_update_with_token</text>
+      <text x="34" y="506">test_delete_requires_authentication</text>
+      <text x="34" y="534">test_delete_booking_with_token</text>
+      <text x="34" y="562">test_invalid_create_payload_is_rejected</text>
+      <text x="34" y="590">test_health_style_ping_via_booking_list</text>
     </g>
     <g fill="#63d792" font-weight="700">
-      <text x="1060" y="182">PASSED</text><text x="1142" y="182">[  6%]</text>
-      <text x="1060" y="212">PASSED</text><text x="1142" y="212">[ 13%]</text>
-      <text x="1060" y="242">PASSED</text><text x="1142" y="242">[ 20%]</text>
-      <text x="1060" y="272">PASSED</text><text x="1142" y="272">[ 26%]</text>
-      <text x="1060" y="302">PASSED</text><text x="1142" y="302">[ 33%]</text>
-      <text x="1060" y="332">PASSED</text><text x="1142" y="332">[ 40%]</text>
-      <text x="1060" y="362">PASSED</text><text x="1142" y="362">[ 46%]</text>
-      <text x="1060" y="392">PASSED</text><text x="1142" y="392">[ 53%]</text>
-      <text x="1060" y="422">PASSED</text><text x="1142" y="422">[ 60%]</text>
-      <text x="1060" y="452">PASSED</text><text x="1142" y="452">[ 66%]</text>
-      <text x="1060" y="482">PASSED</text><text x="1142" y="482">[ 73%]</text>
-      <text x="1060" y="512">PASSED</text><text x="1142" y="512">[ 80%]</text>
-      <text x="1060" y="542">PASSED</text><text x="1142" y="542">[ 86%]</text>
-      <text x="1060" y="572">PASSED</text><text x="1142" y="572">[ 93%]</text>
-      <text x="1060" y="602">PASSED</text><text x="1142" y="602">[100%]</text>
+      <text x="1060" y="198">PASSED</text>
+      <text x="1060" y="226">PASSED</text>
+      <text x="1060" y="254">PASSED</text>
+      <text x="1060" y="282">PASSED</text>
+      <text x="1060" y="310">PASSED</text>
+      <text x="1060" y="338">PASSED</text>
+      <text x="1060" y="366">PASSED</text>
+      <text x="1060" y="394">PASSED</text>
+      <text x="1060" y="422">PASSED</text>
+      <text x="1060" y="450">PASSED</text>
+      <text x="1060" y="478">PASSED</text>
+      <text x="1060" y="506">PASSED</text>
+      <text x="1060" y="534">PASSED</text>
+      <text x="1060" y="562">PASSED</text>
+      <text x="1060" y="590">PASSED</text>
     </g>
-    <line x1="34" y1="632" x2="1166" y2="632" stroke="#30363b"/>
-    <text x="34" y="674" fill="#63d792" font-size="21" font-weight="700">15 passed</text>
-    <text x="175" y="674" fill="#9fa6ab">in 7.67s</text>
-    <text x="34" y="716" fill="#9fa6ab">Local HTTP boundary · deterministic data · no external dependency</text>
+    <line x1="34" y1="620" x2="1166" y2="620" stroke="#30363b"/>
+    <text x="34" y="662" fill="#63d792" font-size="21" font-weight="700">15 passed</text>
+    <text x="175" y="662" fill="#9fa6ab">in 1.44s</text>
+    <text x="34" y="704" fill="#9fa6ab">Public Heroku QA practice API · auth · CRUD · filters · no local mock</text>
   </g>
 </svg>

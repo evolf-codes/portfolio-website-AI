@@ -1,18 +1,23 @@
 # Backend API automation
 
-A compact, risk-ranked pytest suite for a deterministic Orders API. It exercises a real HTTP boundary while avoiding a fragile public dependency, making every check suitable for local development and CI.
+Pytest contract suite against the public QA practice API
+[Restful Booker](https://restful-booker.herokuapp.com/) on Heroku.
 
-## What it demonstrates
+This is the API equivalent of using
+[the-internet.herokuapp.com](https://the-internet.herokuapp.com/) for UI automation:
+a real, shared practice target designed for testers (auth, CRUD, filters, deliberate quirks).
+
+## What it covers
 
 | Risk | Representative checks |
 | --- | --- |
-| Breaking client integrations | JSON Schema, content type, stable error envelope |
-| Incorrect order acceptance | Required fields, quantity bounds, unknown products |
-| Unauthorized data access | Missing and invalid bearer tokens |
-| Duplicate transactions | Idempotency-key replay and conflict behaviour |
-| Poor operability | Health contract and correlation IDs |
-
-The suite tests behaviour and contracts rather than implementation details. Failure messages include method, path, status, and response body; credentials are never logged.
+| Availability | Booking collection responds |
+| Contract | Booking detail schema and content type |
+| Auth | Valid token minting and bad-credential handling |
+| Create / read | Booking create and retrieve by ID |
+| Filtering | firstname / lastname query filters |
+| Authorization | Updates and deletes rejected without a token |
+| Mutation | Authenticated PUT, PATCH, and DELETE |
 
 ## Run locally
 
@@ -23,24 +28,17 @@ pip install -r requirements.txt
 pytest
 ```
 
-The server starts on an ephemeral localhost port and shuts down after the run. No internet access, database, secrets, or persistent state is required.
-
-## Docker
+Optional override:
 
 ```bash
-docker build -t backend-api-sample .
-docker run --rm backend-api-sample
+BOOKER_BASE_URL=https://restful-booker.herokuapp.com pytest
 ```
 
-Expected result: **15 passed**, with every test and its status printed for useful
-review and CI evidence. See the committed [verbose green-run
-evidence](evidence/pytest-green-run.svg).
+Expected result: **15 passed**. See
+[verbose green-run evidence](evidence/pytest-green-run.svg).
 
-## Design notes
+## Notes
 
-- `api.py` is a deliberately small system under test, not a production service.
-- `conftest.py` owns lifecycle and exposes an HTTP client with diagnostic assertions.
-- Schemas allow additive fields while protecting required types and client-critical values.
-- Each test is independent; mutable API state is recreated for every test.
-
-Known limitation: this sample does not prove production authentication, persistence, or network resilience. The next useful increment would run the same contract layer against a deployed test environment and publish JUnit results in CI.
+- Restful Booker resets periodically and includes intentional quirks (for example
+  authenticated DELETE returning `201`).
+- No local mock server is required; tests hit the live practice API over HTTPS.

@@ -5,7 +5,10 @@ description: Build or refine the portfolio API automation sample when demonstrat
 
 # API automation sample
 
-Choose a stable, safe target and keep dependencies minimal. Test externally meaningful contracts and business behaviour before exhaustive endpoint coverage.
+Choose a stable, safe target and keep dependencies minimal. Prefer a public QA
+practice API such as Restful Booker when demonstrating live HTTPS contracts.
+Test externally meaningful contracts and business behaviour before exhaustive
+endpoint coverage.
 
 Separate deterministic checks from live-service health checks. Cover representative success, validation, authorization, idempotency, and schema risks only where the target supports them. Make failures show the request context needed to investigate while redacting secrets.
 
