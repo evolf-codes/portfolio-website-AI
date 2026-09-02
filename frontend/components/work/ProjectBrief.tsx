@@ -8,34 +8,31 @@ export function ProjectBrief({ project }: { project: WorkProject }) {
 
   return (
     <>
-      <CaseStudyHeader
-        eyebrow={project.discipline}
-        title={project.title}
-      />
+      <CaseStudyHeader eyebrow={project.discipline} title={project.title} />
 
       <div className="case-study-simple mt-8">
         <section>
-          <h2>{isLeadership ? "About this example" : "About this sample"}</h2>
+          <h2>Goal</h2>
           <p>{project.about}</p>
         </section>
         <section>
-          <h2>{isLeadership ? "Leadership focus" : "What is being tested"}</h2>
-          <p>{project.demonstrates}</p>
-        </section>
-        <section>
-          <h2>{isLeadership ? "Source" : "Input source"}</h2>
+          <h2>{isLeadership ? "Source" : "Site under test"}</h2>
           <p>{project.inputSource}</p>
         </section>
         <section>
-          <h2>{isLeadership ? "What leaders should see" : "Expected output"}</h2>
+          <h2>{isLeadership ? "What this shows" : "What the tests check"}</h2>
+          <p>{project.demonstrates}</p>
+        </section>
+        <section>
+          <h2>Success looks like</h2>
           <p>{project.expectedOutput}</p>
         </section>
         <section>
-          <h2>{isLeadership ? "Tools" : "Technology"}</h2>
+          <h2>Tools</h2>
           <p className="case-study-tools">{project.tools}</p>
         </section>
         <section>
-          <h2>{isLeadership ? "Evidence" : "Actual result"}</h2>
+          <h2>Result</h2>
           <p>{project.outcome}</p>
           <a
             href={project.resultImageSrc}

@@ -23,16 +23,13 @@ const PROJECTS: WorkProject[] = [
     title: "Frontend automation",
     kind: "automation",
     about:
-      "A browser automation sample that checks real UI behaviour on a public training website.",
+      "Sample browser tests that confirm everyday website actions still work.",
     demonstrates:
-      "Fifteen user-facing UI flows: navigation, forms, tables, hover states, keyboard events, new windows, and HTTP basic auth.",
-    inputSource:
-      "Live public app: https://the-internet.herokuapp.com/ (no customer or private data).",
-    expectedOutput:
-      "Each scenario should complete without flaky waits and end with a clear pytest PASS. A full green run is expected before the suite is treated as healthy.",
+      "Forms, login, tables, menus, new windows, and basic page flows.",
+    inputSource: "https://the-internet.herokuapp.com/ — a public practice website for QA.",
+    expectedOutput: "All 15 tests pass and produce a clean green run report.",
     tools: "Python · pytest · Playwright · Docker",
-    outcome:
-      "15/15 browser checks passed. The screenshot below is the actual pytest green-run evidence.",
+    outcome: "15/15 tests passed against The Internet.",
     discipline: "UI automation",
     accent: "#4f46e5",
     sourcePath: "portfolio-projects/frontend-automation/qa-the-internet/",
@@ -50,16 +47,13 @@ const PROJECTS: WorkProject[] = [
     title: "Backend API automation",
     kind: "automation",
     about:
-      "An API automation sample against the public Restful Booker Heroku practice API — the API counterpart to The Internet for UI testing.",
+      "Sample API tests that confirm a booking service behaves correctly over HTTPS.",
     demonstrates:
-      "Live HTTPS contracts for booking list/detail, auth token minting, create/read, name filters, unauthorized update/delete rejection, and authenticated PUT/PATCH/DELETE.",
-    inputSource:
-      "Public QA practice API: https://restful-booker.herokuapp.com/ (shared tester sandbox on Heroku; no customer data).",
-    expectedOutput:
-      "All 15 checks should PASS against the live practice API, with verbose names printed. Auth failures should not mint tokens; unauthorized mutations should be rejected; created bookings should be readable.",
+      "Login/token checks, create and read bookings, search filters, and blocked updates without permission.",
+    inputSource: "https://restful-booker.herokuapp.com/ — a public practice API for QA.",
+    expectedOutput: "All 15 tests pass against the live practice API.",
     tools: "Python · pytest · requests · JSON Schema",
-    outcome:
-      "15/15 API checks passed against Restful Booker in 1.44s. The verbose pytest listing below is the committed run evidence.",
+    outcome: "15/15 tests passed against Restful Booker.",
     discipline: "API automation",
     accent: "#7c3aed",
     sourcePath: "portfolio-projects/backend-automation/",
@@ -72,17 +66,16 @@ const PROJECTS: WorkProject[] = [
     title: "Performance testing",
     kind: "automation",
     about:
-      "A light Locust run against the same public Restful Booker practice API used for backend checks — a Heroku QA sandbox, not a customer production system.",
+      "A short, light load sample that checks whether a practice API stays fast and reliable.",
     demonstrates:
-      "Latency, error rate, and throughput for polite browsing of GET /booking and GET /booking/{id} under a short warm-up / steady / peak profile.",
+      "Response time, error rate, and request throughput while a few virtual users browse bookings.",
     inputSource:
-      "Public QA practice API: https://restful-booker.herokuapp.com/ with a capped profile (max 4 virtual users, ~14 seconds).",
+      "https://restful-booker.herokuapp.com/ — same public practice API, with a small Locust profile.",
     expectedOutput:
-      "Release gates must all pass on the public network path: p95 under 3000 ms, HTTP errors under 5%, throughput at least 0.5 req/s, and at least one recorded request. The run fails if any gate is breached.",
-    tools: "Python · Locust · Restful Booker (Heroku)",
-    outcome:
-      "61 requests completed at 4.48 req/s with 190 ms p95 and 0 failures. All public-practice thresholds passed.",
-    discipline: "Performance engineering",
+      "The run stays under the set limits for speed, errors, and throughput.",
+    tools: "Python · Locust",
+    outcome: "61 requests, 190 ms p95, 0 failures — all limits passed.",
+    discipline: "Performance",
     accent: "#ea580c",
     sourcePath: "portfolio-projects/performance-testing/",
     resultImageSrc: "/work/results/performance-testing.svg",
@@ -94,16 +87,15 @@ const PROJECTS: WorkProject[] = [
     title: "AI-driven testing",
     kind: "automation",
     about:
-      "An offline evaluation sample for AI-generated checkout test suggestions before a QA engineer would trust them.",
+      "A sample that scores AI-written test ideas before a QA engineer would trust them.",
     demonstrates:
-      "Whether each candidate response is useful and safe: risk coverage, observable oracles, requirement traceability, unsupported claims, consistency across runs, and refusal of prompt-injection instructions.",
+      "Quality, consistency, and safety — including whether unsafe prompt-injection requests are refused.",
     inputSource:
-      "Versioned fixture file of labelled evaluation cases plus captured candidate responses (offline; no live model calls, API keys, or customer data).",
+      "Saved practice cases and AI answers stored in the project (no live model calls).",
     expectedOutput:
-      "At least 80% of responses should pass the quality rubric, every adversarial case must refuse the injected instruction, and score drift across repeats must stay within one point. A safety failure blocks release even if overall quality looks high.",
-    tools: "Python · unittest · labelled evaluation fixtures",
-    outcome:
-      "17 of 18 responses passed the quality checks, but the safety hard gate correctly blocked the candidate release.",
+      "Most answers meet the quality bar, and any unsafe answer blocks release.",
+    tools: "Python · unittest",
+    outcome: "17/18 answers passed quality checks; the safety gate blocked release.",
     discipline: "AI quality",
     accent: "#0891b2",
     sourcePath: "portfolio-projects/ai-driven-testing/",
@@ -116,17 +108,14 @@ const PROJECTS: WorkProject[] = [
     title: "Jira delivery reporting",
     kind: "leadership",
     about:
-      "A Jira-style delivery dashboard showing how I make release risk visible to leadership: WIP, blocked work, ageing, and go / no-go decisions.",
+      "An example Jira-style report used to show delivery risk and release readiness.",
     demonstrates:
-      "QA leadership through Jira reporting — triage dashboards, flow visibility, release readiness, and cross-team coordination without drowning stakeholders in board noise.",
-    inputSource:
-      "Illustrative Jira management views based on how I run delivery reporting in capital-markets and digital-asset delivery (not a confidential client screenshot).",
-    expectedOutput:
-      "Leaders should quickly see blocked work, ageing risk, owners, and the next release decision — with linked documentation for follow-through.",
-    tools: "Jira · Confluence · KPI / release dashboards",
-    outcome:
-      "The screenshot below is an illustrative delivery-reporting view aligned to my resume: defect triage, Jira dashboards, and release confidence.",
-    discipline: "Jira · Leadership reporting",
+      "Blocked work, ageing items, owners, and a clear go / no-go view for leaders.",
+    inputSource: "Illustrative Jira report with sample data (not a confidential client board).",
+    expectedOutput: "A manager can see risk and next decisions quickly.",
+    tools: "Jira · Confluence",
+    outcome: "Example delivery dashboard below.",
+    discipline: "Jira · Leadership",
     accent: "#0d9488",
     sourcePath: "portfolio-projects/kanban-board/",
     resultImageSrc: "/work/results/jira-delivery-reporting.svg",
@@ -138,17 +127,14 @@ const PROJECTS: WorkProject[] = [
     title: "Jira scheduling & documentation",
     kind: "leadership",
     about:
-      "A Jira-style planning view for QA capacity, coverage gaps, schedule conflicts, and the operating docs teams need during delivery.",
+      "An example Jira-style plan used to show staffing, coverage gaps, and linked docs.",
     demonstrates:
-      "QA management skills from my resume: resource allocation across concurrent work, dependency coordination, coverage planning, and keeping runbooks/documentation attached to the plan.",
-    inputSource:
-      "Illustrative Jira scheduling and documentation views that mirror how I plan staffing and coverage (sample data only; no confidential client schedules).",
-    expectedOutput:
-      "Managers should see who is assigned, where coverage is thin, which conflicts need a decision, and which Confluence / runbook links support the work.",
-    tools: "Jira · Confluence · capacity and coverage planning",
-    outcome:
-      "The screenshot below shows the leadership artifact: capacity, conflicts, coverage, owners, and linked documentation in one reviewable view.",
-    discipline: "Jira · Leadership planning",
+      "Who is assigned, where coverage is thin, and which documents support the work.",
+    inputSource: "Illustrative Jira schedule with sample data (not a confidential client plan).",
+    expectedOutput: "A manager can spot conflicts and coverage gaps in one view.",
+    tools: "Jira · Confluence",
+    outcome: "Example scheduling dashboard below.",
+    discipline: "Jira · Leadership",
     accent: "#2563eb",
     sourcePath: "portfolio-projects/employee-schedules/",
     resultImageSrc: "/work/results/jira-scheduling.svg",

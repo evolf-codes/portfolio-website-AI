@@ -20,7 +20,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Work"
             title="Quality engineering in practice"
-            description="Selected projects and automation examples that demonstrate test strategy, tooling, and delivery at a senior QA level."
+            description="Short samples that show what was tested, which practice site was used, and what a good result looks like."
           />
           <WorkShowcase />
         </div>

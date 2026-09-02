@@ -7,8 +7,6 @@ export function WorkShowcase() {
     <div className="work-showcase mt-12">
       {WORK_PROJECTS.map((project, index) => {
         const sourceUrl = getProjectSourceUrl(project);
-        const focusLabel =
-          project.kind === "leadership" ? "Leadership focus:" : "What is tested:";
 
         return (
           <article id={project.slug} key={project.slug} className="work-showcase__item scroll-mt-24">
@@ -23,14 +21,16 @@ export function WorkShowcase() {
               </h3>
               <p className="type-body mt-4">{project.about}</p>
               <p className="type-body mt-3">
-                <span className="font-medium text-[var(--ink)]">{focusLabel}</span>{" "}
-                {project.demonstrates}
+                <span className="font-medium text-[var(--ink)]">
+                  {project.kind === "leadership" ? "Source:" : "Site under test:"}
+                </span>{" "}
+                {project.inputSource}
               </p>
               <p className="work-showcase__outcome mt-5">{project.outcome}</p>
               <p className="type-caption mt-4">{project.tools}</p>
               <div className="mt-6 flex flex-wrap gap-5 text-sm">
                 <Link className="text-link" href={`/work/${project.slug}`}>
-                  {project.kind === "leadership" ? "View example" : "View case study"}
+                  {project.kind === "leadership" ? "View example" : "View sample"}
                 </Link>
                 {sourceUrl ? (
                   <a className="text-link" href={sourceUrl} target="_blank" rel="noreferrer">
