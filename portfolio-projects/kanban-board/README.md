@@ -2,6 +2,10 @@
 
 A small, dependency-free Kanban sample designed to make delivery risk visible. It demonstrates explicit workflow policy, WIP enforcement, blocked and ageing work, keyboard-friendly movement, and honest flow metrics.
 
+![Illustrative Jira delivery management report](evidence/jira-delivery-reporting.svg)
+
+The portfolio view translates the tested workflow into a Jira-style management report: release readiness, delivery risk, decisions, and linked documentation. It is explicitly labelled as illustrative sample data rather than a client screenshot.
+
 ## Run
 
 Requires Node.js 20+ and Python 3.
@@ -17,7 +21,7 @@ Open <http://localhost:4173>. Use a card's arrow buttons to move it. Every actio
 
 The workflow rules live in a pure JavaScript model, separate from rendering. The automated suite checks valid and invalid transitions, WIP boundaries, blocked work, ageing flags, and flow calculations without browser timing or network dependencies. Native buttons and landmarks provide a small, robust accessibility surface.
 
-Evidence: [tested board](evidence/kanban-board.png) and [test run](evidence/test-results.txt).
+Evidence: [Jira-style management report](evidence/jira-delivery-reporting.svg), [tested board](evidence/kanban-board.png), and [test run](evidence/test-results.txt).
 
 ## Deliberate limits
 

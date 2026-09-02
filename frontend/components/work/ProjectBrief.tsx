@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element -- local SVG case-study art */
 import { CaseStudyHeader } from "@/components/layout/CaseStudyHeader";
 import { PanelHeading } from "@/components/layout/PanelHeading";
-import type { WorkProject } from "@/lib/work-projects";
+import { getProjectSourceUrl, type WorkProject } from "@/lib/work-projects";
 
 export function ProjectBrief({ project }: { project: WorkProject }) {
   return (
@@ -48,7 +48,15 @@ export function ProjectBrief({ project }: { project: WorkProject }) {
           />
         </a>
         <p className="type-caption mt-3">
-          Source: <code>{project.sourcePath}</code> · Click the evidence to inspect it.
+          <a className="text-link" href={getProjectSourceUrl(project)} target="_blank" rel="noreferrer">
+            View project files
+          </a>
+          {project.downloads?.map((download) => (
+            <span key={download.href}>
+              {" · "}<a className="text-link" href={download.href} download>{download.label}</a>
+            </span>
+          ))}
+          {" · "}Click the evidence to inspect it.
         </p>
       </section>
     </>

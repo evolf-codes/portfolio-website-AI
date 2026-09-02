@@ -27,16 +27,13 @@ export function SiteFooter() {
             <a className="footer-link" href={`mailto:${SITE_EMAIL}`}>
               {SITE_EMAIL}
             </a>
-            <Link className="footer-link" href="/">
-              Home
+            <Link className="footer-link" href="/#work">
+              Work
             </Link>
-            <Link className="footer-link" href="/journey">
-              Journey
-            </Link>
-            <Link className="footer-link" href="/about">
+            <Link className="footer-link" href="/#about">
               About
             </Link>
-            <Link className="footer-link" href="/contact">
+            <Link className="footer-link" href="/#contact">
               Contact
             </Link>
             <a className="footer-link" href={SITE_LINKEDIN} target="_blank" rel="noreferrer">

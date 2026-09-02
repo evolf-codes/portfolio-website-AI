@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BackLink } from "@/components/layout/BackLink";
 import { PageMain } from "@/components/layout/PageMain";
-import { FrontendAutomationCaseStudy } from "@/components/work/FrontendAutomationCaseStudy";
 import { ProjectBrief } from "@/components/work/ProjectBrief";
 import { getWorkProject, WORK_PROJECTS } from "@/lib/work-projects";
 
@@ -28,11 +27,7 @@ export default async function WorkProjectPage({ params }: Props) {
     <PageMain narrow>
       <BackLink />
       <article className="mt-8">
-        {project.slug === "frontend-automation" ? (
-          <FrontendAutomationCaseStudy project={project} />
-        ) : (
-          <ProjectBrief project={project} />
-        )}
+        <ProjectBrief project={project} />
       </article>
     </PageMain>
   );

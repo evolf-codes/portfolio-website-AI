@@ -4,17 +4,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const nav = [
-  { href: "/", label: "Home" },
-  { href: "/journey", label: "Journey" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/#work", label: "Work" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
 ] as const;
 
 function isActive(pathname: string, href: string) {
-  if (href === "/") {
+  if (href.startsWith("/#work")) {
     return pathname === "/" || pathname.startsWith("/work/");
   }
-  return pathname === href || pathname.startsWith(`${href}/`);
+  return false;
 }
 
 export function SiteHeader() {

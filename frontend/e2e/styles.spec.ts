@@ -22,7 +22,7 @@ test.describe("Site styles", () => {
     expect(css).toContain(".page-main");
   });
 
-  test("home page shows styled name and work tiles", async ({ page }) => {
+  test("home page shows styled name and work showcase", async ({ page }) => {
     await page.goto("/");
 
     const name = page.getByRole("heading", { level: 1, name: "Eric Volfson" });
@@ -30,8 +30,8 @@ test.describe("Site styles", () => {
     const fontSize = await name.evaluate((el) => getComputedStyle(el).fontSize);
     expect(parseFloat(fontSize)).toBeGreaterThan(32);
 
-    const tile = page.getByRole("link", { name: /Kanban board/i }).first();
-    await expect(tile).toBeVisible();
-    await expect(tile).toHaveClass(/work-card/);
+    const showcase = page.locator(".work-showcase");
+    await expect(showcase).toBeVisible();
+    await expect(page.getByRole("link", { name: /Frontend automation/i }).first()).toBeVisible();
   });
 });

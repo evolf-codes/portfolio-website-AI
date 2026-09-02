@@ -8,24 +8,23 @@ vi.mock("next/navigation", () => ({
 }));
 
 describe("SiteHeader", () => {
-  it("renders Home before Journey, About, and Contact", () => {
+  it("renders Work, About, and Contact section anchors", () => {
     vi.mocked(usePathname).mockReturnValue("/");
     render(<SiteHeader />);
     const nav = screen.getByRole("navigation", { name: "Primary" });
     const links = within(nav).getAllByRole("link");
-    expect(links[0]).toHaveTextContent("Home");
-    expect(links[0]).toHaveAttribute("href", "/");
-    expect(within(nav).getByRole("link", { name: "Journey" })).toHaveAttribute(
-      "href",
-      "/journey",
-    );
+    expect(links.map((link) => link.getAttribute("href"))).toEqual([
+      "/#work",
+      "/#about",
+      "/#contact",
+    ]);
   });
 
-  it("marks Home active on project routes", () => {
+  it("marks Work active on project routes", () => {
     vi.mocked(usePathname).mockReturnValue("/work/kanban");
     render(<SiteHeader />);
     const nav = screen.getByRole("navigation", { name: "Primary" });
-    const home = within(nav).getByRole("link", { name: "Home" });
-    expect(home.className).toContain("site-header__link--active");
+    const work = within(nav).getByRole("link", { name: "Work" });
+    expect(work.className).toContain("site-header__link--active");
   });
 });

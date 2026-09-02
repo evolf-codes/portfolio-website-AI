@@ -5,7 +5,7 @@ type Props = {
   children?: string;
 };
 
-export function BackLink({ href = "/", children = "Back to work" }: Props) {
+export function BackLink({ href = "/#work", children = "Back to work" }: Props) {
   return (
     <Link href={href} className="text-link inline-flex text-sm font-medium">
       {children}

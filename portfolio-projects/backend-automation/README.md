@@ -32,7 +32,9 @@ docker build -t backend-api-sample .
 docker run --rm backend-api-sample
 ```
 
-Expected result: **15 passed**. See the committed [green-run evidence](evidence/pytest-green-run.svg).
+Expected result: **15 passed**, with every test and its status printed for useful
+review and CI evidence. See the committed [verbose green-run
+evidence](evidence/pytest-green-run.svg).
 
 ## Design notes
 

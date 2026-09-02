@@ -16,46 +16,50 @@ export type WorkProject = {
   sourcePath: string;
   resultImageSrc: string;
   resultImageAlt: string;
+  priority: number;
+  downloads?: readonly { label: string; href: string }[];
 };
 
-export const WORK_PROJECTS: readonly WorkProject[] = [
+const PROJECTS: WorkProject[] = [
   {
     slug: "kanban",
-    title: "Kanban delivery board",
-    summary: "An accessible delivery board with enforceable WIP limits, blocked-work rules, ageing signals, and measured flow.",
+    title: "Jira delivery reporting",
+    summary: "An illustrative Jira management view that turns WIP, blocked work, ageing, and flow into release decisions.",
     imageSrc: "/work/kanban.svg",
     imageAlt: "Kanban board with teal, amber, and blue workflow columns",
     accent: "#0d9488",
     status: "Ready",
-    discipline: "Delivery leadership",
+    discipline: "Jira · Management reporting",
     challenge: "Make delivery risk, work in progress, and blocked work visible without turning the board into administrative overhead.",
     approach: ["Set explicit entry and exit policies for each workflow state.", "Use WIP limits and ageing signals to surface flow risk early.", "Pair delivery metrics with qualitative review instead of treating velocity as performance."],
     evidence: ["Interactive board", "Workflow policy", "Flow-metrics summary"],
     nextStep: "Add an automated browser accessibility scan while preserving the native keyboard move controls.",
-    tools: "JavaScript · Node test runner · accessible HTML/CSS",
+    tools: "Jira workflow design · JavaScript · Node test runner",
     outcome: "8 deterministic workflow tests pass; desktop and mobile interactions were reviewed with no browser errors.",
     sourcePath: "portfolio-projects/kanban-board/",
-    resultImageSrc: "/work/results/kanban-board.png",
-    resultImageAlt: "Working Kanban board with workflow columns, WIP limits, and flow metrics",
+    resultImageSrc: "/work/results/jira-delivery-reporting.svg",
+    resultImageAlt: "Illustrative Jira delivery management dashboard with release risks and flow measures",
+    priority: 5,
   },
   {
     slug: "gantt-schedules",
-    title: "Employee schedule testing",
-    summary: "A staffing timeline that exposes overlaps, approved leave, coverage gaps, overnight work, and timezone boundaries.",
+    title: "Jira scheduling & documentation",
+    summary: "An illustrative Jira planning view for team capacity, schedule conflicts, coverage gaps, and linked operating documentation.",
     imageSrc: "/work/gantt.svg",
     imageAlt: "Gantt chart with color-coded schedule bars",
     accent: "#2563eb",
     status: "Ready",
-    discipline: "People operations",
+    discipline: "Jira · Scheduling",
     challenge: "Give managers a trustworthy staffing view while making overlaps, leave, and coverage gaps easy to spot.",
     approach: ["Model shifts and leave as simple time ranges with clear ownership.", "Highlight conflicts and under-covered periods at the point of planning.", "Test timezone, boundary-date, and overlapping-assignment risks first."],
     evidence: ["Schedule timeline", "Conflict rules", "Boundary test matrix"],
     nextStep: "Add property-based interval testing for broader boundary coverage.",
-    tools: "Python · Flask · pytest",
+    tools: "Jira planning · Python · Flask · pytest",
     outcome: "16 schedule, boundary, conflict, and route tests pass against a deterministic fixture set.",
     sourcePath: "portfolio-projects/employee-schedules/",
-    resultImageSrc: "/work/results/employee-schedules.png",
-    resultImageAlt: "Employee schedule timeline showing shifts, leave, and coverage alerts",
+    resultImageSrc: "/work/results/jira-scheduling.svg",
+    resultImageAlt: "Illustrative Jira scheduling dashboard with capacity, conflicts, and linked documentation",
+    priority: 6,
   },
   {
     slug: "frontend-automation",
@@ -76,6 +80,12 @@ export const WORK_PROJECTS: readonly WorkProject[] = [
     sourcePath: "portfolio-projects/frontend-automation/qa-the-internet/",
     resultImageSrc: "/work/frontend-automation-pytest-output.png",
     resultImageAlt: "Green pytest output for fifteen frontend browser checks",
+    priority: 1,
+    downloads: [
+      { label: "README", href: "/work/frontend-automation-readme.txt" },
+      { label: "requirements.txt", href: "/work/frontend-automation-requirements.txt" },
+      { label: "notes.txt", href: "/work/frontend-automation-notes.txt" },
+    ],
   },
   {
     slug: "backend-automation",
@@ -95,6 +105,7 @@ export const WORK_PROJECTS: readonly WorkProject[] = [
     sourcePath: "portfolio-projects/backend-automation/",
     resultImageSrc: "/work/results/backend-automation.svg",
     resultImageAlt: "Green pytest summary for the Orders API automation sample",
+    priority: 2,
   },
   {
     slug: "performance-testing",
@@ -114,6 +125,7 @@ export const WORK_PROJECTS: readonly WorkProject[] = [
     sourcePath: "portfolio-projects/performance-testing/",
     resultImageSrc: "/work/results/performance-testing.svg",
     resultImageAlt: "Locust performance test summary with release thresholds",
+    priority: 3,
   },
   {
     slug: "ai-driven-testing",
@@ -133,8 +145,17 @@ export const WORK_PROJECTS: readonly WorkProject[] = [
     sourcePath: "portfolio-projects/ai-driven-testing/",
     resultImageSrc: "/work/results/ai-driven-testing.svg",
     resultImageAlt: "AI evaluation scorecard showing a blocked release after a safety failure",
+    priority: 4,
   },
-] as const;
+];
+
+export const WORK_PROJECTS: readonly WorkProject[] = PROJECTS.sort(
+  (a, b) => a.priority - b.priority,
+);
+
+export function getProjectSourceUrl(project: WorkProject): string {
+  return `https://github.com/evolf-codes/portfolio-website-AI/tree/main/${project.sourcePath}`;
+}
 
 export function getWorkProject(slug: string): WorkProject | undefined {
   return WORK_PROJECTS.find((p) => p.slug === slug);

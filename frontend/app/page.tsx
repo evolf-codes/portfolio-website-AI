@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { HomeIntro } from "@/components/HomeIntro";
+import { ContactForm } from "@/components/ContactForm";
 import { SectionHeading } from "@/components/layout/SectionHeading";
-import { WorkGrid } from "@/components/WorkGrid";
+import { WorkShowcase } from "@/components/WorkShowcase";
+import { CORE_SKILLS, PROFILE_SUMMARY } from "@/lib/profile";
+import { SITE_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -11,16 +14,37 @@ export default function HomePage() {
   return (
     <div>
       <HomeIntro />
-      <section className="page-section">
+      <section id="work" className="page-section scroll-mt-20">
         <div className="page-section__inner">
           <SectionHeading
             eyebrow="Work"
             title="Quality engineering in practice"
             description="Selected projects and automation examples that demonstrate test strategy, tooling, and delivery at a senior QA level."
           />
-          <div className="mt-10">
-            <WorkGrid />
+          <WorkShowcase />
+        </div>
+      </section>
+      <section id="about" className="page-section page-section--white scroll-mt-20">
+        <div className="page-section__inner about-flow">
+          <SectionHeading eyebrow="About" title="Quality leadership grounded in delivery" />
+          <div className="about-flow__content">
+            <div className="space-y-4">
+              {PROFILE_SUMMARY.map((item) => <p key={item} className="type-body">{item}</p>)}
+            </div>
+            <ul className="flex flex-wrap gap-2">
+              {CORE_SKILLS.slice(0, 8).map((skill) => <li key={skill} className="skill-pill">{skill}</li>)}
+            </ul>
           </div>
+        </div>
+      </section>
+      <section id="contact" className="contact-flow scroll-mt-20">
+        <div className="page-section__inner contact-flow__inner">
+          <div>
+            <p className="type-eyebrow contact-flow__eyebrow">Contact</p>
+            <h2 className="contact-flow__title mt-3">Let&apos;s improve release confidence.</h2>
+            <p className="contact-flow__copy mt-5">Share a role, delivery challenge, or QA leadership opportunity. You can also email <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.</p>
+          </div>
+          <div className="contact-flow__form"><ContactForm /></div>
         </div>
       </section>
     </div>

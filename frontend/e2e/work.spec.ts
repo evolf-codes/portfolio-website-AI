@@ -24,7 +24,7 @@ test.describe("Work", () => {
 
     const readme = page.getByRole("link", { name: "README" });
     const reqs = page.getByRole("link", { name: "requirements.txt" });
-    const notes = page.getByRole("link", { name: /download notes.txt/i });
+    const notes = page.getByRole("link", { name: "notes.txt" });
 
     await expect(readme).toHaveAttribute(
       "href",

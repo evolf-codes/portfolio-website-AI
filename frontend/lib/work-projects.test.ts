@@ -9,7 +9,7 @@ describe("work-projects", () => {
   });
 
   it("resolves known slugs", () => {
-    expect(getWorkProject("kanban")?.title).toBe("Kanban delivery board");
+    expect(getWorkProject("kanban")?.title).toBe("Jira delivery reporting");
     expect(getWorkProject("ai-driven-testing")?.title).toBe(
       "AI-driven testing",
     );
@@ -29,5 +29,20 @@ describe("work-projects", () => {
 
     expect(WORK_PROJECTS.every((project) => project.status === "Ready")).toBe(true);
     expect(WORK_PROJECTS.every((project) => project.resultImageSrc.startsWith("/work/"))).toBe(true);
+  });
+
+  it("leads with automation and performance evidence", () => {
+    expect(WORK_PROJECTS.slice(0, 3).map((project) => project.slug)).toEqual([
+      "frontend-automation",
+      "backend-automation",
+      "performance-testing",
+    ]);
+  });
+
+  it("exposes GitHub source links for every project path", () => {
+    for (const project of WORK_PROJECTS) {
+      expect(project.sourcePath).toMatch(/^portfolio-projects\//);
+      expect(project.sourcePath.endsWith("/")).toBe(true);
+    }
   });
 });

@@ -2,6 +2,10 @@
 
 A small, runnable staffing timeline demonstrating senior-level test design around overlapping shifts, approved leave, coverage gaps, timezone handling, and boundary semantics.
 
+![Illustrative Jira scheduling and documentation report](evidence/jira-scheduling.svg)
+
+The portfolio view translates the tested schedule rules into a Jira-style QA operations report: capacity, conflicts, coverage, decisions, owners, and linked runbooks. It is explicitly labelled as illustrative sample data rather than a client screenshot.
+
 ![Accessible schedule risk timeline](evidence/schedule-page.png)
 
 ![Green automated test run](evidence/test-results.svg)
@@ -32,6 +36,7 @@ The tests cover adjacent and overlapping shifts, leave edges, full and partial c
 - `app.py` — accessible server-rendered timeline and health endpoint
 - `tests/` — fast pytest suite at the rule and rendering boundaries
 - `evidence/test-results.svg` — compact, reviewable green-run evidence
+- `evidence/jira-scheduling.svg` — illustrative Jira-style management report
 
 ## Known limits
 
