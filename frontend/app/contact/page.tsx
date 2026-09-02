@@ -16,7 +16,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Get in touch"
-        description="Open to QA leadership roles, consulting, and delivery conversations."
+        description="Open to QA leadership roles and delivery conversations."
       />
       <PageMain>
         <div className="contact-layout">

@@ -18,7 +18,7 @@ test.describe("Home", () => {
     await expect(page.getByRole("heading", { name: "Jira tracking & documentation" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "AI-assisted quality engineering" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Frontend automation" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Ready to talk quality leadership." })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Let's talk." })).toBeVisible();
 
     const sectionOrder = await page.evaluate(() =>
       ["about", "resume", "work", "contact"].map((id) => {

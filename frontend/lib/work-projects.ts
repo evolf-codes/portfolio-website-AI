@@ -26,11 +26,11 @@ const PROJECTS: WorkProject[] = [
     title: "Jira tracking & documentation",
     kind: "leadership",
     about:
-      "I run project health in Jira and Confluence so bugs, owners, and decisions stay visible to the whole team.",
+      "I keep bugs, owners, and decisions visible in Jira and Confluence so the team shares one view of project health.",
     demonstrates:
-      "Status dashboards, defect lists by ID, burndown-style progress, and Confluence links for runbooks and release notes.",
+      "Status dashboards, defect lists by ID, burndown-style progress, and Confluence runbooks.",
     tools: "Jira · Confluence · Dashboards · Filters",
-    outcome: "Clear risk, clear ownership, fewer surprises at release.",
+    outcome: "Shared risk view. Clear ownership. Fewer surprises.",
     discipline: "Leadership · Delivery",
     accent: "#0f766e",
     resultImageSrc: "/work/results/jira-scheduling.svg",
@@ -43,11 +43,11 @@ const PROJECTS: WorkProject[] = [
     title: "AI-assisted quality engineering",
     kind: "automation",
     about:
-      "I use AI every day to plan tests, find gaps, and move faster — while QA still owns the release call.",
+      "I use AI daily to draft plans, find coverage gaps, and move faster — with QA still owning the call.",
     demonstrates:
-      "Claude, Cursor, Codex, and ChatGPT for test plans, coverage matrices, skills, agents, and custom tooling across API through UI.",
+      "Claude, Cursor, Codex, and ChatGPT for plans, matrices, skills, agents, and tooling from API to UI.",
     tools: "Claude · Cursor · Codex · ChatGPT · Skills · Agents · Sheets",
-    outcome: "Stronger plans, visible coverage, and this site built with the same workflow.",
+    outcome: "Stronger plans, visible gaps, and this site built the same way.",
     discipline: "AI · End-to-end",
     accent: "#0f766e",
     resultImageSrc: "/work/results/ai-driven-testing.svg",
@@ -73,12 +73,11 @@ const PROJECTS: WorkProject[] = [
     slug: "frontend-automation",
     title: "Frontend automation",
     kind: "automation",
-    about:
-      "UI automation that confirms critical browser flows still work before a release.",
+    about: "Browser checks for the flows that matter before you ship.",
     demonstrates:
-      "Login, forms, tables, menus, and multi-window checks — short, readable pytest plus Playwright coverage.",
+      "Login, forms, tables, menus, and multi-window paths in concise pytest and Playwright.",
     tools: "Python · pytest · Playwright · Docker",
-    outcome: "15/15 checks passed on a public practice site.",
+    outcome: "15/15 passed on a public practice site.",
     discipline: "UI automation",
     accent: "#0f766e",
     sourcePath: "portfolio-projects/frontend-automation/qa-the-internet/",
@@ -90,12 +89,11 @@ const PROJECTS: WorkProject[] = [
     slug: "backend-automation",
     title: "Backend API automation",
     kind: "automation",
-    about:
-      "API tests that prove booking and auth behaviour under real HTTPS traffic.",
+    about: "API checks for booking and auth over live HTTPS.",
     demonstrates:
-      "Token checks, create and read flows, search filters, and blocked updates without permission.",
+      "Tokens, create and read flows, search filters, and blocked updates without permission.",
     tools: "Python · pytest · requests · JSON Schema",
-    outcome: "15/15 checks passed against a live practice API.",
+    outcome: "15/15 passed against a live practice API.",
     discipline: "API automation",
     accent: "#0f766e",
     sourcePath: "portfolio-projects/backend-automation/",
@@ -107,12 +105,11 @@ const PROJECTS: WorkProject[] = [
     slug: "performance-testing",
     title: "Performance testing",
     kind: "automation",
-    about:
-      "Light load testing that shows whether an API stays fast and stable under pressure.",
+    about: "A light Locust profile to see if an API stays fast under load.",
     demonstrates:
-      "Response time, error rate, and throughput with clear pass/fail limits for release.",
+      "Response time, error rate, and throughput against clear pass/fail limits.",
     tools: "Python · Locust",
-    outcome: "61 requests, 190 ms p95, zero failures — limits met.",
+    outcome: "61 requests, 190 ms p95, zero failures.",
     discipline: "Performance",
     accent: "#0f766e",
     sourcePath: "portfolio-projects/performance-testing/",

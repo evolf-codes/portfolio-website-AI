@@ -6,6 +6,6 @@ export const SITE_LOCATION = "Toronto, ON, Canada — Remote First";
 export const SITE_LINKEDIN = "https://www.linkedin.com/in/eric-v-aa45ab79/";
 export const SITE_GITHUB = "https://github.com/evolf-codes";
 
-export const SITE_TITLE = "QA Manager | Quality Engineering | Fintech & Digital Assets";
+export const SITE_TITLE = "QA Manager · Fintech & Digital Assets";
 export const SITE_TAGLINE =
-  "I help trading and fintech teams ship with confidence — clear strategy, strong automation, and quality leadership that holds up under release pressure.";
+  "I lead quality for trading platforms — from strategy and automation to the release call.";

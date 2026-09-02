@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Eric Volfson",
   },
   description:
-    "Eric Volfson — QA manager for fintech and digital assets. Leadership, automation, AI-assisted quality, and release confidence.",
+    "Eric Volfson — QA manager for fintech and digital assets. Strategy, automation, and release confidence.",
 };
 
 export const viewport = {

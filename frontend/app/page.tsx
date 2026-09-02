@@ -25,7 +25,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Work"
             title="Selected work"
-            description="Leadership, AI-assisted quality, and automation samples that show how I keep releases clear and defensible."
+            description="Delivery visibility, AI-assisted QA, and automation you can inspect."
           />
           <WorkShowcase />
         </div>
@@ -34,9 +34,9 @@ export default function HomePage() {
         <div className="page-section__inner contact-flow__inner">
           <div>
             <p className="type-eyebrow contact-flow__eyebrow">Contact</p>
-            <h2 className="contact-flow__title mt-3">Ready to talk quality leadership.</h2>
+            <h2 className="contact-flow__title mt-3">Let&apos;s talk.</h2>
             <p className="contact-flow__copy mt-5">
-              Tell me about the role, the team, or the delivery challenge. You can also email{" "}
+              Share the role, the team, or the challenge — or email{" "}
               <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.
             </p>
           </div>

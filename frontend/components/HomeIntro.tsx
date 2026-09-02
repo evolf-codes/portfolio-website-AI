@@ -1,8 +1,6 @@
 import { ProfilePhoto } from "@/components/ProfilePhoto";
-import { CORE_SKILLS, PROFILE_SUMMARY } from "@/lib/profile";
+import { INTRO_SKILLS, PROFILE_SUMMARY } from "@/lib/profile";
 import { SITE_LOCATION, SITE_TAGLINE, SITE_TITLE } from "@/lib/site";
-
-const ABOUT_COPY = [PROFILE_SUMMARY[0], PROFILE_SUMMARY[2], PROFILE_SUMMARY[3]] as const;
 
 export function HomeIntro() {
   return (
@@ -19,14 +17,14 @@ export function HomeIntro() {
         <div className="home-intro__profile">
           <ProfilePhoto className="profile-photo--about" priority />
           <div className="home-intro__copy">
-            {ABOUT_COPY.map((item) => (
+            {PROFILE_SUMMARY.map((item) => (
               <p key={item}>{item}</p>
             ))}
           </div>
         </div>
 
         <ul className="home-intro__skills">
-          {CORE_SKILLS.slice(0, 8).map((skill) => (
+          {INTRO_SKILLS.map((skill) => (
             <li key={skill} className="skill-pill">
               {skill}
             </li>
