@@ -81,6 +81,6 @@ test.describe("Work", () => {
     await page.goto("/work/kanban");
     await expect(page.getByRole("heading", { name: "Leadership focus" })).toBeVisible();
     await expect(page.getByText(/workflow tests/i)).toHaveCount(0);
-    await expect(page.getByRole("link", { name: "View project files" })).toHaveCount(0);
+    await expect(page.getByRole("link", { name: "View project files" })).toBeVisible();
   });
 });

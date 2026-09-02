@@ -1,12 +1,12 @@
 # portfolio-website-AI
 
-Professional portfolio for **Eric Volfson**, a senior QA engineer and QA manager focused on capital markets, crypto trading, and high-volume platforms.
+Professional portfolio for **Eric Volfson**, QA Manager focused on fintech, capital markets, and digital assets.
 
-The repository contains:
+## Contents
 
-- **`frontend/`** — Next.js portfolio site (home, career journey, about, contact, and work case studies)
-- **`portfolio-projects/frontend-automation/qa-the-internet/`** — pytest automation sample against [The Internet](https://the-internet.herokuapp.com/) (Docker, PEP 8, portfolio case-study assets)
-- **`portfolio-projects/`** — six focused sample briefs and reusable skill instructions
-- **`deployment/`** — tested Cloudflare release instructions and deployment skill
+- **`frontend/`** — Next.js portfolio site
+- **`portfolio-projects/`** — automation samples and Jira leadership evidence linked from Work
 
-The live experience leads with project work and case studies, a career timeline, an about profile, and a contact form backed by Formspree.
+See [`portfolio-projects/README.md`](portfolio-projects/README.md) for the project index and verification commands.
+
+Live site: https://portfolio-website-ai.saucers-mikado-0a.workers.dev

@@ -45,18 +45,16 @@ describe("work-projects", () => {
     expect(jira).toHaveLength(2);
     for (const project of jira) {
       expect(project.kind).toBe("leadership");
-      expect(project.sourcePath).toBeUndefined();
+      expect(project.sourcePath).toMatch(/^portfolio-projects\//);
       expect(project.demonstrates.toLowerCase()).not.toContain("workflow tests");
       expect(project.outcome.toLowerCase()).not.toMatch(/\d+\s+.*tests? passed/);
     }
   });
 
-  it("exposes GitHub source links only for automation samples", () => {
+  it("exposes GitHub source links for every project path", () => {
     for (const project of WORK_PROJECTS) {
-      if (project.kind === "automation") {
-        expect(project.sourcePath).toMatch(/^portfolio-projects\//);
-        expect(project.sourcePath?.endsWith("/")).toBe(true);
-      }
+      expect(project.sourcePath).toMatch(/^portfolio-projects\//);
+      expect(project.sourcePath?.endsWith("/")).toBe(true);
     }
   });
 });
