@@ -6,8 +6,6 @@ test.describe("Resume", () => {
     await page.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Resume" }).click();
     await expect(page.getByRole("heading", { name: "View a current resume" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "2-page resume" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "Detailed resume" })).toHaveCount(0);
-
     await expect(page.getByRole("link", { name: "View PDF" })).toHaveAttribute(
       "href",
       "/resume/eric-volfson-qa-manager-2-page.pdf",
@@ -16,6 +14,7 @@ test.describe("Resume", () => {
       "href",
       "/resume/eric-volfson-qa-manager-2-page.docx",
     );
+    await expect(page.getByRole("link", { name: "View PDF" })).toHaveCount(1);
   });
 
   test("resume files are served", async ({ request }) => {
