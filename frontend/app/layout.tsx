@@ -23,6 +23,12 @@ export const metadata: Metadata = {
     "Eric Volfson — QA manager for fintech and digital assets. Leadership, automation, AI-assisted quality, and release confidence.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover" as const,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

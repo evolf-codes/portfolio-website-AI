@@ -14,6 +14,7 @@ test.describe("Site styles", () => {
     expect(cssResponse.status(), `CSS failed: ${href}`).toBe(200);
 
     const css = await cssResponse.text();
+    expect(css).toContain("safe-area-inset");
     expect(css).toContain("scroll-padding-top");
     expect(css).toContain("--brand:");
     expect(css).toContain(".btn-primary");

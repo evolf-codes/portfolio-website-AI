@@ -146,7 +146,7 @@ export function SiteHeader() {
 
   return (
     <header className="site-header sticky top-0 z-50">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
+      <div className="site-header__inner">
         <Link href="/" className="group flex flex-col" onClick={() => activateSection("home")}>
           <span className="site-header__brand text-sm font-semibold tracking-wide uppercase">
             Eric Volfson
@@ -155,7 +155,7 @@ export function SiteHeader() {
             QA Leadership
           </span>
         </Link>
-        <nav aria-label="Primary" className="flex gap-4 sm:gap-6 md:gap-8">
+        <nav aria-label="Primary" className="site-header__nav">
           {nav.map((item) => {
             const active = activeSection === item.section;
             return (
