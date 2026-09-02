@@ -1,0 +1,11 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { initialCards, isAgeing, metrics, moveCard } from "../model.js";
+test("moves eligible work to the next workflow state", () => { const cards = initialCards.filter((card) => card.id !== 3); assert.equal(moveCard(cards, 1, 1).cards.find((card) => card.id === 1).column, "progress"); });
+test("moves eligible work backwards", () => { const cards = initialCards.filter((card) => card.id !== 3); assert.equal(moveCard(cards, 4, -1).cards.find((card) => card.id === 4).column, "progress"); });
+test("does not mutate the supplied board", () => { const cards = initialCards.filter((card) => card.id !== 3); moveCard(cards, 1, 1); assert.equal(cards.find((card) => card.id === 1).column, "ready"); });
+test("rejects movement when a target reaches its WIP limit", () => { assert.match(moveCard(initialCards, 1, 1).error, /WIP limit/); });
+test("keeps blocked work in its current state", () => { const outcome = moveCard(initialCards, 2, 1); assert.equal(outcome.cards.find((card) => card.id === 2).column, "progress"); assert.match(outcome.error, /resolved/); });
+test("rejects movement beyond a workflow boundary", () => { assert.match(moveCard(initialCards, 5, 1).error, /boundary/); });
+test("flags ageing active work but not completed work", () => { assert.equal(isAgeing(initialCards[1]), true); assert.equal(isAgeing(initialCards[7]), false); });
+test("calculates measured delivery flow", () => { assert.deepEqual(metrics(initialCards), { blocked: 1, throughput: 4, medianCycleTime: 3.5 }); });

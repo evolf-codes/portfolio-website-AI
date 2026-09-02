@@ -1,0 +1,8 @@
+> npm test
+
+tests 8
+pass 8
+fail 0
+duration_ms 37.3
+
+Verified locally with Node.js v24.4.1 on 2026-09-02.

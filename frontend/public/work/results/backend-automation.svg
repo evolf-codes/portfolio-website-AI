@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Backend API pytest green run</title>
+  <desc id="desc">Terminal evidence showing 15 backend API tests passed.</desc>
+  <rect width="960" height="420" rx="18" fill="#111315"/>
+  <rect width="960" height="54" rx="18" fill="#25282b"/>
+  <rect y="36" width="960" height="18" fill="#25282b"/>
+  <circle cx="28" cy="27" r="7" fill="#70757a"/><circle cx="52" cy="27" r="7" fill="#70757a"/><circle cx="76" cy="27" r="7" fill="#70757a"/>
+  <text x="480" y="33" text-anchor="middle" fill="#d8dcdf" font-family="ui-monospace, monospace" font-size="14">backend-automation — pytest</text>
+  <g font-family="ui-monospace, SFMono-Regular, monospace" font-size="18">
+    <text x="34" y="102" fill="#9da3a8">$ pytest</text>
+    <text x="34" y="146" fill="#f4f5f6">...............                                                          [100%]</text>
+    <text x="34" y="202" fill="#62d58b">15 passed</text>
+    <text x="138" y="202" fill="#9da3a8">in 7.66s</text>
+    <text x="34" y="272" fill="#d8dcdf">Risk coverage</text>
+    <text x="34" y="310" fill="#9da3a8">contract • validation • authorization • idempotency • diagnostics</text>
+    <text x="34" y="366" fill="#62d58b">Deterministic local HTTP boundary — no external service dependency</text>
+  </g>
+</svg>

@@ -9,9 +9,9 @@ describe("work-projects", () => {
   });
 
   it("resolves known slugs", () => {
-    expect(getWorkProject("kanban")?.title).toBe("Kanban board");
+    expect(getWorkProject("kanban")?.title).toBe("Kanban delivery board");
     expect(getWorkProject("ai-driven-testing")?.title).toBe(
-      "AI driven testing example",
+      "AI-driven testing",
     );
   });
 
@@ -27,10 +27,7 @@ describe("work-projects", () => {
       expect(project.nextStep.length).toBeGreaterThan(20);
     }
 
-    expect(
-      WORK_PROJECTS.filter((project) => project.status === "Ready").map(
-        (project) => project.slug,
-      ),
-    ).toEqual(["frontend-automation"]);
+    expect(WORK_PROJECTS.every((project) => project.status === "Ready")).toBe(true);
+    expect(WORK_PROJECTS.every((project) => project.resultImageSrc.startsWith("/work/"))).toBe(true);
   });
 });

@@ -9,7 +9,7 @@ every test will fail with `Executable doesn't exist`.
 ## One-shot setup (macOS / Linux)
 
 ```bash
-cd qa-the-internet
+cd portfolio-projects/frontend-automation/qa-the-internet
 chmod +x scripts/bootstrap.sh
 ./scripts/bootstrap.sh
 . .venv/bin/activate
@@ -19,7 +19,7 @@ python -m pytest tests/ -v
 ## Run locally (manual)
 
 ```bash
-cd qa-the-internet
+cd portfolio-projects/frontend-automation/qa-the-internet
 python3 -m venv .venv
 . .venv/bin/activate
 pip install -r requirements.txt
@@ -42,7 +42,7 @@ refetches the matching browser build.
 ## Run in Docker
 
 ```bash
-cd qa-the-internet
+cd portfolio-projects/frontend-automation/qa-the-internet
 docker build -t herokuapp-ui-qa .
 docker run --rm herokuapp-ui-qa
 ```
@@ -52,11 +52,12 @@ docker run --rm herokuapp-ui-qa
 After a green run, generate a terminal-style PNG the site can show:
 
 ```bash
-cd qa-the-internet
+cd portfolio-projects/frontend-automation/qa-the-internet
 . .venv/bin/activate
 python scripts/snapshot_pytest_output.py
 ```
 
-The image is written to `../frontend/public/work/frontend-automation-pytest-output.png`.
+The image is written to the repository path
+`frontend/public/work/frontend-automation-pytest-output.png`.
 
 See `notes.txt` for the rationale and trade-offs.

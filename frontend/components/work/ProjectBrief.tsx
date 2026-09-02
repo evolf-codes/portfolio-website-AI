@@ -15,6 +15,7 @@ export function ProjectBrief({ project }: { project: WorkProject }) {
           <p className="type-eyebrow">{project.discipline}</p>
           <PanelHeading>Quality brief</PanelHeading>
           <div className="article-body mt-5">
+            <p className="case-study-tools">{project.tools}</p>
             <p>{project.challenge}</p>
             <h2>Approach</h2>
             <ul>
@@ -23,7 +24,7 @@ export function ProjectBrief({ project }: { project: WorkProject }) {
           </div>
         </section>
         <aside className="panel p-6 sm:p-8" aria-label="Project evidence">
-          <p className="type-eyebrow">Evidence target</p>
+          <p className="type-eyebrow">Evidence</p>
           <ul className="evidence-list mt-4">
             {project.evidence.map((item) => <li key={item}>{item}</li>)}
           </ul>
@@ -31,6 +32,25 @@ export function ProjectBrief({ project }: { project: WorkProject }) {
           <p className="type-body mt-3">{project.nextStep}</p>
         </aside>
       </div>
+      <section className="mt-8" aria-labelledby="result-heading">
+        <p id="result-heading" className="type-eyebrow">Verified result</p>
+        <p className="type-body mt-3">{project.outcome}</p>
+        <a
+          href={project.resultImageSrc}
+          target="_blank"
+          rel="noreferrer"
+          className="result-link mt-4 block overflow-hidden rounded-xl border border-[var(--border)] bg-white"
+        >
+          <img
+            src={project.resultImageSrc}
+            alt={project.resultImageAlt}
+            className="w-full object-contain"
+          />
+        </a>
+        <p className="type-caption mt-3">
+          Source: <code>{project.sourcePath}</code> · Click the evidence to inspect it.
+        </p>
+      </section>
     </>
   );
 }

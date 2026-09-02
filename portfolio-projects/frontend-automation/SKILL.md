@@ -5,7 +5,7 @@ description: Maintain the portfolio's pytest and Playwright UI automation sample
 
 # Frontend automation sample
 
-Work in [`../../qa-the-internet`](../../qa-the-internet) for executable code and keep the linked portfolio assets synchronized.
+Work in [`qa-the-internet`](qa-the-internet) for executable code and keep the linked portfolio assets synchronized.
 
 Preserve exactly 15 independent, readable scenarios unless the user changes the scope. Each test needs a concise docstring; use comments only to explain non-obvious intent. Prefer role, label, and stable structural locators, Playwright auto-waiting, and one clear behaviour per test. Do not add sleeps or page-object abstraction without demonstrated reuse.
 

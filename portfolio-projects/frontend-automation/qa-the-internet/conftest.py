@@ -16,10 +16,11 @@ def browser(playwright_instance: Playwright) -> Browser:
         br = playwright_instance.chromium.launch(headless=True)
     except Exception as exc:  # pragma: no cover
         err = str(exc)
-        if "Executable doesn't exist" in err or "BrowserType.launch" in err:
+        if "Executable doesn't exist" in err:
             pytest.fail(
                 "Playwright browser binaries are not installed for this venv. "
-                "From qa-the-internet with .venv active, run:\n"
+                "From portfolio-projects/frontend-automation/qa-the-internet "
+                "with .venv active, run:\n"
                 "  python -m playwright install chromium\n"
                 f"(underlying error: {err})"
             )

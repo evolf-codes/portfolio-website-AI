@@ -12,12 +12,12 @@ Success: every work tile opens a useful brief and only completed work is labelle
 
 ## Phase 2 — Samples
 
-- [ ] Complete the Kanban sample and its acceptance evidence.
-- [ ] Complete the employee schedule sample and boundary tests.
+- [x] Complete the Kanban sample and its acceptance evidence.
+- [x] Complete the employee schedule sample and boundary tests.
 - [x] Provide 15 runnable frontend checks, Docker packaging, rationale, and output evidence.
-- [ ] Complete the API automation sample and contract report.
-- [ ] Complete the performance sample and threshold report.
-- [ ] Complete the AI evaluation sample and failure analysis.
+- [x] Complete the API automation sample and contract report.
+- [x] Complete the performance sample and threshold report.
+- [x] Complete the AI evaluation sample and failure analysis.
 
 Success: each completed sample runs from a clean checkout and presents reproducible evidence rather than unsupported claims.
 

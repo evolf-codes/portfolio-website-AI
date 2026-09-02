@@ -47,12 +47,12 @@ test.describe("Work", () => {
     expect(notesResp.ok()).toBeTruthy();
   });
 
-  test("planned projects show a quality brief without claiming results", async ({ page }) => {
+  test("completed projects show their quality brief and verified evidence", async ({ page }) => {
     await page.goto("/work/performance-testing");
 
-    await expect(page.getByText("Planned", { exact: true })).toBeVisible();
+    await expect(page.getByText("Ready", { exact: true })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Quality brief" })).toBeVisible();
-    await expect(page.getByText("Evidence target")).toBeVisible();
-    await expect(page.getByText("Next increment")).toBeVisible();
+    await expect(page.getByText("Evidence", { exact: true })).toBeVisible();
+    await expect(page.getByText("Verified result")).toBeVisible();
   });
 });

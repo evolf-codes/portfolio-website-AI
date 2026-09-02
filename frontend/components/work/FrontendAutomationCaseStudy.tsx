@@ -21,7 +21,7 @@ export function FrontendAutomationCaseStudy({ project }: Props) {
         <p>
           The runnable suite lives under{" "}
           <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-sm text-[var(--ink)]">
-            qa-the-internet/
+            portfolio-projects/frontend-automation/qa-the-internet/
           </code>{" "}
           in this repository: fifteen focused UI checks against{" "}
           <a
@@ -83,7 +83,7 @@ export function FrontendAutomationCaseStudy({ project }: Props) {
           </a>{" "}
           (same as{" "}
           <code className="rounded bg-[var(--surface)] px-1.5 py-0.5 text-sm">
-            qa-the-internet/notes.txt
+            portfolio-projects/frontend-automation/qa-the-internet/notes.txt
           </code>
           ) for a senior-level write-up of the approach and trade-offs.
         </p>
