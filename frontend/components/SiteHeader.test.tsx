@@ -8,7 +8,7 @@ vi.mock("next/navigation", () => ({
 }));
 
 describe("SiteHeader", () => {
-  it("renders Work, About, and Contact section anchors", () => {
+  it("renders Work, About, Resume, and Contact section anchors", () => {
     vi.mocked(usePathname).mockReturnValue("/");
     render(<SiteHeader />);
     const nav = screen.getByRole("navigation", { name: "Primary" });
@@ -16,6 +16,7 @@ describe("SiteHeader", () => {
     expect(links.map((link) => link.getAttribute("href"))).toEqual([
       "/#work",
       "/#about",
+      "/#resume",
       "/#contact",
     ]);
   });

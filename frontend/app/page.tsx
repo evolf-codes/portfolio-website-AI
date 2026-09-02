@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { HomeIntro } from "@/components/HomeIntro";
 import { ContactForm } from "@/components/ContactForm";
 import { ProfilePhoto } from "@/components/ProfilePhoto";
+import { ResumeDownloads } from "@/components/ResumeDownloads";
 import { SectionHeading } from "@/components/layout/SectionHeading";
 import { WorkShowcase } from "@/components/WorkShowcase";
 import { CORE_SKILLS, PROFILE_SUMMARY } from "@/lib/profile";
@@ -47,6 +48,16 @@ export default function HomePage() {
               ))}
             </ul>
           </div>
+        </div>
+      </section>
+      <section id="resume" className="page-section scroll-mt-20">
+        <div className="page-section__inner">
+          <SectionHeading
+            eyebrow="Resume"
+            title="Download a current resume"
+            description="Two PDF versions — a short 2-page summary, and a more detailed version with selected projects."
+          />
+          <ResumeDownloads />
         </div>
       </section>
       <section id="contact" className="contact-flow scroll-mt-20">

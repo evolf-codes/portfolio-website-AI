@@ -33,6 +33,9 @@ export function SiteFooter() {
             <Link className="footer-link" href="/#about">
               About
             </Link>
+            <Link className="footer-link" href="/#resume">
+              Resume
+            </Link>
             <Link className="footer-link" href="/#contact">
               Contact
             </Link>
