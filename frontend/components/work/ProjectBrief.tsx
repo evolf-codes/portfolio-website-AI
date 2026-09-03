@@ -30,9 +30,7 @@ export function ProjectBrief({ project }: { project: WorkProject }) {
         <section>
           <h2>Result</h2>
           <p>{project.outcome}</p>
-          <div
-            className={`result-gallery mt-5 ${resultImages.length > 1 ? "result-gallery--multi" : ""}`}
-          >
+          <div className="result-gallery mt-5">
             {resultImages.map((image) => (
               <a
                 key={image.src}

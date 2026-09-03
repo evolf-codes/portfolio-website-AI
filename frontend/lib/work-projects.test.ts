@@ -52,16 +52,21 @@ describe("work-projects", () => {
     }
   });
 
-  it("exposes GitHub source links for automation samples 3-5 only", () => {
-    expect(getProjectSourceUrl(WORK_PROJECTS[0]!)).toBeNull();
-    expect(getProjectSourceUrl(WORK_PROJECTS[1]!)).toBeNull();
-    expect(getProjectSourceUrl(WORK_PROJECTS[2]!)).toContain(
+  it("exposes GitHub source links for automation samples only", () => {
+    // Leadership + AI tiles are narrative evidence; automation samples link to source.
+    const bySlug = Object.fromEntries(
+      WORK_PROJECTS.map((project) => [project.slug, project]),
+    );
+
+    expect(getProjectSourceUrl(bySlug["gantt-schedules"]!)).toBeNull();
+    expect(getProjectSourceUrl(bySlug["ai-driven-testing"]!)).toBeNull();
+    expect(getProjectSourceUrl(bySlug["frontend-automation"]!)).toContain(
       "portfolio-projects/frontend-automation/qa-the-internet/",
     );
-    expect(getProjectSourceUrl(WORK_PROJECTS[3]!)).toContain(
+    expect(getProjectSourceUrl(bySlug["backend-automation"]!)).toContain(
       "portfolio-projects/backend-automation/",
     );
-    expect(getProjectSourceUrl(WORK_PROJECTS[4]!)).toContain(
+    expect(getProjectSourceUrl(bySlug["performance-testing"]!)).toContain(
       "portfolio-projects/performance-testing/",
     );
   });
