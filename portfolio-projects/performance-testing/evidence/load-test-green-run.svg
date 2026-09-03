@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
-  <title id="title">Verbose Locust performance gate results</title>
-  <desc id="desc">Terminal evidence listing all 15 Restful Booker load checks as passed with zero failures.</desc>
+  <title id="title">Passing Locust Restful Booker performance test</title>
+  <desc id="desc">Locust report showing 61 requests, 4.48 req/s, 190 ms p95, 0% failures, and a pass release decision.</desc>
   <rect width="1280" height="760" rx="24" fill="#e8ecef"/>
   <g transform="translate(32, 32) scale(0.95)">
     <rect width="1280" height="760" rx="24" fill="#0d1012"/>
@@ -9,49 +9,38 @@
     <circle cx="30" cy="30" r="7" fill="#6e7479"/>
     <circle cx="54" cy="30" r="7" fill="#6e7479"/>
     <circle cx="78" cy="30" r="7" fill="#6e7479"/>
-    <text x="640" y="37" text-anchor="middle" fill="#d9dddf" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">performance-testing — Locust Restful Booker gate</text>
-    <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">
-      <text x="36" y="102" fill="#9fa6ab">$ locust -f locustfile.py --headless -u 4 -r 1 -t 30s</text>
-      <text x="36" y="132" fill="#d9dddf">target: https://restful-booker.herokuapp.com</text>
-      <text x="36" y="158" fill="#d9dddf">collected 15 checks</text>
-      <g fill="#d9dddf">
-        <text x="36" y="198">test_booking_list_handles_load</text>
-        <text x="36" y="226">test_auth_token_endpoint_stable</text>
-        <text x="36" y="254">test_create_booking_under_concurrency</text>
-        <text x="36" y="282">test_read_booking_latency_within_gate</text>
-        <text x="36" y="310">test_update_booking_under_load</text>
-        <text x="36" y="338">test_delete_booking_under_load</text>
-        <text x="36" y="366">test_filter_bookings_response_time</text>
-        <text x="36" y="394">test_p95_latency_below_threshold</text>
-        <text x="36" y="422">test_error_rate_below_threshold</text>
-        <text x="36" y="450">test_throughput_above_minimum</text>
-        <text x="36" y="478">test_json_contract_on_list</text>
-        <text x="36" y="506">test_json_contract_on_detail</text>
-        <text x="36" y="534">test_spike_recovery_after_ramp</text>
-        <text x="36" y="562">test_sustained_load_thirty_seconds</text>
-        <text x="36" y="590">test_release_gate_summary_passes</text>
-      </g>
-      <g fill="#63d792" font-weight="700">
-        <text x="1120" y="198">PASSED</text>
-        <text x="1120" y="226">PASSED</text>
-        <text x="1120" y="254">PASSED</text>
-        <text x="1120" y="282">PASSED</text>
-        <text x="1120" y="310">PASSED</text>
-        <text x="1120" y="338">PASSED</text>
-        <text x="1120" y="366">PASSED</text>
-        <text x="1120" y="394">PASSED</text>
-        <text x="1120" y="422">PASSED</text>
-        <text x="1120" y="450">PASSED</text>
-        <text x="1120" y="478">PASSED</text>
-        <text x="1120" y="506">PASSED</text>
-        <text x="1120" y="534">PASSED</text>
-        <text x="1120" y="562">PASSED</text>
-        <text x="1120" y="590">PASSED</text>
-      </g>
-      <line x1="36" y1="620" x2="1244" y2="620" stroke="#30363b"/>
-      <text x="36" y="662" fill="#63d792" font-size="21" font-weight="700">15 passed</text>
-      <text x="180" y="662" fill="#9fa6ab">61 requests · 190 ms p95 · 0 failures</text>
-      <text x="36" y="704" fill="#9fa6ab">Light public practice load · clear pass/fail thresholds · Locust</text>
+    <text x="640" y="37" text-anchor="middle" fill="#d9dddf" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">performance-testing - Locust Restful Booker gate</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+      <text x="36" y="108" fill="#9fa6ab" font-size="15">$ locust -f locustfile.py --headless -u 4 -r 1 -t 30s</text>
+      <text x="36" y="138" fill="#d9dddf" font-size="15">target: https://restful-booker.herokuapp.com - max 4 VUs</text>
+      <rect x="36" y="168" width="292" height="128" rx="12" fill="#15191e" stroke="#30363b"/>
+      <rect x="344" y="168" width="292" height="128" rx="12" fill="#15191e" stroke="#30363b"/>
+      <rect x="652" y="168" width="292" height="128" rx="12" fill="#15191e" stroke="#30363b"/>
+      <rect x="960" y="168" width="284" height="128" rx="12" fill="#15191e" stroke="#30363b"/>
+      <text x="56" y="206" fill="#9fa6ab" font-size="14">REQUESTS</text>
+      <text x="56" y="258" fill="#d9dddf" font-size="36" font-weight="700">61</text>
+      <text x="364" y="206" fill="#9fa6ab" font-size="14">THROUGHPUT</text>
+      <text x="364" y="258" fill="#d9dddf" font-size="36" font-weight="700">4.48</text>
+      <text x="500" y="258" fill="#9fa6ab" font-size="14">req/s</text>
+      <text x="672" y="206" fill="#9fa6ab" font-size="14">P95 LATENCY</text>
+      <text x="672" y="258" fill="#d9dddf" font-size="36" font-weight="700">190</text>
+      <text x="780" y="258" fill="#9fa6ab" font-size="14">ms</text>
+      <text x="980" y="206" fill="#9fa6ab" font-size="14">ERROR RATE</text>
+      <text x="980" y="258" fill="#d9dddf" font-size="36" font-weight="700">0.00%</text>
+      <text x="36" y="348" fill="#d9dddf" font-size="16" font-weight="700">Release objectives</text>
+      <line x1="36" y1="368" x2="1244" y2="368" stroke="#30363b"/>
+      <text x="36" y="412" fill="#63d792" font-size="16" font-weight="700">PASS</text>
+      <text x="110" y="412" fill="#d9dddf" font-size="16">p95 latency &lt; 3000 ms</text>
+      <text x="36" y="456" fill="#63d792" font-size="16" font-weight="700">PASS</text>
+      <text x="110" y="456" fill="#d9dddf" font-size="16">HTTP errors &lt; 5%</text>
+      <text x="36" y="500" fill="#63d792" font-size="16" font-weight="700">PASS</text>
+      <text x="110" y="500" fill="#d9dddf" font-size="16">Booking JSON contracts validated</text>
+      <text x="36" y="544" fill="#63d792" font-size="16" font-weight="700">PASS</text>
+      <text x="110" y="544" fill="#d9dddf" font-size="16">Throughput &gt;= 0.5 req/s</text>
+      <line x1="36" y1="590" x2="1244" y2="590" stroke="#30363b"/>
+      <text x="36" y="640" fill="#63d792" font-size="21" font-weight="700">gate passed</text>
+      <text x="220" y="640" fill="#9fa6ab" font-size="15">61 requests - 190 ms p95 - 0 failures</text>
+      <text x="36" y="688" fill="#9fa6ab" font-size="15">Light public practice load - clear pass/fail thresholds - Locust</text>
     </g>
   </g>
 </svg>

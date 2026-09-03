@@ -9,7 +9,7 @@
     <circle cx="30" cy="30" r="7" fill="#6e7479"/>
     <circle cx="54" cy="30" r="7" fill="#6e7479"/>
     <circle cx="78" cy="30" r="7" fill="#6e7479"/>
-    <text x="640" y="37" text-anchor="middle" fill="#d9dddf" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">backend-automation — Restful Booker pytest -vv</text>
+    <text x="640" y="37" text-anchor="middle" fill="#d9dddf" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">backend-automation - Restful Booker pytest -vv</text>
     <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">
       <text x="36" y="102" fill="#9fa6ab">$ pytest -vv</text>
       <text x="36" y="132" fill="#d9dddf">target: https://restful-booker.herokuapp.com</text>
@@ -51,7 +51,7 @@
       <line x1="36" y1="620" x2="1244" y2="620" stroke="#30363b"/>
       <text x="36" y="662" fill="#63d792" font-size="21" font-weight="700">15 passed</text>
       <text x="180" y="662" fill="#9fa6ab">in 1.44s</text>
-      <text x="36" y="704" fill="#9fa6ab">Public Heroku QA practice API · auth · CRUD · filters · no local mock</text>
+      <text x="36" y="704" fill="#9fa6ab">Public Heroku QA practice API - auth - CRUD - filters - no local mock</text>
     </g>
   </g>
 </svg>
