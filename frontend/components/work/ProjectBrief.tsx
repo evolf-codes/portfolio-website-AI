@@ -41,7 +41,7 @@ export function ProjectBrief({ project }: { project: WorkProject }) {
                 rel="noreferrer"
                 className="result-link overflow-hidden rounded-xl border border-[var(--border)] bg-white"
               >
-                <img src={image.src} alt={image.alt} className="w-full object-contain" />
+                <img src={image.src} alt={image.alt} />
               </a>
             ))}
           </div>

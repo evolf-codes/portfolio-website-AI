@@ -1,105 +1,107 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
   <title id="title">Jira bug tracking dashboard</title>
   <desc id="desc">Left: pie chart of bugs by status. Right: open bug list with IDs, descriptions, and burndown trend.</desc>
-  <rect width="1280" height="760" fill="#f4f5f7"/>
-  <rect width="220" height="760" fill="#0747a6"/>
-  <text x="28" y="52" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Jira</text>
-  <text x="28" y="92" fill="#deebff" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">QA OPERATIONS</text>
-  <g fill="#deebff" font-family="Arial, Helvetica, sans-serif" font-size="15">
-    <text x="40" y="150">Dashboards</text>
-    <text x="40" y="190">Bugs</text>
-    <text x="40" y="230">Boards</text>
-    <text x="40" y="270">Confluence</text>
-    <text x="40" y="310">Filters</text>
-  </g>
-
-  <text x="260" y="48" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">ILLUSTRATIVE · SAMPLE PROJECT DATA</text>
-  <text x="260" y="88" fill="#172b4d" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Project bug tracking</text>
-  <text x="260" y="118" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="15">Payments release · Sprint 24 · linked Confluence runbook</text>
-
-  <g font-family="Arial, Helvetica, sans-serif">
-    <g transform="translate(260 148)">
-      <rect width="180" height="78" rx="8" fill="white" stroke="#dfe1e6"/>
-      <text x="18" y="28" fill="#5e6c84" font-size="12">OPEN BUGS</text>
-      <text x="18" y="58" fill="#172b4d" font-size="26" font-weight="700">42</text>
-    </g>
-    <g transform="translate(458 148)">
-      <rect width="180" height="78" rx="8" fill="white" stroke="#dfe1e6"/>
-      <text x="18" y="28" fill="#5e6c84" font-size="12">BLOCKED</text>
-      <text x="18" y="58" fill="#de350b" font-size="26" font-weight="700">5</text>
-    </g>
-    <g transform="translate(656 148)">
-      <rect width="180" height="78" rx="8" fill="white" stroke="#dfe1e6"/>
-      <text x="18" y="28" fill="#5e6c84" font-size="12">CLOSED THIS SPRINT</text>
-      <text x="18" y="58" fill="#006644" font-size="26" font-weight="700">19</text>
-    </g>
-    <g transform="translate(854 148)">
-      <rect width="186" height="78" rx="8" fill="white" stroke="#dfe1e6"/>
-      <text x="18" y="28" fill="#5e6c84" font-size="12">DOCS LINKED</text>
-      <text x="18" y="58" fill="#0052cc" font-size="20" font-weight="700">Confluence</text>
-    </g>
-  </g>
-
-  <!-- Left panel: pie -->
-  <rect x="260" y="250" width="420" height="450" rx="10" fill="white" stroke="#dfe1e6"/>
-  <text x="284" y="290" fill="#172b4d" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Bugs by status</text>
-  <text x="284" y="316" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="13">Open · In progress · Done · Blocked</text>
-
-  <!-- Pie: Open 38%, In Progress 24%, Done 26%, Blocked 12% -->
-  <g transform="translate(470 480)">
-    <circle r="118" fill="#dfe1e6"/>
-    <!-- Open #0052cc ~136deg -->
-    <path d="M0,0 L0,-118 A118,118 0 0 1 110.4,-41.5 Z" fill="#0052cc"/>
-    <!-- In progress #6554c0 ~86deg -->
-    <path d="M0,0 L110.4,-41.5 A118,118 0 0 1 70.2,94.8 Z" fill="#6554c0"/>
-    <!-- Done #36b37e ~94deg -->
-    <path d="M0,0 L70.2,94.8 A118,118 0 0 1 -110.4,-41.5 Z" fill="#36b37e"/>
-    <!-- Blocked #de350b ~43deg -->
-    <path d="M0,0 L-110.4,-41.5 A118,118 0 0 1 0,-118 Z" fill="#de350b"/>
-    <circle r="52" fill="white"/>
-    <text x="0" y="-4" text-anchor="middle" fill="#172b4d" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">42</text>
-    <text x="0" y="18" text-anchor="middle" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="12">total</text>
-  </g>
-
-  <g font-family="Arial, Helvetica, sans-serif" font-size="13">
-    <rect x="290" y="620" width="12" height="12" rx="2" fill="#0052cc"/><text x="310" y="631" fill="#172b4d">Open 16</text>
-    <rect x="400" y="620" width="12" height="12" rx="2" fill="#6554c0"/><text x="420" y="631" fill="#172b4d">In progress 10</text>
-    <rect x="290" y="652" width="12" height="12" rx="2" fill="#36b37e"/><text x="310" y="663" fill="#172b4d">Done 11</text>
-    <rect x="400" y="652" width="12" height="12" rx="2" fill="#de350b"/><text x="420" y="663" fill="#172b4d">Blocked 5</text>
-  </g>
-
-  <!-- Right panel: bug list + mini burndown -->
-  <rect x="700" y="250" width="340" height="450" rx="10" fill="white" stroke="#dfe1e6"/>
-  <text x="724" y="290" fill="#172b4d" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Open bugs · burndown view</text>
-  <text x="724" y="314" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="12">ID · description · status</text>
-
-  <!-- Mini burndown line -->
-  <polyline points="724,360 770,352 816,340 862,328 908,318 954,300 1000,292" fill="none" stroke="#0052cc" stroke-width="3"/>
-  <polyline points="724,360 770,358 816,356 862,354 908,352 954,350 1000,348" fill="none" stroke="#dfe1e6" stroke-width="2" stroke-dasharray="4 4"/>
-  <text x="724" y="380" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="11">Ideal vs remaining open bugs this sprint</text>
-
-  <g font-family="Arial, Helvetica, sans-serif">
-    <line x1="724" y1="400" x2="1016" y2="400" stroke="#dfe1e6"/>
-    <text x="724" y="428" fill="#0052cc" font-size="13" font-weight="700">PAY-1842</text>
-    <text x="800" y="428" fill="#172b4d" font-size="13">Settlement mismatch on retry</text>
-    <text x="724" y="448" fill="#de350b" font-size="11">Blocked · waiting on API fix</text>
-
-    <line x1="724" y1="468" x2="1016" y2="468" stroke="#dfe1e6"/>
-    <text x="724" y="496" fill="#0052cc" font-size="13" font-weight="700">PAY-1837</text>
-    <text x="800" y="496" fill="#172b4d" font-size="13">Timeout on confirm screen</text>
-    <text x="724" y="516" fill="#6554c0" font-size="11">In progress · assigned QA</text>
-
-    <line x1="724" y1="536" x2="1016" y2="536" stroke="#dfe1e6"/>
-    <text x="724" y="564" fill="#0052cc" font-size="13" font-weight="700">PAY-1829</text>
-    <text x="800" y="564" fill="#172b4d" font-size="13">Missing audit log on void</text>
-    <text x="724" y="584" fill="#0052cc" font-size="11">Open · severity High</text>
-
-    <line x1="724" y1="604" x2="1016" y2="604" stroke="#dfe1e6"/>
-    <text x="724" y="632" fill="#0052cc" font-size="13" font-weight="700">PAY-1811</text>
-    <text x="800" y="632" fill="#172b4d" font-size="13">CSV export truncates rows</text>
-    <text x="724" y="652" fill="#0052cc" font-size="11">Open · linked Confluence note</text>
-
-    <line x1="724" y1="672" x2="1016" y2="672" stroke="#dfe1e6"/>
-    <text x="724" y="696" fill="#5e6c84" font-size="12">+ 12 more in filter · QA Manager view</text>
-  </g>
-</svg>
+  <rect width="1280" height="760" rx="24" fill="#e8ecef"/>
+  <g transform="translate(32, 32) scale(0.95)">
+      <rect width="1280" height="760" fill="#f4f5f7"/>
+      <rect width="220" height="760" fill="#0747a6"/>
+      <text x="28" y="52" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Jira</text>
+      <text x="28" y="92" fill="#deebff" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">QA OPERATIONS</text>
+      <g fill="#deebff" font-family="Arial, Helvetica, sans-serif" font-size="15">
+        <text x="40" y="150">Dashboards</text>
+        <text x="40" y="190">Bugs</text>
+        <text x="40" y="230">Boards</text>
+        <text x="40" y="270">Confluence</text>
+        <text x="40" y="310">Filters</text>
+      </g>
+    
+      <text x="260" y="48" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">ILLUSTRATIVE · SAMPLE PROJECT DATA</text>
+      <text x="260" y="88" fill="#172b4d" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Project bug tracking</text>
+      <text x="260" y="118" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="15">Payments release · Sprint 24 · linked Confluence runbook</text>
+    
+      <g font-family="Arial, Helvetica, sans-serif">
+        <g transform="translate(260 148)">
+          <rect width="180" height="78" rx="8" fill="white" stroke="#dfe1e6"/>
+          <text x="18" y="28" fill="#5e6c84" font-size="12">OPEN BUGS</text>
+          <text x="18" y="58" fill="#172b4d" font-size="26" font-weight="700">42</text>
+        </g>
+        <g transform="translate(458 148)">
+          <rect width="180" height="78" rx="8" fill="white" stroke="#dfe1e6"/>
+          <text x="18" y="28" fill="#5e6c84" font-size="12">BLOCKED</text>
+          <text x="18" y="58" fill="#de350b" font-size="26" font-weight="700">5</text>
+        </g>
+        <g transform="translate(656 148)">
+          <rect width="180" height="78" rx="8" fill="white" stroke="#dfe1e6"/>
+          <text x="18" y="28" fill="#5e6c84" font-size="12">CLOSED THIS SPRINT</text>
+          <text x="18" y="58" fill="#006644" font-size="26" font-weight="700">19</text>
+        </g>
+        <g transform="translate(854 148)">
+          <rect width="186" height="78" rx="8" fill="white" stroke="#dfe1e6"/>
+          <text x="18" y="28" fill="#5e6c84" font-size="12">DOCS LINKED</text>
+          <text x="18" y="58" fill="#0052cc" font-size="20" font-weight="700">Confluence</text>
+        </g>
+      </g>
+    
+      <!-- Left panel: pie -->
+      <rect x="260" y="250" width="420" height="450" rx="10" fill="white" stroke="#dfe1e6"/>
+      <text x="284" y="290" fill="#172b4d" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Bugs by status</text>
+      <text x="284" y="316" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="13">Open · In progress · Done · Blocked</text>
+    
+      <!-- Pie: Open 38%, In Progress 24%, Done 26%, Blocked 12% -->
+      <g transform="translate(470 480)">
+        <circle r="118" fill="#dfe1e6"/>
+        <!-- Open #0052cc ~136deg -->
+        <path d="M0,0 L0,-118 A118,118 0 0 1 110.4,-41.5 Z" fill="#0052cc"/>
+        <!-- In progress #6554c0 ~86deg -->
+        <path d="M0,0 L110.4,-41.5 A118,118 0 0 1 70.2,94.8 Z" fill="#6554c0"/>
+        <!-- Done #36b37e ~94deg -->
+        <path d="M0,0 L70.2,94.8 A118,118 0 0 1 -110.4,-41.5 Z" fill="#36b37e"/>
+        <!-- Blocked #de350b ~43deg -->
+        <path d="M0,0 L-110.4,-41.5 A118,118 0 0 1 0,-118 Z" fill="#de350b"/>
+        <circle r="52" fill="white"/>
+        <text x="0" y="-4" text-anchor="middle" fill="#172b4d" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">42</text>
+        <text x="0" y="18" text-anchor="middle" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="12">total</text>
+      </g>
+    
+      <g font-family="Arial, Helvetica, sans-serif" font-size="13">
+        <rect x="290" y="620" width="12" height="12" rx="2" fill="#0052cc"/><text x="310" y="631" fill="#172b4d">Open 16</text>
+        <rect x="400" y="620" width="12" height="12" rx="2" fill="#6554c0"/><text x="420" y="631" fill="#172b4d">In progress 10</text>
+        <rect x="290" y="652" width="12" height="12" rx="2" fill="#36b37e"/><text x="310" y="663" fill="#172b4d">Done 11</text>
+        <rect x="400" y="652" width="12" height="12" rx="2" fill="#de350b"/><text x="420" y="663" fill="#172b4d">Blocked 5</text>
+      </g>
+    
+      <!-- Right panel: bug list + mini burndown -->
+      <rect x="700" y="250" width="340" height="450" rx="10" fill="white" stroke="#dfe1e6"/>
+      <text x="724" y="290" fill="#172b4d" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Open bugs · burndown view</text>
+      <text x="724" y="314" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="12">ID · description · status</text>
+    
+      <!-- Mini burndown line -->
+      <polyline points="724,360 770,352 816,340 862,328 908,318 954,300 1000,292" fill="none" stroke="#0052cc" stroke-width="3"/>
+      <polyline points="724,360 770,358 816,356 862,354 908,352 954,350 1000,348" fill="none" stroke="#dfe1e6" stroke-width="2" stroke-dasharray="4 4"/>
+      <text x="724" y="380" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="11">Ideal vs remaining open bugs this sprint</text>
+    
+      <g font-family="Arial, Helvetica, sans-serif">
+        <line x1="724" y1="400" x2="1016" y2="400" stroke="#dfe1e6"/>
+        <text x="724" y="428" fill="#0052cc" font-size="13" font-weight="700">PAY-1842</text>
+        <text x="800" y="428" fill="#172b4d" font-size="13">Settlement mismatch on retry</text>
+        <text x="724" y="448" fill="#de350b" font-size="11">Blocked · waiting on API fix</text>
+    
+        <line x1="724" y1="468" x2="1016" y2="468" stroke="#dfe1e6"/>
+        <text x="724" y="496" fill="#0052cc" font-size="13" font-weight="700">PAY-1837</text>
+        <text x="800" y="496" fill="#172b4d" font-size="13">Timeout on confirm screen</text>
+        <text x="724" y="516" fill="#6554c0" font-size="11">In progress · assigned QA</text>
+    
+        <line x1="724" y1="536" x2="1016" y2="536" stroke="#dfe1e6"/>
+        <text x="724" y="564" fill="#0052cc" font-size="13" font-weight="700">PAY-1829</text>
+        <text x="800" y="564" fill="#172b4d" font-size="13">Missing audit log on void</text>
+        <text x="724" y="584" fill="#0052cc" font-size="11">Open · severity High</text>
+    
+        <line x1="724" y1="604" x2="1016" y2="604" stroke="#dfe1e6"/>
+        <text x="724" y="632" fill="#0052cc" font-size="13" font-weight="700">PAY-1811</text>
+        <text x="800" y="632" fill="#172b4d" font-size="13">CSV export truncates rows</text>
+        <text x="724" y="652" fill="#0052cc" font-size="11">Open · linked Confluence note</text>
+    
+        <line x1="724" y1="672" x2="1016" y2="672" stroke="#dfe1e6"/>
+        <text x="724" y="696" fill="#5e6c84" font-size="12">+ 12 more in filter · QA Manager view</text>
+      </g>
+  </g></svg>

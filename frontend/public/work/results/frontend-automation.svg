@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Verbose The Internet pytest results</title>
+  <desc id="desc">Terminal evidence listing all 15 frontend browser checks as passed against the-internet.herokuapp.com.</desc>
+  <rect width="1280" height="760" rx="24" fill="#e8ecef"/>
+  <g transform="translate(32, 32) scale(0.95)">
+    <rect width="1280" height="760" rx="24" fill="#0d1012"/>
+    <rect width="1280" height="62" rx="24" fill="#1c2126"/>
+    <rect y="38" width="1280" height="24" fill="#1c2126"/>
+    <circle cx="30" cy="30" r="7" fill="#6e7479"/>
+    <circle cx="54" cy="30" r="7" fill="#6e7479"/>
+    <circle cx="78" cy="30" r="7" fill="#6e7479"/>
+    <text x="640" y="37" text-anchor="middle" fill="#d9dddf" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">frontend-automation — the-internet.herokuapp.com pytest -vv</text>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">
+      <text x="36" y="102" fill="#9fa6ab">$ pytest -vv</text>
+      <text x="36" y="132" fill="#d9dddf">target: https://the-internet.herokuapp.com</text>
+      <text x="36" y="158" fill="#d9dddf">collected 15 items</text>
+      <g fill="#d9dddf">
+        <text x="36" y="198">test_home_lists_common_challenges</text>
+        <text x="36" y="226">test_add_remove_creates_deletable_item</text>
+        <text x="36" y="254">test_checkboxes_first_can_be_toggled_off</text>
+        <text x="36" y="282">test_dropdown_selects_option_one</text>
+        <text x="36" y="310">test_form_authentication_succeeds</text>
+        <text x="36" y="338">test_forgot_password_exposes_email_field</text>
+        <text x="36" y="366">test_dynamic_content_refreshes_block</text>
+        <text x="36" y="394">test_broken_images_page_has_heading</text>
+        <text x="36" y="422">test_hovers_reveals_profile_caption</text>
+        <text x="36" y="450">test_key_presses_feeds_back_last_key</text>
+        <text x="36" y="478">test_table_example_has_headers</text>
+        <text x="36" y="506">test_status_code_200_page_is_ok</text>
+        <text x="36" y="534">test_a_b_page_loads_experiment_text</text>
+        <text x="36" y="562">test_new_window_opens_second_page</text>
+        <text x="36" y="590">test_basic_auth_with_credentials</text>
+      </g>
+      <g fill="#63d792" font-weight="700">
+        <text x="1120" y="198">PASSED</text>
+        <text x="1120" y="226">PASSED</text>
+        <text x="1120" y="254">PASSED</text>
+        <text x="1120" y="282">PASSED</text>
+        <text x="1120" y="310">PASSED</text>
+        <text x="1120" y="338">PASSED</text>
+        <text x="1120" y="366">PASSED</text>
+        <text x="1120" y="394">PASSED</text>
+        <text x="1120" y="422">PASSED</text>
+        <text x="1120" y="450">PASSED</text>
+        <text x="1120" y="478">PASSED</text>
+        <text x="1120" y="506">PASSED</text>
+        <text x="1120" y="534">PASSED</text>
+        <text x="1120" y="562">PASSED</text>
+        <text x="1120" y="590">PASSED</text>
+      </g>
+      <line x1="36" y1="620" x2="1244" y2="620" stroke="#30363b"/>
+      <text x="36" y="662" fill="#63d792" font-size="21" font-weight="700">15 passed</text>
+      <text x="180" y="662" fill="#9fa6ab">in 12.08s</text>
+      <text x="36" y="704" fill="#9fa6ab">Public practice site · login · forms · tables · windows · Docker</text>
+    </g>
+  </g>
+</svg>

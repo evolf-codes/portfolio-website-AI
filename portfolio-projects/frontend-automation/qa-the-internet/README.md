@@ -57,7 +57,11 @@ cd portfolio-projects/frontend-automation/qa-the-internet
 python scripts/snapshot_pytest_output.py
 ```
 
-The image is written to the repository path
-`frontend/public/work/frontend-automation-pytest-output.png`.
+The portfolio uses the stylized evidence SVG at
+`frontend/public/work/results/frontend-automation.svg`
+(kept in sync with backend/performance terminal styling).
+
+Optional: regenerate a raw pytest text capture with
+`python scripts/snapshot_pytest_output.py` (writes under `evidence/`).
 
 See `notes.txt` for the rationale and trade-offs.

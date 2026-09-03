@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Render the most recent pytest output as a PNG for the public portfolio page."""
+"""Optional: capture raw pytest text output under evidence/ for debugging.
+
+Portfolio tiles use the matched SVG at
+frontend/public/work/results/frontend-automation.svg.
+"""
 
 import html
 import subprocess
@@ -8,14 +12,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REPO = ROOT.parents[2]
-OUT = (
-    REPO
-    / "frontend"
-    / "public"
-    / "work"
-    / "frontend-automation-pytest-output.png"
-)
+OUT = ROOT / "evidence" / "pytest-raw-capture.png"
 
 
 def main() -> int:

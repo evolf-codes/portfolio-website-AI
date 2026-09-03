@@ -497,6 +497,32 @@ a {
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.result-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.result-link:not(.work-showcase__media) img {
+  height: auto;
+}
+
+.result-gallery .result-link {
+  position: relative;
+  display: block;
+  aspect-ratio: 1280 / 760;
+  overflow: hidden;
+}
+
+.result-gallery .result-link img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .result-link:hover {
   border-color: rgba(15, 118, 110, 0.45);
   transform: translateY(-3px);
@@ -581,9 +607,32 @@ a {
   margin-top: var(--space-1);
 }
 
-.work-showcase__item > .result-link {
-  align-self: stretch;
-  min-height: 16rem;
+.work-showcase__media {
+  position: relative;
+  display: block;
+  align-self: start;
+  width: 100%;
+  aspect-ratio: 1280 / 760;
+  overflow: hidden;
+  background: #e8ecef;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.work-showcase__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.work-showcase__media:hover {
+  box-shadow: 0 14px 32px rgba(15, 118, 110, 0.12);
+}
+
+.work-showcase__item > .result-link.work-showcase__media {
+  min-height: 0;
 }
 
 @media (min-width: 768px) {
@@ -592,10 +641,22 @@ a {
   }
 
   .work-showcase__item {
-    align-items: center;
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: var(--space-7);
     padding: var(--space-7) 0;
+  }
+
+  .work-showcase__copy {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .work-showcase__media {
+    grid-column: 2;
+    grid-row: 1;
+    height: clamp(13.5rem, 22vw, 17.5rem);
+    aspect-ratio: auto;
   }
 
   .work-showcase__item:first-child {
@@ -603,11 +664,11 @@ a {
   }
 
   .work-showcase__item:nth-child(even) .work-showcase__copy {
-    order: 2;
+    grid-column: 2;
   }
 
-  .work-showcase__item > .result-link {
-    min-height: 18rem;
+  .work-showcase__item:nth-child(even) .work-showcase__media {
+    grid-column: 1;
   }
 }
 

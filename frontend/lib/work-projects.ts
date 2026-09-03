@@ -81,7 +81,7 @@ const PROJECTS: WorkProject[] = [
     discipline: "UI automation",
     accent: "#0f766e",
     sourcePath: "portfolio-projects/frontend-automation/qa-the-internet/",
-    resultImageSrc: "/work/frontend-automation-pytest-output.png",
+    resultImageSrc: "/work/results/frontend-automation.svg",
     resultImageAlt: "Green pytest output for fifteen frontend browser checks",
     priority: 3,
   },

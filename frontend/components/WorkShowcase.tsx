@@ -35,12 +35,13 @@ export function WorkShowcase() {
             </div>
             <Link
               href={`/work/${project.slug}`}
-              className="result-link overflow-hidden rounded-xl border border-[var(--border)] bg-white"
+              className="work-showcase__media result-link overflow-hidden rounded-xl border border-[var(--border)]"
             >
               <img
                 src={project.resultImageSrc}
                 alt={project.resultImageAlt}
-                className="h-full w-full object-contain"
+                width={1280}
+                height={760}
                 loading={index < 2 ? "eager" : "lazy"}
               />
             </Link>

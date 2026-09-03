@@ -59,4 +59,24 @@ test.describe("Work", () => {
     await expect(page.getByRole("img", { name: /test plan draft/i })).toBeVisible();
     await expect(page.getByRole("img", { name: /coverage matrix/i })).toBeVisible();
   });
+
+  test("showcase evidence tiles share one size", async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto("/#work");
+
+    const sizes = await page.locator(".work-showcase__media").evaluateAll((elements) =>
+      elements.map((element) => {
+        const { width, height } = element.getBoundingClientRect();
+        return { width: Math.round(width), height: Math.round(height) };
+      }),
+    );
+
+    expect(sizes.length).toBe(WORK_PROJECTS.length);
+
+    const [first, ...rest] = sizes;
+    for (const size of rest) {
+      expect(size.width).toBe(first.width);
+      expect(size.height).toBe(first.height);
+    }
+  });
 });

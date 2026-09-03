@@ -39,7 +39,7 @@ echo "== Performance testing =="
 echo "== Frontend automation package =="
 require_file "$repo_dir/portfolio-projects/frontend-automation/qa-the-internet/tests/test_herokuapp.py"
 require_file "$repo_dir/portfolio-projects/frontend-automation/qa-the-internet/README.md"
-require_file "$repo_dir/frontend/public/work/frontend-automation-pytest-output.png"
+require_file "$repo_dir/frontend/public/work/results/frontend-automation.svg"
 echo "OK"
 
 echo "All sample checks passed."
